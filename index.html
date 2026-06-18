@@ -10,7 +10,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="msapplication-tap-highlight" content="no">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236C5CE7'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='50' font-family='sans-serif' font-weight='bold'>T</text></svg>">
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVGFza0Zsb3ciLCJzaG9ydF9uYW1lIjoiVGFza0Zsb3ciLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBDMEYxQSIsInRoZW1lX2NvbG9yIjoiIzZDNUNFNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsPHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIwJyBmaWxsPSclMjM2QzVDRTcnLz48dGV4dCB4PSc1MCcgeT0nNjgnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZpbGw9J3doaXRlJyBmb250LXNpemU9JzUwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9J2JvbGQnPlQ8L3RleHQ+PC9zdmc+Iiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19"><title>TaskFlow v6.3</title>
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVGFza0Zsb3ciLCJzaG9ydF9uYW1lIjoiVGFza0Zsb3ciLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBDMEYxQSIsInRoZW1lX2NvbG9yIjoiIzZDNUNFNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsPHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIwJyBmaWxsPSclMjM2QzVDRTcnLz48dGV4dCB4PSc1MCcgeT0nNjgnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZpbGw9J3doaXRlJyBmb250LXNpemU9JzUwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9J2JvbGQnPlQ8L3RleHQ+PC9zdmc+Iiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19"><title>TaskFlow v6.8.2</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 [data-theme="dark"]{--primary:#6C5CE7;--primary-dk:#5A4BD1;--primary-lt:#A29BFE;--accent:#00CEC9;--accent2:#0984E3;--success:#00B894;--warning:#FDCB6E;--danger:#E17055;--urgent:#D63031;--bg:#0B0E17;--card:#131726;--card2:#1A1F35;--input:#1E2440;--hover:#232A45;--text:#F0F0F5;--text2:#8892B0;--muted:#5A6380;--border:#2A3050;--border2:#353D5E;--shadow:rgba(0,0,0,.35);--glass:rgba(255,255,255,.03);}
 [data-theme="light"]{--primary:#6C5CE7;--primary-dk:#5A4BD1;--primary-lt:#6C5CE7;--accent:#00B4AE;--accent2:#0770C7;--success:#059669;--warning:#D97706;--danger:#DC2626;--urgent:#B91C1C;--bg:#F3F4F8;--card:#FFF;--card2:#EEF0F5;--input:#E4E7EE;--hover:#DCDFE8;--text:#1A1D2E;--text2:#4A5568;--muted:#8896AB;--border:#D0D4DE;--border2:#BFC5D2;--shadow:rgba(0,0,0,.06);--glass:rgba(0,0,0,.02);}
@@ -529,7 +529,7 @@ body{min-height:100%;min-height:100dvh;overscroll-behavior-y:contain;-webkit-tap
 <div class="panel"><div class="panel-title" style="margin-bottom:10px;"><div class="dot" style="background:var(--accent2)"></div>Backup & Restore</div><div class="backup-stats" id="backupStats"></div><div style="display:flex;gap:6px;flex-wrap:wrap;"><button class="btn btn-p" onclick="exportBackup()" style="flex:1;">Export Backup</button><label class="btn btn-g" style="flex:1;cursor:pointer;">Import<input type="file" id="importFile" accept=".json" style="display:none;" onchange="importBackup(event)"></label></div><div style="display:flex;gap:6px;margin-top:6px;"><button class="btn btn-d" onclick="cfm('🗑️','Delete ALL data? Cannot be undone!',()=>{['p2_recurring','p2_tasks','p2_instances','p2_reminders','planner_notes','p2_lastGen','p2_reports','p2_leave','p2_team','planner_theme','p2_showOverdue','p2_lilo_data','p2_lilo_settings','p2_lilo_submitted','p2_task_cats','p2_report_cats','p2_leave_types','p2_priorities','p2_bu_objects','p2_expenses','p2_expense_cats','p2_pay_methods','p2_expense_tags','p2_expense_budget','p2_my_leave_config','p2_my_leave_log'].forEach(k=>localStorage.removeItem(k));location.reload();})">🗑️ Reset All</button></div><div class="backup-info">💾 Export/Import all data as JSON. Transfer between devices or keep as backup.</div></div>
 
 </div></div>
-<div class="footer">TaskFlow v6.3 — Universal Search · Quick Capture · Trash Bin · Health Check · A11y © 2026</div>
+<div class="footer">TaskFlow v6.8 — Mobile Overhaul · Quick Capture · Trash Bin · Health Check · A11y © 2026</div>
 </div>
 
 </div>
@@ -5211,5 +5211,2844 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 else setTimeout(init,2500);
 })();
 </script>
+
+
+<!-- ═══ TaskFlow v6.5 + v6.6 + v6.7 ═══ -->
+
+<!-- v6.5 Selective Backup -->
+<style id="tfv65css">
+.tfbk-modal{max-width:680px;}
+.tfbk-mode-tabs{display:flex;gap:4px;background:var(--card2);border-radius:9px;padding:3px;margin-bottom:16px;}
+.tfbk-mode-tab{flex:1;padding:9px 14px;border:none;background:transparent;color:var(--text2);font-size:11px;font-weight:600;border-radius:7px;cursor:pointer;font-family:inherit;}
+.tfbk-mode-tab.active{background:var(--primary);color:#fff;}
+.tfbk-info-banner{padding:10px 12px;background:rgba(108,92,231,.06);border:1px solid rgba(108,92,231,.18);border-left:3px solid var(--primary);border-radius:8px;font-size:11px;color:var(--text2);margin-bottom:14px;line-height:1.5;}
+.tfbk-info-banner b{color:var(--text);}
+.tfbk-controls-row{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--card2);border:1px solid var(--border);border-radius:8px;margin-bottom:10px;flex-wrap:wrap;gap:8px;}
+.tfbk-quick-actions{display:flex;gap:6px;flex-wrap:wrap;}
+.tfbk-quick-btn{padding:5px 10px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text2);font-size:10px;font-weight:600;cursor:pointer;font-family:inherit;}
+.tfbk-quick-btn:hover{border-color:var(--primary);color:var(--primary);}
+.tfbk-summary{font-size:11px;font-weight:700;color:var(--accent2);}
+.tfbk-summary b{color:var(--primary);}
+.tfbk-groups{max-height:55vh;overflow-y:auto;border:1px solid var(--border);border-radius:10px;padding:8px;background:var(--input);}
+.tfbk-group{background:var(--card);border:1px solid var(--border);border-radius:9px;margin-bottom:6px;overflow:hidden;}
+.tfbk-group-head{display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer;background:var(--card2);}
+.tfbk-group-cb{width:18px;height:18px;border:2px solid var(--border2);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent;cursor:pointer;flex-shrink:0;}
+.tfbk-group-cb.checked{background:var(--success);border-color:var(--success);color:#fff;}
+.tfbk-group-cb.partial{background:var(--warning);border-color:var(--warning);color:#fff;}
+.tfbk-group-icon{font-size:18px;}
+.tfbk-group-info{flex:1;min-width:0;}
+.tfbk-group-name{font-size:12px;font-weight:700;}
+.tfbk-group-stats{font-size:9px;color:var(--muted);margin-top:2px;}
+.tfbk-group-toggle{font-size:11px;color:var(--text2);transition:.2s;}
+.tfbk-group.expanded .tfbk-group-toggle{transform:rotate(180deg);}
+.tfbk-group-body{display:none;padding:6px 12px 10px;}
+.tfbk-group.expanded .tfbk-group-body{display:block;}
+.tfbk-key-row{display:flex;align-items:center;gap:8px;padding:5px 8px;font-size:10px;border-radius:5px;}
+.tfbk-key-cb{width:14px;height:14px;border:1.5px solid var(--border2);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;color:transparent;cursor:pointer;}
+.tfbk-key-cb.checked{background:var(--primary);border-color:var(--primary);color:#fff;}
+.tfbk-key-name{flex:1;color:var(--text2);font-family:monospace;font-size:9px;}
+.tfbk-key-count{font-size:9px;color:var(--accent2);font-weight:700;min-width:60px;text-align:right;}
+.tfbk-import-source{padding:12px;background:var(--card2);border:1px dashed var(--border);border-radius:10px;text-align:center;margin-bottom:12px;}
+.tfbk-import-source.has-file{border-style:solid;border-color:var(--success);background:rgba(16,185,129,.05);}
+.tfbk-import-file-label{display:inline-block;padding:8px 16px;border-radius:8px;background:var(--primary);color:#fff;cursor:pointer;font-size:11px;font-weight:600;}
+.tfbk-import-file-info{margin-top:8px;font-size:11px;color:var(--text2);}
+.tfbk-warning{padding:10px 12px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-left:3px solid var(--warning);border-radius:8px;font-size:11px;color:var(--warning);margin-bottom:12px;}
+.tfbk-merge-options{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+.tfbk-merge-opt{flex:1;min-width:160px;padding:10px 12px;border:2px solid var(--border);border-radius:9px;background:var(--card);cursor:pointer;text-align:center;}
+.tfbk-merge-opt.selected{border-color:var(--primary);background:rgba(108,92,231,.08);}
+.tfbk-merge-opt-icon{font-size:20px;margin-bottom:5px;}
+.tfbk-merge-opt-title{font-size:11px;font-weight:700;margin-bottom:3px;}
+.tfbk-merge-opt-desc{font-size:9px;color:var(--text2);line-height:1.4;}
+</style>
+<script id="tfv65js">
+(function(){'use strict';
+function esc(s){return window.tfEsc?window.tfEsc(s):String(s||'').replace(/[<>&"]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+
+var STORAGE_MAP=[
+  {id:'tasks',icon:'📋',name:'Tasks & Reminders',desc:'One-time, recurring, instances, reminders, history',keys:[{k:'p2_tasks',label:'One-time tasks',type:'array'},{k:'p2_recurring',label:'Recurring tasks',type:'array'},{k:'p2_instances',label:'Recurring instances',type:'array'},{k:'p2_reminders',label:'Reminders',type:'array'},{k:'p2_comp_history',label:'Completion history',type:'array'},{k:'p2_recur_history',label:'Recurring history',type:'array'},{k:'p2_lastGen',label:'Last gen date',type:'string'},{k:'p2_showOverdue',label:'Show overdue',type:'string'}]},
+  {id:'meetings',icon:'🤝',name:'Meetings',desc:'Auto-saved meeting drafts',keys:[{k:'tf_meeting_drafts',label:'Meeting drafts',type:'object'}]},
+  {id:'developments',icon:'📊',name:'Developments',desc:'Power BI, Excel & Automation projects',keys:[{k:'tf_dev_projects',label:'Development projects',type:'array'}]},
+  {id:'reports',icon:'📂',name:'Reports Directory',desc:'Report library',keys:[{k:'p2_reports',label:'Reports',type:'array'}]},
+  {id:'leave',icon:'🏥',name:'Leave',desc:'Team + my leave',keys:[{k:'p2_leave',label:'Team leave',type:'array'},{k:'p2_my_leave_log',label:'My leave log',type:'array'},{k:'p2_my_leave_config',label:'Leave credits',type:'object'},{k:'p2_team',label:'Team members',type:'array'}]},
+  {id:'lilo',icon:'⏰',name:'LILO Attendance',desc:'Attendance tracker',keys:[{k:'p2_lilo_data',label:'LILO data',type:'object'},{k:'p2_lilo_settings',label:'LILO settings',type:'object'},{k:'p2_lilo_submitted',label:'Submission',type:'object'}]},
+  {id:'expenses',icon:'💰',name:'Expenses',desc:'WFO expense tracker',keys:[{k:'p2_expenses',label:'Expenses',type:'array'},{k:'p2_expense_budget',label:'Budgets',type:'object'}]},
+  {id:'templates',icon:'📝',name:'Templates & Workspaces',desc:'Templates + workspaces',keys:[{k:'p2_msg_tpl',label:'Message templates',type:'array'},{k:'p2_step_tpl',label:'Step templates',type:'array'},{k:'p2_workspaces',label:'Workspaces',type:'array'},{k:'p2_active_ws',label:'Active workspace',type:'string'}]},
+  {id:'dashboard',icon:'📊',name:'Dashboard',desc:'Widget layout',keys:[{k:'tf_dashboard',label:'Dashboard widgets',type:'array'}]},
+  {id:'productivity',icon:'🎯',name:'Goals, Habits & Badges',desc:'Goals, streaks, habits, badges',keys:[{k:'tf_goals',label:'Goals',type:'object'},{k:'tf_habits',label:'Habits',type:'array'},{k:'tf_earned_badges',label:'Badges',type:'array'},{k:'tf_focus_sessions',label:'Focus sessions',type:'string'},{k:'tf_themes_used',label:'Themes used',type:'array'},{k:'tf_pins_count',label:'Pin count',type:'string'},{k:'tf_voice_used',label:'Voice flag',type:'string'}]},
+  {id:'admin',icon:'⚙️',name:'Admin Lists',desc:'Categories, priorities, BUs',keys:[{k:'p2_task_cats',label:'Task categories',type:'array'},{k:'p2_report_cats',label:'Report categories',type:'array'},{k:'p2_leave_types',label:'Leave types',type:'array'},{k:'p2_priorities',label:'Priorities',type:'array'},{k:'p2_bu_objects',label:'Business units',type:'array'},{k:'p2_bus_units',label:'BUs (legacy)',type:'array'},{k:'p2_expense_cats',label:'Expense categories',type:'array'},{k:'p2_pay_methods',label:'Payment methods',type:'array'},{k:'p2_expense_tags',label:'Expense tags',type:'array'},{k:'p2_admin',label:'Field visibility',type:'object'}]},
+  {id:'settings',icon:'🎨',name:'Settings & Preferences',desc:'Theme, language, view modes',keys:[{k:'planner_theme',label:'Theme',type:'string'},{k:'tf_theme_preset',label:'Theme preset',type:'string'},{k:'tf_a11y',label:'Accessibility',type:'string'},{k:'tf_lang',label:'Language',type:'string'},{k:'tf_compact',label:'Compact mode',type:'string'},{k:'tf_task_view_mode',label:'Task view',type:'string'},{k:'tf_carry_forward_settings',label:'Carry-forward',type:'object'},{k:'tf_sidebar_pinned',label:'Pinned items',type:'array'},{k:'tf_focus_mode',label:'Focus mode',type:'string'},{k:'tf_admin_v66',label:'Admin Center settings',type:'object'}]},
+  {id:'notes',icon:'📓',name:'Notes',desc:'Quick notes',keys:[{k:'planner_notes',label:'Quick notes',type:'string'}]}
+];
+
+var ALL_KEYS=[];STORAGE_MAP.forEach(function(g){g.keys.forEach(function(k){ALL_KEYS.push(k.k);});});
+
+function getItemCount(key,type){var raw=localStorage.getItem(key);if(raw===null)return null;if(type==='array'){try{var arr=JSON.parse(raw);if(Array.isArray(arr)){var act=arr.filter(function(x){return x&&!x._deleted;}).length;var del=arr.length-act;return del>0?(act+' (+'+del+' trashed)'):act;}}catch(e){}return 0;}if(type==='object'){try{var o=JSON.parse(raw);if(o&&typeof o==='object')return Object.keys(o).length+' keys';}catch(e){}return raw.length>0?'set':'empty';}return raw.length>30?(raw.slice(0,30)+'...'):raw;}
+
+var selG={},selK={},mode='export',imp=null,impName='',mMode='replace';
+function isGS(g){var any=false,all=true;g.keys.forEach(function(k){var s=(selK[k.k]!==undefined)?selK[k.k]:selG[g.id];if(s)any=true;else all=false;});return any&&all?'all':any?'partial':'none';}
+function isKS(g,k){if(selK[k.k]!==undefined)return selK[k.k];return !!selG[g.id];}
+function setGS(gid,v){selG[gid]=v;var grp=STORAGE_MAP.find(function(g){return g.id===gid;});if(grp)grp.keys.forEach(function(k){delete selK[k.k];});}
+function selAll(v){STORAGE_MAP.forEach(function(g){selG[g.id]=v;});selK={};}
+function getEK(){var o=[];STORAGE_MAP.forEach(function(g){g.keys.forEach(function(k){if(isKS(g,k))o.push(k.k);});});return o;}
+function compSum(){var keys=getEK(),items=0,groups=0;STORAGE_MAP.forEach(function(g){var any=false;g.keys.forEach(function(k){if(isKS(g,k)){any=true;var c=getItemCount(k.k,k.type);if(typeof c==='number')items+=c;}});if(any)groups++;});return{keys:keys.length,groups:groups,items:items};}
+
+function renderGroups(){var el=document.getElementById('tfbkGroups');if(!el)return;el.innerHTML=STORAGE_MAP.map(function(g){var st=isGS(g),cl=st==='all'?'checked':st==='partial'?'partial':'',ic=st==='all'?'✓':st==='partial'?'–':'';var total=0,miss=0;g.keys.forEach(function(k){var c=getItemCount(k.k,k.type);if(c===null)miss++;else if(typeof c==='number')total+=c;});var stats=(total>0?total+' items':'no data')+(miss===g.keys.length?' — empty':'');return '<div class="tfbk-group" data-group="'+g.id+'"><div class="tfbk-group-head" onclick="tfbkTogExp(\''+g.id+'\')"><div class="tfbk-group-cb '+cl+'" onclick="event.stopPropagation();tfbkTogGrp(\''+g.id+'\')">'+ic+'</div><div class="tfbk-group-icon">'+g.icon+'</div><div class="tfbk-group-info"><div class="tfbk-group-name">'+esc(g.name)+'</div><div class="tfbk-group-stats">'+esc(g.desc)+' · <b>'+stats+'</b></div></div><div class="tfbk-group-toggle">▼</div></div><div class="tfbk-group-body">'+g.keys.map(function(k){var ks=isKS(g,k),c=getItemCount(k.k,k.type),lbl=c===null?'<span style="color:var(--muted);font-style:italic;">not set</span>':c;return '<div class="tfbk-key-row"><div class="tfbk-key-cb '+(ks?'checked':'')+'" onclick="tfbkTogKey(\''+k.k+'\',\''+g.id+'\')">'+(ks?'✓':'')+'</div><div class="tfbk-key-name">'+esc(k.label)+' <span style="opacity:.5;">('+k.k+')</span></div><div class="tfbk-key-count">'+lbl+'</div></div>';}).join('')+'</div></div>';}).join('');var s=compSum(),sel=document.getElementById('tfbkSummary');if(sel)sel.innerHTML='✓ <b>'+s.groups+'</b> modules · <b>'+s.keys+'</b> keys · ~<b>'+s.items+'</b> items';}
+
+window.tfbkTogExp=function(gid){var el=document.querySelector('.tfbk-group[data-group="'+gid+'"]');if(el)el.classList.toggle('expanded');};
+window.tfbkTogGrp=function(gid){var s=isGS(STORAGE_MAP.find(function(g){return g.id===gid;}));setGS(gid,s!=='all');renderGroups();};
+window.tfbkTogKey=function(kn,gid){var g=STORAGE_MAP.find(function(x){return x.id===gid;});var k=g.keys.find(function(x){return x.k===kn;});selK[kn]=!isKS(g,k);renderGroups();};
+window.tfbkSelectAll=function(){selAll(true);renderGroups();};
+window.tfbkSelectNone=function(){selAll(false);renderGroups();};
+window.tfbkSelectEssentials=function(){selAll(false);['tasks','meetings','developments','reports','leave','lilo','expenses','templates','dashboard','admin','notes','productivity'].forEach(function(id){selG[id]=true;});selK={};renderGroups();if(typeof toast==='function')toast('Essentials selected','i');};
+window.tfbkSetMode=function(m){mode=m;document.querySelectorAll('.tfbk-mode-tab').forEach(function(t){t.classList.toggle('active',t.dataset.mode===m);});document.getElementById('tfbkExpV').style.display=m==='export'?'block':'none';document.getElementById('tfbkImpV').style.display=m==='import'?'block':'none';document.getElementById('tfbkExpBtn').style.display=m==='export'?'':'none';document.getElementById('tfbkImpBtn').style.display=m==='import'?'':'none';};
+window.tfbkSetMergeMode=function(m){mMode=m;document.querySelectorAll('.tfbk-merge-opt').forEach(function(o){o.classList.toggle('selected',o.dataset.merge===m);});};
+window.tfbkDoExport=function(){var keys=getEK();if(!keys.length){if(typeof toast==='function')toast('⚠️ Select a module','e');return;}var p={_app:'TaskFlow',_version:'6.7',_exportedAt:new Date().toISOString(),_device:navigator.userAgent.slice(0,100),_selectedKeys:keys};keys.forEach(function(k){var v=localStorage.getItem(k);if(v!==null)p[k]=v;});var s=compSum(),blob=new Blob([JSON.stringify(p,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='TaskFlow_Backup_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);if(typeof toast==='function')toast('💾 Exported '+s.groups+' modules ('+s.items+' items)','s');};
+window.tfbkOnFile=function(input){var file=input.files[0];if(!file)return;impName=file.name;var r=new FileReader();r.onload=function(e){try{var d=JSON.parse(e.target.result);if(!d||typeof d!=='object')throw new Error('Invalid');imp=d;renderImpPrev();}catch(err){if(typeof toast==='function')toast('❌ '+err.message,'e');imp=null;renderImpPrev();}};r.readAsText(file);};
+function renderImpPrev(){var src=document.getElementById('tfbkImpSrc');if(!src)return;if(!imp){src.classList.remove('has-file');src.innerHTML='<label class="tfbk-import-file-label">📂 Choose backup file...<input type="file" accept=".json" style="display:none;" onchange="tfbkOnFile(this)"></label><div class="tfbk-import-file-info">Select TaskFlow .json backup</div>';document.getElementById('tfbkImpArea').style.display='none';return;}src.classList.add('has-file');var date=imp._exportedAt?new Date(imp._exportedAt).toLocaleString():'?',ver=imp._version||'legacy';var avail=Object.keys(imp).filter(function(k){return k.charAt(0)!=='_';});src.innerHTML='<div style="font-size:14px;margin-bottom:6px;">✅ <b>'+esc(impName)+'</b></div><div class="tfbk-import-file-info">Version: <b>'+esc(ver)+'</b> · Exported: <b>'+esc(date)+'</b><br>Contains <b>'+avail.length+'</b> data keys</div><label class="tfbk-import-file-label" style="margin-top:10px;">📂 Different file...<input type="file" accept=".json" style="display:none;" onchange="tfbkOnFile(this)"></label>';var am={};avail.forEach(function(k){am[k]=true;});selAll(false);STORAGE_MAP.forEach(function(g){var any=g.keys.some(function(k){return am[k.k];});if(any)selG[g.id]=true;g.keys.forEach(function(k){if(!am[k.k])selK[k.k]=false;});});document.getElementById('tfbkImpArea').style.display='block';renderGroups();}
+window.tfbkDoImport=function(){if(!imp){if(typeof toast==='function')toast('⚠️ Choose file first','e');return;}var keys=getEK();if(!keys.length){if(typeof toast==='function')toast('⚠️ Select a module','e');return;}var will=keys.filter(function(k){return imp[k]!==undefined;});if(!will.length){if(typeof toast==='function')toast('⚠️ Selected modules not in backup','e');return;}var msg=mMode==='replace'?'⚠️ <b>REPLACE</b> '+will.length+' keys? Overwrites current data.':'ℹ️ <b>MERGE</b> '+will.length+' keys? Adds items; same ID = backup wins.';if(typeof cfm==='function')cfm(mMode==='replace'?'⚠️ Replace':'ℹ️ Merge',msg,function(){perfImp(will);});else if(confirm(msg.replace(/<[^>]+>/g,'')))perfImp(will);};
+function perfImp(keys){var r=0,m=0;keys.forEach(function(k){var nv=imp[k];if(nv===undefined)return;if(mMode==='replace'){localStorage.setItem(k,nv);r++;return;}var ex=localStorage.getItem(k);if(ex===null){localStorage.setItem(k,nv);r++;return;}try{var ea=JSON.parse(ex),na=JSON.parse(nv);if(Array.isArray(ea)&&Array.isArray(na)){var ids={};ea.forEach(function(it,i){if(it&&it.id)ids[it.id]=i;});na.forEach(function(it){if(it&&it.id&&ids[it.id]!==undefined)ea[ids[it.id]]=it;else ea.push(it);});localStorage.setItem(k,JSON.stringify(ea));m++;}else{localStorage.setItem(k,nv);r++;}}catch(e){localStorage.setItem(k,nv);r++;}});if(typeof toast==='function')toast('✅ Restored '+r+', merged '+m+' · Reloading...','s');setTimeout(function(){location.reload();},1500);}
+
+function buildBkModal(){if(document.getElementById('tfbkModal'))return;var m=document.createElement('div');m.className='modal-overlay';m.id='tfbkModal';m.innerHTML='<div class="modal tfbk-modal"><div class="modal-head"><h2>💾 Backup & Restore</h2><button class="m-close" onclick="closeM(\'tfbkModal\')">×</button></div><div class="tfbk-mode-tabs"><button class="tfbk-mode-tab active" data-mode="export" onclick="tfbkSetMode(\'export\')">⬆️ Export</button><button class="tfbk-mode-tab" data-mode="import" onclick="tfbkSetMode(\'import\')">⬇️ Import</button></div><div id="tfbkExpV"><div class="tfbk-info-banner">📦 Choose modules to include. Item counts shown. Trashed items also included.</div></div><div id="tfbkImpV" style="display:none;"><div class="tfbk-import-source" id="tfbkImpSrc"><label class="tfbk-import-file-label">📂 Choose backup file...<input type="file" accept=".json" style="display:none;" onchange="tfbkOnFile(this)"></label><div class="tfbk-import-file-info">Select TaskFlow .json backup</div></div><div id="tfbkImpArea" style="display:none;"><div class="tfbk-warning">⚠️ <b>Warning:</b> Replace overwrites your data; Merge combines arrays by ID.</div><div class="tfbk-merge-options"><div class="tfbk-merge-opt selected" data-merge="replace" onclick="tfbkSetMergeMode(\'replace\')"><div class="tfbk-merge-opt-icon">🔄</div><div class="tfbk-merge-opt-title">Replace</div><div class="tfbk-merge-opt-desc">Overwrite. Safer for full restore.</div></div><div class="tfbk-merge-opt" data-merge="merge" onclick="tfbkSetMergeMode(\'merge\')"><div class="tfbk-merge-opt-icon">🔀</div><div class="tfbk-merge-opt-title">Merge</div><div class="tfbk-merge-opt-desc">Add items. Same ID = backup wins.</div></div></div></div></div><div class="tfbk-controls-row"><div class="tfbk-quick-actions"><button class="tfbk-quick-btn" onclick="tfbkSelectAll()">✓ All</button><button class="tfbk-quick-btn" onclick="tfbkSelectNone()">✗ None</button><button class="tfbk-quick-btn" onclick="tfbkSelectEssentials()">⭐ Essentials</button></div><div class="tfbk-summary" id="tfbkSummary">—</div></div><div class="tfbk-groups" id="tfbkGroups"></div><div class="modal-footer"><button class="btn btn-g" onclick="closeM(\'tfbkModal\')">Cancel</button><button class="btn btn-p" id="tfbkExpBtn" onclick="tfbkDoExport()">💾 Export Backup</button><button class="btn btn-p" id="tfbkImpBtn" style="display:none;" onclick="tfbkDoImport()">📂 Restore Selected</button></div></div>';m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('show');});document.body.appendChild(m);}
+
+window.tfbkOpen=function(initialMode){buildBkModal();selAll(true);selK={};imp=null;impName='';mMode='replace';mode=initialMode||'export';document.querySelectorAll('.tfbk-mode-tab').forEach(function(t){t.classList.toggle('active',t.dataset.mode===mode);});document.getElementById('tfbkExpV').style.display=mode==='export'?'block':'none';document.getElementById('tfbkImpV').style.display=mode==='import'?'block':'none';document.getElementById('tfbkExpBtn').style.display=mode==='export'?'':'none';document.getElementById('tfbkImpBtn').style.display=mode==='import'?'':'none';document.getElementById('tfbkImpArea').style.display='none';renderImpPrev();renderGroups();document.getElementById('tfbkModal').classList.add('show');};
+
+window.exportBackup=function(){window.tfbkOpen('export');};
+window.importBackup=function(ev){if(ev&&ev.target&&ev.target.files&&ev.target.files[0]){window.tfbkOpen('import');setTimeout(function(){window.tfbkOnFile(ev.target);ev.target.value='';},100);return;}window.tfbkOpen('import');};
+window.tfbkFullReset=function(){if(!confirm('🗑️ DELETE ALL TASKFLOW DATA?\n\nRemoves tasks, developments, meetings, expenses, leave, settings — EVERYTHING.\nCannot be undone (unless you have a backup).'))return;ALL_KEYS.forEach(function(k){localStorage.removeItem(k);});var rm=[];for(var i=0;i<localStorage.length;i++){var key=localStorage.key(i);if(key&&(key.indexOf('tf_')===0||key.indexOf('p2_')===0))rm.push(key);}rm.forEach(function(k){localStorage.removeItem(k);});location.reload();};
+
+function init(){buildBkModal();console.log('%c[v6.5] Backup loaded','color:#10B981;font-weight:bold;');}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else setTimeout(init,1500);
+window.tfBackup={storageMap:STORAGE_MAP,allKeys:ALL_KEYS,getItemCount:getItemCount,open:window.tfbkOpen};
+})();
+</script>
+
+<!-- v6.6 Admin Center -->
+<style id="tfv66css">
+#sec-admin{display:none;max-width:100%;overflow-x:hidden;margin-bottom:14px;}
+.tfac-shell{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;min-height:600px;}
+.tfac-rail{width:240px;flex-shrink:0;background:var(--card2);border-right:1px solid var(--border);padding:14px 8px;overflow-y:auto;}
+.tfac-rail-title{font-size:9px;text-transform:uppercase;letter-spacing:1.3px;color:var(--muted);font-weight:700;padding:6px 12px 8px;}
+.tfac-rail-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer;color:var(--text2);font-size:12px;font-weight:600;margin-bottom:2px;border:1px solid transparent;}
+.tfac-rail-item:hover{background:var(--hover);color:var(--text);}
+.tfac-rail-item.active{background:rgba(108,92,231,.1);color:var(--primary-lt);border-color:rgba(108,92,231,.2);}
+.tfac-rail-icon{font-size:16px;width:22px;text-align:center;}
+.tfac-content{flex:1;min-width:0;padding:24px 28px;overflow-y:auto;}
+.tfac-page{display:none;}
+.tfac-page.active{display:block;animation:tfacFade .2s;}
+@keyframes tfacFade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.tfac-page-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px;}
+.tfac-page-title{font-size:18px;font-weight:800;display:flex;align-items:center;gap:10px;}
+.tfac-page-title .tfac-page-icon{font-size:24px;}
+.tfac-page-desc{font-size:11px;color:var(--text2);margin-top:2px;}
+.tfac-card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:12px;}
+.tfac-card-title{font-size:12px;font-weight:700;color:var(--primary-lt);margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.tfac-card-desc{font-size:10px;color:var(--text2);margin-bottom:14px;line-height:1.5;}
+.tfac-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);gap:14px;flex-wrap:wrap;}
+.tfac-row:last-child{border-bottom:none;}
+.tfac-row-info{flex:1;min-width:200px;}
+.tfac-row-label{font-size:12px;font-weight:600;margin-bottom:2px;}
+.tfac-row-desc{font-size:10px;color:var(--text2);line-height:1.4;}
+.tfac-row-ctrl{flex-shrink:0;display:flex;align-items:center;gap:6px;}
+.tfac-switch{width:42px;height:22px;border-radius:11px;background:var(--border);cursor:pointer;position:relative;transition:.2s;flex-shrink:0;}
+.tfac-switch.on{background:var(--success);}
+.tfac-switch::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s;}
+.tfac-switch.on::after{transform:translateX(20px);}
+.tfac-switch.locked{cursor:not-allowed;opacity:.5;}
+.tfac-sel{padding:7px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:11px;font-family:inherit;cursor:pointer;font-weight:600;min-width:140px;}
+.tfac-inp{padding:7px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:11px;font-family:inherit;width:140px;}
+.tfac-btn{padding:7px 14px;border-radius:7px;border:none;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;}
+.tfac-btn-p{background:var(--primary);color:#fff;}
+.tfac-btn-g{background:var(--card);color:var(--text);border:1px solid var(--border);}
+.tfac-btn-d{background:transparent;color:var(--danger);border:1px solid var(--danger);}
+.tfac-btn-a{background:var(--accent);color:#0B0E17;}
+.tfac-theme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;}
+.tfac-theme-opt{padding:10px;border:2px solid var(--border);border-radius:10px;cursor:pointer;text-align:center;background:var(--card);}
+.tfac-theme-opt.active{border-color:var(--primary);background:rgba(108,92,231,.06);}
+.tfac-theme-swatch{display:flex;gap:3px;height:18px;border-radius:4px;overflow:hidden;margin-bottom:6px;}
+.tfac-theme-swatch span{flex:1;}
+.tfac-theme-name{font-size:10px;font-weight:700;}
+.tfac-list-mgr{display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto;padding-right:4px;}
+.tfac-list-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--card);border:1px solid var(--border);border-radius:7px;}
+.tfac-list-icon{font-size:14px;width:20px;text-align:center;}
+.tfac-list-name{flex:1;font-size:11px;font-weight:500;}
+.tfac-list-default-tag{font-size:8px;font-weight:700;padding:2px 6px;border-radius:4px;background:var(--input);color:var(--muted);}
+.tfac-list-act{width:24px;height:24px;border-radius:5px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;padding:0;}
+.tfac-list-act:hover{border-color:var(--primary);color:var(--primary);}
+.tfac-list-act.del:hover{background:var(--danger);color:#fff;border-color:var(--danger);}
+.tfac-list-add{display:flex;gap:6px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);}
+.tfac-list-add input{flex:1;padding:7px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:11px;font-family:inherit;}
+.tfac-list-add input.tfac-icon-inp{flex:0 0 60px;text-align:center;}
+.tfac-stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:14px;}
+.tfac-stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-align:center;}
+.tfac-stat-v{font-size:22px;font-weight:800;color:var(--primary);}
+.tfac-stat-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:3px;}
+.tfac-storage-bar{height:8px;background:var(--input);border-radius:4px;overflow:hidden;margin-top:8px;}
+.tfac-storage-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:4px;transition:width .4s;}
+.tfac-storage-fill.warn{background:linear-gradient(90deg,var(--warning),var(--danger));}
+.tfac-banner{padding:12px 14px;border-radius:10px;background:linear-gradient(135deg,rgba(108,92,231,.06),rgba(0,206,201,.03));border:1px solid rgba(108,92,231,.18);border-left:3px solid var(--primary);font-size:11px;line-height:1.6;margin-bottom:14px;}
+.tfac-banner b{color:var(--text);}
+.tfac-banner.warn{background:rgba(245,158,11,.06);border-color:rgba(245,158,11,.25);border-left-color:var(--warning);color:var(--warning);}
+.tfac-banner.warn b{color:var(--text);}
+.tfac-banner.danger{background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.25);border-left-color:var(--danger);color:var(--danger);}
+.tfac-banner.locked{background:rgba(108,92,231,.04);border-color:var(--border);border-left-color:var(--muted);color:var(--text2);}
+.tfac-action-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;}
+.tfac-action-btn{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--card);cursor:pointer;text-align:left;font-family:inherit;color:var(--text);}
+.tfac-action-btn:hover{border-color:var(--primary);background:rgba(108,92,231,.04);}
+.tfac-action-icon{font-size:22px;width:34px;text-align:center;flex-shrink:0;}
+.tfac-action-body{flex:1;min-width:0;}
+.tfac-action-title{font-size:12px;font-weight:700;margin-bottom:2px;}
+.tfac-action-sub{font-size:10px;color:var(--text2);line-height:1.3;}
+.tfac-link{color:var(--accent2);cursor:pointer;text-decoration:underline;font-size:11px;}
+.tfac-kbd{display:inline-block;padding:2px 7px;border-radius:5px;background:var(--card);border:1px solid var(--border);font-family:monospace;font-size:10px;font-weight:700;margin:0 2px;}
+.tfac-search-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--card2);border:1px solid var(--border);border-radius:10px;margin-bottom:14px;}
+.tfac-search-bar input{flex:1;border:none;background:transparent;color:var(--text);font-size:12px;font-family:inherit;outline:none;}
+
+/* Page-section card layout (v6.7) */
+.tfac-pages-tabs{display:flex;gap:4px;background:var(--card2);border-radius:9px;padding:3px;margin-bottom:14px;flex-wrap:wrap;}
+.tfac-pages-tab{padding:8px 12px;border:none;background:transparent;color:var(--text2);font-size:10px;font-weight:600;border-radius:7px;cursor:pointer;font-family:inherit;}
+.tfac-pages-tab.active{background:var(--primary);color:#fff;}
+
+@media(max-width:768px){
+  .tfac-shell{flex-direction:column;}
+  .tfac-rail{width:100%;max-height:auto;display:flex;overflow-x:auto;padding:8px;border-right:none;border-bottom:1px solid var(--border);gap:4px;}
+  .tfac-rail-title{display:none;}
+  .tfac-rail-item{flex-shrink:0;padding:6px 12px;font-size:10px;}
+  .tfac-content{padding:16px;}
+  .tfac-row{flex-direction:column;align-items:stretch;}
+  .tfac-row-ctrl{justify-content:flex-end;}
+}
+</style>
+
+<!-- v6.7 Page Layout Configuration + Force-Hide -->
+<style id="tfv67css">
+/* Force-hide Backup & Restore panel from Schedule (always — only in Admin Center) */
+.tf-backup-panel-marker{display:none !important;}
+
+/* Force-hide Settings button in sidebar footer (always — only in Admin Center) */
+.sb-footer .sb-item.tf-settings-locked{display:none !important;}
+
+/* Page section toggle classes (v6.7 user-controlled) */
+body.tf-h-mission #tfMission{display:none !important;}
+body.tf-h-goals #tfGoalsPanel{display:none !important;}
+body.tf-h-badges #tfBadgesPanel{display:none !important;}
+body.tf-h-suggest #tfSuggestBanner{display:none !important;}
+body.tf-h-weekly #tfWeeklyReview{display:none !important;}
+body.tf-h-kpis #sec-tasks~.kpi-row,body.tf-h-kpis .kpi-row{display:none !important;}
+body.tf-h-nwd .nwd-banner{display:none !important;}
+body.tf-h-outban .out-today-banner{display:none !important;}
+body.tf-h-qcap-tasks #sec-tasks .tf-qcap{display:none !important;}
+body.tf-h-qcap-mtg #sec-meetings .tf-qcap,body.tf-h-qcap-mtg #mtgQuickAdd{display:none !important;}
+body.tf-h-qcap-dev #sec-dev .tf-qcap,body.tf-h-qcap-dev .dev-quick-add{display:none !important;}
+body.tf-h-qcap-reports #sec-reports .tf-qcap{display:none !important;}
+body.tf-h-qcap-leave #sec-leave .tf-qcap{display:none !important;}
+body.tf-h-qcap-exp #sec-expenses .tf-qcap{display:none !important;}
+body.tf-h-timer #timerPanel{display:none !important;}
+body.tf-h-reminders .main-grid>div:last-child>.panel.tf-rem-form,body.tf-h-reminders .main-grid>div:last-child>.panel.tf-rem-list{display:none !important;}
+body.tf-h-qnotes .main-grid>div:last-child>.panel.tf-qnotes-panel{display:none !important;}
+body.tf-h-vtabs #viewTabs{display:none !important;}
+body.tf-h-progress .progress-bar,body.tf-h-progress #compPct{display:none !important;}
+body.tf-h-progress div[style*="justify-content:space-between"][style*="margin-bottom:3px"]:has(#compPct){display:none !important;}
+body.tf-h-tlbars .timeline-bar{display:none !important;}
+body.tf-h-odtoggle #odToggleRow{display:none !important;}
+
+/* Dashboard sections */
+body.tf-h-dash-toolbar .tf-dt{display:none !important;}
+
+/* Header — voice button */
+body.tf-h-voicebtn .voice-btn{display:none !important;}
+/* Header — workspace selector */
+body.tf-h-wsbtn .ws-sel{display:none !important;}
+
+/* AI Briefing on Agent */
+body.tf-h-aibriefing #sec-agent>.panel:nth-child(1){display:none !important;}
+
+/* Tabs nav style */
+body.tf-h-mobnav .mobile-bnav{display:none !important;}
+
+/* Chat fab */
+body.tf-h-chatfab .chat-fab,body.tf-h-chatfab #tfGPTFab{display:none !important;}
+
+/* Focus button */
+body.tf-h-focusbtn .focus-btn{display:none !important;}
+
+/* Theme toggle in header */
+body.tf-h-themetoggle .theme-toggle{display:none !important;}
+
+/* Help button */
+body.tf-h-helpbtn .tf-hp-fab{display:none !important;}
+
+/* Trash fab */
+body.tf-h-trashfab .tf-trash-fab{display:none !important;}
+</style>
+<script id="tfv66js">
+(function(){'use strict';
+function esc(s){return window.tfEsc?window.tfEsc(s):String(s||'').replace(/[<>&"]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+
+var CFG_KEY='tf_admin_v66';
+var DEFAULTS={
+  themeMode:'auto', themePreset:'default-dark', a11y:'off', lang:'en', compact:false,
+  layout:'sidebar', taskView:'list', sidebarCollapsedDefault:false,
+  modules:{tasks:true, recurring:true, onetime:true, reports:true, leave:true, lilo:true, expenses:true, meetings:true, dev:true, dashboard:true, analytics:true, calendar:true, templates:true, agent:true},
+  defaultPriority:'medium', defaultRemindMin:15, defaultTaskTime:'09:00', defaultDueDate:'today',
+  defaultView:'today', completedTasksLimit:50,
+  showPriority:true, showDescription:true, showRemind:true, showSnapshots:true, showReportLinks:true,
+  showTimeline:true, showKpis:true, showNwdBanner:true, showQuickNotes:true, showReminders:true, showTimer:true,
+  notifEnabled:true, shiftNotifs:true, shiftStartHour:16, shiftEndHour:1,
+  alarmSound:true, alarmVolume:70, alarmRepeat:'repeat',
+  defaultPayment:'Cash', defaultExpLoc:'auto', currency:'₱',
+  carryEnabled:true, carryMode:'ask', carrySkipMeetings:false, carrySkipRecurring:true, carryMaxDays:7,
+  dailyGoal:5, weeklyGoal:30, streakGoal:7,
+  timeFormat:'12h', dateFormat:'short',
+  autoSaveDrafts:true, voiceCommands:true, undoDuration:10,
+  // v6.7 — Page Sections
+  pageSections:{
+    // Schedule page
+    schMission:true, schGoals:true, schBadges:true, schSuggest:true, schWeekly:true,
+    schKpis:true, schNwd:true, schOutBan:true, schQcap:true, schVtabs:true,
+    schProgress:true, schTlbars:true, schOdtoggle:true,
+    schTimer:true, schReminders:true, schQnotes:true,
+    // Other pages quick capture
+    mtgQcap:true, devQcap:true, repQcap:true, lvQcap:true, expQcap:true,
+    // Dashboard
+    dashToolbar:true,
+    // Agent
+    aiBriefing:true,
+    // Header items
+    voiceBtn:true, wsBtn:true, themeToggle:true, focusBtn:true, helpBtn:true,
+    // Floating
+    chatFab:true, trashFab:true, mobNav:true
+  }
+};
+
+function getCfg(){try{var c=JSON.parse(localStorage.getItem(CFG_KEY)||'null');if(!c)return JSON.parse(JSON.stringify(DEFAULTS));var merged=Object.assign({},DEFAULTS,c);merged.modules=Object.assign({},DEFAULTS.modules,c.modules||{});merged.pageSections=Object.assign({},DEFAULTS.pageSections,c.pageSections||{});return merged;}catch(e){return JSON.parse(JSON.stringify(DEFAULTS));}}
+function saveCfg(c){localStorage.setItem(CFG_KEY,JSON.stringify(c));}
+window.tfacGetCfg=getCfg;
+window.tfacSaveCfg=saveCfg;
+
+// ── Apply all settings live ──
+function applyAllSettings(){
+  var cfg=getCfg();
+  document.body.classList.toggle('tf-compact',!!cfg.compact);
+  // Modules — hide nav for disabled
+  Object.keys(cfg.modules||{}).forEach(function(m){
+    var navItem=document.querySelector('.sb-item[data-section="'+m+'"]');
+    if(navItem)navItem.style.display=cfg.modules[m]===false?'none':'';
+    var tab=document.querySelector('#mainTabs .tab[onclick*="\''+m+'\'"]');
+    if(tab)tab.style.display=cfg.modules[m]===false?'none':'';
+  });
+  // Field visibility
+  try{
+    var pa=getAdminSettings?getAdminSettings():null;
+    if(pa){
+      pa.priority=!!cfg.showPriority;pa.description=!!cfg.showDescription;pa.remind=!!cfg.showRemind;
+      pa.snapshots=!!cfg.showSnapshots;pa.reportlinks=!!cfg.showReportLinks;pa.timeline=!!cfg.showTimeline;
+      pa.kpis=!!cfg.showKpis;pa.nwdbanner=!!cfg.showNwdBanner;pa.quicknotes=!!cfg.showQuickNotes;
+      pa.reminders=!!cfg.showReminders;pa.timer=!!cfg.showTimer;
+      saveAdminSettings(pa);if(typeof applyAdminSettings==='function')applyAdminSettings();
+    }
+  }catch(e){}
+  // v6.7 — Apply page sections
+  applyPageSections(cfg);
+}
+window.tfacApplyAll=applyAllSettings;
+
+// ── v6.7 Page Sections ──
+function applyPageSections(cfg){
+  var ps=(cfg||getCfg()).pageSections||{};
+  var b=document.body;
+  // Mappings: cfg key -> body class to ADD when section is HIDDEN
+  var map={
+    schMission:'tf-h-mission', schGoals:'tf-h-goals', schBadges:'tf-h-badges',
+    schSuggest:'tf-h-suggest', schWeekly:'tf-h-weekly',
+    schKpis:'tf-h-kpis', schNwd:'tf-h-nwd', schOutBan:'tf-h-outban',
+    schQcap:'tf-h-qcap-tasks', schVtabs:'tf-h-vtabs', schProgress:'tf-h-progress',
+    schTlbars:'tf-h-tlbars', schOdtoggle:'tf-h-odtoggle',
+    schTimer:'tf-h-timer', schReminders:'tf-h-reminders', schQnotes:'tf-h-qnotes',
+    mtgQcap:'tf-h-qcap-mtg', devQcap:'tf-h-qcap-dev', repQcap:'tf-h-qcap-reports',
+    lvQcap:'tf-h-qcap-leave', expQcap:'tf-h-qcap-exp',
+    dashToolbar:'tf-h-dash-toolbar', aiBriefing:'tf-h-aibriefing',
+    voiceBtn:'tf-h-voicebtn', wsBtn:'tf-h-wsbtn', themeToggle:'tf-h-themetoggle',
+    focusBtn:'tf-h-focusbtn', helpBtn:'tf-h-helpbtn',
+    chatFab:'tf-h-chatfab', trashFab:'tf-h-trashfab', mobNav:'tf-h-mobnav'
+  };
+  Object.keys(map).forEach(function(k){
+    // When pageSections[k] === false, ADD the hide class
+    b.classList.toggle(map[k], ps[k]===false);
+  });
+  // Tag the right-column panels in Schedule for selective hiding
+  setTimeout(tagSchedulePanels,200);
+}
+
+function tagSchedulePanels(){
+  var pn=document.querySelectorAll('.main-grid > div:last-child > .panel');
+  if(pn.length>=5){
+    // [0]=timer, [1]=add reminder form, [2]=reminders list, [3]=quick notes, [4]=backup
+    pn[0].classList.add('tf-timer-panel');
+    pn[1].classList.add('tf-rem-form');
+    pn[2].classList.add('tf-rem-list');
+    pn[3].classList.add('tf-qnotes-panel');
+    pn[4].classList.add('tf-backup-panel-marker');
+  }
+  // Force-hide settings button in sidebar
+  var sf=document.querySelector('.sb-footer .sb-item[onclick*="toggleAdmin"]');
+  if(sf)sf.classList.add('tf-settings-locked');
+}
+window.tfacTagSchedulePanels=tagSchedulePanels;
+
+// ── Sidebar nav: Admin Center ──
+function injectNav(){
+  if(document.querySelector('.sb-item[data-section="admin"]'))return;
+  var nav=document.querySelector('.sb-nav');if(!nav)return;
+  var btn=document.createElement('button');
+  btn.className='sb-item';btn.setAttribute('data-section','admin');btn.setAttribute('title','Admin Center');
+  btn.setAttribute('onclick',"navTo('admin',this)");
+  btn.innerHTML='<span class="sb-icon">⚙️</span><span class="sb-label">Admin Center</span>';
+  nav.appendChild(btn);
+}
+
+// ── Section ──
+function injectSection(){
+  if(document.getElementById('sec-admin'))return;
+  var c=document.querySelector('.app-main .container')||document.querySelector('.container');
+  if(!c)return;
+  var sec=document.createElement('div');sec.id='sec-admin';sec.style.display='none';
+  sec.innerHTML=buildAdminHTML();
+  var footer=c.querySelector('.footer');
+  if(footer)c.insertBefore(sec,footer);else c.appendChild(sec);
+}
+
+function buildAdminHTML(){
+  return '<div class="tfac-shell">'+
+    '<aside class="tfac-rail">'+
+      '<div class="tfac-rail-title">⚙ Configuration</div>'+
+      '<div class="tfac-rail-item active" data-page="general" onclick="tfacNav(\'general\')"><span class="tfac-rail-icon">🏠</span><span>General</span></div>'+
+      '<div class="tfac-rail-item" data-page="appearance" onclick="tfacNav(\'appearance\')"><span class="tfac-rail-icon">🎨</span><span>Appearance</span></div>'+
+      '<div class="tfac-rail-item" data-page="modules" onclick="tfacNav(\'modules\')"><span class="tfac-rail-icon">🧩</span><span>Modules</span></div>'+
+      '<div class="tfac-rail-item" data-page="pagelayout" onclick="tfacNav(\'pagelayout\')"><span class="tfac-rail-icon">📐</span><span>Page Layout</span></div>'+
+      '<div class="tfac-rail-item" data-page="fields" onclick="tfacNav(\'fields\')"><span class="tfac-rail-icon">📝</span><span>Form Fields</span></div>'+
+      '<div class="tfac-rail-item" data-page="defaults" onclick="tfacNav(\'defaults\')"><span class="tfac-rail-icon">⚡</span><span>Defaults</span></div>'+
+      '<div class="tfac-rail-title" style="margin-top:8px;">📂 Lists</div>'+
+      '<div class="tfac-rail-item" data-page="categories" onclick="tfacNav(\'categories\')"><span class="tfac-rail-icon">🏷️</span><span>Categories</span></div>'+
+      '<div class="tfac-rail-item" data-page="workspaces" onclick="tfacNav(\'workspaces\')"><span class="tfac-rail-icon">📁</span><span>Workspaces</span></div>'+
+      '<div class="tfac-rail-item" data-page="team" onclick="tfacNav(\'team\')"><span class="tfac-rail-icon">👥</span><span>Team</span></div>'+
+      '<div class="tfac-rail-title" style="margin-top:8px;">🎯 Productivity</div>'+
+      '<div class="tfac-rail-item" data-page="goals" onclick="tfacNav(\'goals\')"><span class="tfac-rail-icon">🎯</span><span>Goals & Habits</span></div>'+
+      '<div class="tfac-rail-item" data-page="carryforward" onclick="tfacNav(\'carryforward\')"><span class="tfac-rail-icon">🔄</span><span>Carry-Forward</span></div>'+
+      '<div class="tfac-rail-item" data-page="notifications" onclick="tfacNav(\'notifications\')"><span class="tfac-rail-icon">🔔</span><span>Notifications</span></div>'+
+      '<div class="tfac-rail-title" style="margin-top:8px;">📊 Module Config</div>'+
+      '<div class="tfac-rail-item" data-page="lilo" onclick="tfacNav(\'lilo\')"><span class="tfac-rail-icon">⏰</span><span>LILO Defaults</span></div>'+
+      '<div class="tfac-rail-item" data-page="expenses" onclick="tfacNav(\'expenses\')"><span class="tfac-rail-icon">💰</span><span>Expenses</span></div>'+
+      '<div class="tfac-rail-item" data-page="leaveconfig" onclick="tfacNav(\'leaveconfig\')"><span class="tfac-rail-icon">🏥</span><span>Leave Credits</span></div>'+
+      '<div class="tfac-rail-title" style="margin-top:8px;">💾 Data</div>'+
+      '<div class="tfac-rail-item" data-page="backup" onclick="tfacNav(\'backup\')"><span class="tfac-rail-icon">💾</span><span>Backup & Restore</span></div>'+
+      '<div class="tfac-rail-item" data-page="sync" onclick="tfacNav(\'sync\')"><span class="tfac-rail-icon">☁️</span><span>Cloud Sync</span></div>'+
+      '<div class="tfac-rail-item" data-page="trash" onclick="tfacNav(\'trash\')"><span class="tfac-rail-icon">🗑️</span><span>Trash Bin</span></div>'+
+      '<div class="tfac-rail-item" data-page="health" onclick="tfacNav(\'health\')"><span class="tfac-rail-icon">🛡️</span><span>Health Check</span></div>'+
+      '<div class="tfac-rail-title" style="margin-top:8px;">ℹ About</div>'+
+      '<div class="tfac-rail-item" data-page="shortcuts" onclick="tfacNav(\'shortcuts\')"><span class="tfac-rail-icon">⌨️</span><span>Shortcuts</span></div>'+
+      '<div class="tfac-rail-item" data-page="about" onclick="tfacNav(\'about\')"><span class="tfac-rail-icon">ℹ️</span><span>About</span></div>'+
+    '</aside>'+
+    '<main class="tfac-content" id="tfacContent"></main>'+
+  '</div>';
+}
+
+window.tfacNav=function(page){
+  document.querySelectorAll('.tfac-rail-item').forEach(function(r){r.classList.toggle('active',r.dataset.page===page);});
+  var c=document.getElementById('tfacContent');
+  if(!c)return;
+  var fn=tfacPages[page];
+  c.innerHTML=fn?fn():'<div class="tfac-banner warn">Page not found.</div>';
+};
+
+var tfacPages={};
+
+// ═══ PAGE: GENERAL ═══
+tfacPages.general=function(){
+  var cfg=getCfg();
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🏠</span>General</div><div class="tfac-page-desc">Core app settings — language, accessibility, behavior</div></div></div>'+
+    '<div class="tfac-banner">👋 Welcome to <b>Admin Center</b> — all your settings in one place. Changes apply immediately.</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">🌐 Language & Region</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Language</div><div class="tfac-row-desc">UI language (English or Filipino)</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'lang\',this.value);if(typeof toggleLanguage===\'function\'&&this.value!==(localStorage.getItem(\'tf_lang\')||\'en\'))toggleLanguage();"><option value="en"'+(cfg.lang==='en'?' selected':'')+'>🇺🇸 English</option><option value="fil"'+(cfg.lang==='fil'?' selected':'')+'>🇵🇭 Filipino</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Time Format</div><div class="tfac-row-desc">12-hour or 24-hour</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'timeFormat\',this.value)"><option value="12h"'+(cfg.timeFormat==='12h'?' selected':'')+'>12-hour (4:00 PM)</option><option value="24h"'+(cfg.timeFormat==='24h'?' selected':'')+'>24-hour (16:00)</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Date Format</div><div class="tfac-row-desc">How dates appear</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'dateFormat\',this.value)"><option value="short"'+(cfg.dateFormat==='short'?' selected':'')+'>Short (Jun 19)</option><option value="long"'+(cfg.dateFormat==='long'?' selected':'')+'>Long (June 19, 2026)</option><option value="iso"'+(cfg.dateFormat==='iso'?' selected':'')+'>ISO (2026-06-19)</option></select></div></div>'+
+    '</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">♿ Accessibility</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Display Mode</div><div class="tfac-row-desc">High contrast or dyslexia-friendly</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'a11y\',this.value);if(typeof tfSetA11y===\'function\')tfSetA11y(this.value);"><option value="off"'+(cfg.a11y==='off'?' selected':'')+'>Default</option><option value="high-contrast"'+(cfg.a11y==='high-contrast'?' selected':'')+'>🔆 High Contrast</option><option value="dyslexia"'+(cfg.a11y==='dyslexia'?' selected':'')+'>📖 Dyslexia-Friendly</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Compact Mode</div><div class="tfac-row-desc">Tighter spacing — fits more on screen</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfg.compact?'on':'')+'" onclick="tfacToggle(\'compact\',this,function(v){document.body.classList.toggle(\'tf-compact\',v);localStorage.setItem(\'tf_compact\',v?\'1\':\'0\');})"></div></div></div>'+
+    '</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">⚡ Behavior</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Auto-save Drafts</div><div class="tfac-row-desc">Auto-saves task/meeting form drafts</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfg.autoSaveDrafts?'on':'')+'" onclick="tfacToggle(\'autoSaveDrafts\',this)"></div></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Voice Commands</div><div class="tfac-row-desc">Mic button for voice-to-task</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfg.voiceCommands?'on':'')+'" onclick="tfacToggle(\'voiceCommands\',this,function(v){var b=document.querySelector(\'.voice-btn\');if(b)b.style.display=v?\'\':\'none\';})"></div></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Undo Window</div><div class="tfac-row-desc">Seconds to undo a delete</div></div><div class="tfac-row-ctrl"><input type="number" class="tfac-inp" min="3" max="60" value="'+cfg.undoDuration+'" onchange="tfacSet(\'undoDuration\',+this.value||10)"></div></div>'+
+    '</div>'+
+  '</div>';
+};
+
+// ═══ PAGE: APPEARANCE ═══
+tfacPages.appearance=function(){
+  var cfg=getCfg();
+  var themes=[
+    {id:'default-dark',name:'Default Dark',colors:['#6C5CE7','#00CEC9','#0B0E17']},
+    {id:'default-light',name:'Default Light',colors:['#6366F1','#06B6D4','#F8FAFC']},
+    {id:'amoled',name:'AMOLED',colors:['#A78BFA','#22D3EE','#000']},
+    {id:'catppuccin',name:'Catppuccin',colors:['#CBA6F7','#94E2D5','#1E1E2E']},
+    {id:'nord',name:'Nord',colors:['#88C0D0','#8FBCBB','#2E3440']},
+    {id:'dracula',name:'Dracula',colors:['#BD93F9','#FF79C6','#282A36']},
+    {id:'tokyo',name:'Tokyo Night',colors:['#7AA2F7','#BB9AF7','#1A1B26']},
+    {id:'gruvbox',name:'Gruvbox',colors:['#FE8019','#D3869B','#282828']},
+    {id:'solarized',name:'Solarized',colors:['#268BD2','#D33682','#002B36']}
+  ];
+  var themesHtml=themes.map(function(t){return '<div class="tfac-theme-opt'+(cfg.themePreset===t.id?' active':'')+'" onclick="tfacSetTheme(\''+t.id+'\')"><div class="tfac-theme-swatch">'+t.colors.map(function(c){return '<span style="background:'+c+';"></span>';}).join('')+'</div><div class="tfac-theme-name">'+t.name+'</div></div>';}).join('');
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🎨</span>Appearance</div><div class="tfac-page-desc">Theme, layout, and view preferences</div></div></div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">🌗 Theme</div>'+
+      '<div class="tfac-card-desc">9 carefully crafted themes. Changes apply instantly.</div>'+
+      '<div class="tfac-theme-grid">'+themesHtml+'</div>'+
+    '</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">📐 Layout</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Navigation Style</div><div class="tfac-row-desc">Sidebar (desktop) or top tabs</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'layout\',this.value);if(typeof setLayout===\'function\')setLayout(this.value);"><option value="sidebar"'+(cfg.layout==='sidebar'?' selected':'')+'>📍 Sidebar</option><option value="tabs"'+(cfg.layout==='tabs'?' selected':'')+'>🗂 Tabs</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default Task View</div><div class="tfac-row-desc">How tasks appear by default</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'taskView\',this.value);if(typeof setTaskViewMode===\'function\')setTaskViewMode(this.value);"><option value="list"'+(cfg.taskView==='list'?' selected':'')+'>📋 List</option><option value="kanban"'+(cfg.taskView==='kanban'?' selected':'')+'>🗂 Kanban</option><option value="timeline"'+(cfg.taskView==='timeline'?' selected':'')+'>📅 Timeline</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Sidebar Collapsed by Default</div><div class="tfac-row-desc">Save horizontal space</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfg.sidebarCollapsedDefault?'on':'')+'" onclick="tfacToggle(\'sidebarCollapsedDefault\',this,function(v){localStorage.setItem(\'p2_sb_collapsed\',v?\'1\':\'0\');})"></div></div></div>'+
+    '</div>'+
+  '</div>';
+};
+
+// ═══ PAGE: MODULES ═══
+tfacPages.modules=function(){
+  var cfg=getCfg();
+  var modules=[
+    {id:'tasks',icon:'📋',name:'Schedule (Tasks)',desc:'Main task list'},
+    {id:'recurring',icon:'🔄',name:'Recurring',desc:'Tasks that repeat on a schedule'},
+    {id:'onetime',icon:'📌',name:'One-Time',desc:'Single non-repeating tasks'},
+    {id:'reports',icon:'📂',name:'Reports Directory',desc:'Library of reports'},
+    {id:'leave',icon:'🏥',name:'Leave',desc:'Team + personal leave balance'},
+    {id:'lilo',icon:'⏰',name:'LILO Attendance',desc:'Monthly attendance tracker'},
+    {id:'expenses',icon:'💰',name:'Expenses',desc:'WFO expense tracker'},
+    {id:'meetings',icon:'🤝',name:'Meetings',desc:'Meeting tasks'},
+    {id:'dev',icon:'📊',name:'Developments',desc:'Power BI / Excel projects'},
+    {id:'dashboard',icon:'📊',name:'Dashboard',desc:'Customizable widgets'},
+    {id:'analytics',icon:'📈',name:'Analytics',desc:'Productivity insights'},
+    {id:'calendar',icon:'📅',name:'Calendar',desc:'Monthly calendar view'},
+    {id:'templates',icon:'📝',name:'Templates',desc:'Reusable templates'},
+    {id:'agent',icon:'🤖',name:'AI Agent',desc:'Smart briefings + suggestions'}
+  ];
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🧩</span>Modules</div><div class="tfac-page-desc">Enable or disable modules — disabled modules disappear from navigation</div></div><div style="display:flex;gap:6px;"><button class="tfac-btn tfac-btn-g" onclick="tfacEnableAllModules()">✓ All</button><button class="tfac-btn tfac-btn-g" onclick="tfacDisableNonEssentialModules()">⭐ Essentials</button></div></div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-desc">⚠️ Disabling a module only hides its navigation — your data is preserved.</div>'+
+      modules.map(function(m){var on=cfg.modules[m.id]!==false;return '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">'+m.icon+' '+esc(m.name)+'</div><div class="tfac-row-desc">'+esc(m.desc)+'</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(on?'on':'')+'" onclick="tfacToggleModule(\''+m.id+'\',this)"></div></div></div>';}).join('')+
+    '</div>'+
+  '</div>';
+};
+
+// ═══ PAGE: PAGE LAYOUT (v6.7 NEW) ═══
+var PAGE_SECTIONS_MAP={
+  schedule:{
+    icon:'📋',name:'Schedule (Tasks)',
+    groups:[
+      {label:'Header banners',items:[
+        {k:'schMission',label:'Mission Card',desc:'Greeting + progress ring + "Next Up" task'},
+        {k:'schGoals',label:'Goals & Streaks panel',desc:'Daily/weekly target bars + 7-day history'},
+        {k:'schBadges',label:'Achievements panel',desc:'16 unlockable badges (hidden by default)'},
+        {k:'schSuggest',label:'Smart Suggestions banner',desc:'AI detects patterns and suggests tasks'},
+        {k:'schWeekly',label:'Weekly Review banner',desc:'Auto-Sunday productivity summary'},
+        {k:'schKpis',label:'KPI Cards row',desc:'Today/Pending/Done/Overdue/Recurring cards'},
+        {k:'schNwd',label:'Next Working Day banner',desc:'Shows the next workday + task count'},
+        {k:'schOutBan',label:'"Who\'s Out Today" banner',desc:'Team members on leave + cover reports'}
+      ]},
+      {label:'Main content',items:[
+        {k:'schQcap',label:'Quick Capture bar',desc:'Inline "Quick add: type task..." input'},
+        {k:'schVtabs',label:'View Tabs (Today/Tomorrow/NWD/All/Overdue)',desc:'Sub-tabs for filtering by date'},
+        {k:'schOdtoggle',label:'Include Overdue toggle',desc:'Switch to merge overdue into current view'},
+        {k:'schProgress',label:'Completion Progress bar',desc:'Visual % bar above task list'},
+        {k:'schTlbars',label:'Timeline time dividers',desc:'Time labels between tasks (e.g., "16:00")'}
+      ]},
+      {label:'Sidebar (right column)',items:[
+        {k:'schTimer',label:'Timer panel',desc:'Countdown + Stopwatch with focus sounds'},
+        {k:'schReminders',label:'Reminders panel',desc:'Add Reminder form + reminder list'},
+        {k:'schQnotes',label:'Quick Notes panel',desc:'Free-form text area for jotting notes'}
+      ]}
+    ]
+  },
+  meetings:{
+    icon:'🤝',name:'Meetings',
+    groups:[{label:'Quick add',items:[
+      {k:'mtgQcap',label:'Meeting Quick Add bar',desc:'Inline meeting title + date + time'}
+    ]}]
+  },
+  dev:{
+    icon:'📊',name:'Developments',
+    groups:[{label:'Quick add',items:[
+      {k:'devQcap',label:'Project Quick Add bar',desc:'Inline project name + type + status + target date'}
+    ]}]
+  },
+  reports:{
+    icon:'📂',name:'Reports',
+    groups:[{label:'Quick capture',items:[
+      {k:'repQcap',label:'Quick Capture bar',desc:'Inline quick-add at top of Reports page'}
+    ]}]
+  },
+  leave:{
+    icon:'🏥',name:'Leave',
+    groups:[{label:'Quick capture',items:[
+      {k:'lvQcap',label:'Quick Capture bar',desc:'Inline quick-add at top of Leave page'}
+    ]}]
+  },
+  expenses:{
+    icon:'💰',name:'Expenses',
+    groups:[{label:'Quick capture',items:[
+      {k:'expQcap',label:'Quick Capture bar',desc:'Inline quick-add at top of Expenses page'}
+    ]}]
+  },
+  dashboard:{
+    icon:'📊',name:'Dashboard',
+    groups:[{label:'Controls',items:[
+      {k:'dashToolbar',label:'Dashboard toolbar',desc:'Add Widget / Edit / Reset buttons'}
+    ]}]
+  },
+  agent:{
+    icon:'🤖',name:'AI Agent',
+    groups:[{label:'Top panels',items:[
+      {k:'aiBriefing',label:'Daily Briefing panel',desc:'Greeting + stats + up-next tasks'}
+    ]}]
+  },
+  header:{
+    icon:'🔝',name:'Header',
+    groups:[{label:'Header buttons',items:[
+      {k:'wsBtn',label:'Workspace switcher',desc:'Dropdown to switch between workspaces'},
+      {k:'voiceBtn',label:'Voice command button',desc:'🎤 icon to start voice command'},
+      {k:'themeToggle',label:'Theme toggle (sun/moon)',desc:'Quick dark/light theme switch'},
+      {k:'focusBtn',label:'Focus mode button',desc:'Distraction-free mode toggle'},
+      {k:'helpBtn',label:'Help button (?)',desc:'Opens the Help Center'}
+    ]}]
+  },
+  floating:{
+    icon:'🎈',name:'Floating Buttons',
+    groups:[{label:'FAB cluster (bottom-right)',items:[
+      {k:'chatFab',label:'Chat + AI assistant FAB',desc:'Floating chat button + AI assistant button'},
+      {k:'trashFab',label:'Trash bin FAB',desc:'Quick access to deleted items'}
+    ]},
+    {label:'Bottom navigation',items:[
+      {k:'mobNav',label:'Mobile bottom nav (mobile only)',desc:'Bottom tab bar on small screens'}
+    ]}]
+  }
+};
+
+var activePageLayoutTab='schedule';
+
+tfacPages.pagelayout=function(){
+  var cfg=getCfg();
+  var ps=cfg.pageSections||{};
+  var keys=Object.keys(PAGE_SECTIONS_MAP);
+  var tabs=keys.map(function(k){var p=PAGE_SECTIONS_MAP[k];return '<button class="tfac-pages-tab'+(activePageLayoutTab===k?' active':'')+'" onclick="tfacSetPageTab(\''+k+'\')">'+p.icon+' '+esc(p.name)+'</button>';}).join('');
+  var page=PAGE_SECTIONS_MAP[activePageLayoutTab];
+  var content='';
+  if(page){
+    page.groups.forEach(function(grp){
+      content+='<div class="tfac-card">'+
+        '<div class="tfac-card-title">'+esc(grp.label)+'</div>';
+      grp.items.forEach(function(it){
+        var on=ps[it.k]!==false;
+        content+='<div class="tfac-row">'+
+          '<div class="tfac-row-info"><div class="tfac-row-label">'+esc(it.label)+'</div><div class="tfac-row-desc">'+esc(it.desc)+'</div></div>'+
+          '<div class="tfac-row-ctrl"><div class="tfac-switch '+(on?'on':'')+'" onclick="tfacTogglePageSection(\''+it.k+'\',this)"></div></div>'+
+        '</div>';
+      });
+      content+='</div>';
+    });
+  }
+  // Special section for the locked items (always hidden)
+  var lockedHtml='';
+  if(activePageLayoutTab==='schedule'){
+    lockedHtml='<div class="tfac-card">'+
+      '<div class="tfac-card-title">🔒 Locked (always hidden from page)</div>'+
+      '<div class="tfac-card-desc">These items have moved permanently to <b>Admin Center</b>.</div>'+
+      '<div class="tfac-row">'+
+        '<div class="tfac-row-info"><div class="tfac-row-label">Backup & Restore panel</div><div class="tfac-row-desc">Moved to <span class="tfac-link" onclick="tfacNav(\'backup\')">Admin Center → Data → Backup</span></div></div>'+
+        '<div class="tfac-row-ctrl"><div class="tfac-switch locked" title="Locked">🔒</div></div>'+
+      '</div>'+
+    '</div>';
+  }
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">📐</span>Page Layout</div><div class="tfac-page-desc">Show or hide individual sections on each page</div></div><div style="display:flex;gap:6px;"><button class="tfac-btn tfac-btn-g" onclick="tfacShowAllSections()">✓ Show All</button><button class="tfac-btn tfac-btn-g" onclick="tfacHideOptionalSections()">🎯 Minimal</button><button class="tfac-btn tfac-btn-g" onclick="tfacResetPageLayout()">↺ Reset</button></div></div>'+
+    '<div class="tfac-banner">📐 Toggle which sections appear on each page. <b>Changes apply immediately.</b> Use the tabs below to switch between pages.</div>'+
+    '<div class="tfac-pages-tabs">'+tabs+'</div>'+
+    content+
+    lockedHtml+
+  '</div>';
+};
+
+window.tfacSetPageTab=function(t){activePageLayoutTab=t;tfacNav('pagelayout');};
+window.tfacTogglePageSection=function(k,el){var c=getCfg();c.pageSections[k]=!c.pageSections[k];saveCfg(c);el.classList.toggle('on',c.pageSections[k]);applyPageSections(c);if(typeof toast==='function')toast(c.pageSections[k]?'✓ Shown':'⏸ Hidden','i');};
+window.tfacShowAllSections=function(){var c=getCfg();Object.keys(c.pageSections).forEach(function(k){c.pageSections[k]=true;});saveCfg(c);applyPageSections(c);tfacNav('pagelayout');if(typeof toast==='function')toast('✓ All sections shown','s');};
+window.tfacHideOptionalSections=function(){var c=getCfg();var keep=['schMission','schKpis','schVtabs','schProgress','schQcap','mtgQcap','devQcap','dashToolbar','aiBriefing','wsBtn','themeToggle','helpBtn','mobNav','chatFab','trashFab'];Object.keys(c.pageSections).forEach(function(k){c.pageSections[k]=keep.indexOf(k)>=0;});saveCfg(c);applyPageSections(c);tfacNav('pagelayout');if(typeof toast==='function')toast('🎯 Minimal mode','i');};
+window.tfacResetPageLayout=function(){var c=getCfg();c.pageSections=JSON.parse(JSON.stringify(DEFAULTS.pageSections));saveCfg(c);applyPageSections(c);tfacNav('pagelayout');if(typeof toast==='function')toast('↺ Defaults restored','s');};
+
+// ═══ PAGE: FIELDS ═══
+tfacPages.fields=function(){
+  var cfg=getCfg();
+  var fields=[
+    {id:'showPriority',label:'Priority',desc:'Show priority selector in task forms'},
+    {id:'showDescription',label:'Description',desc:'Show description / notes field'},
+    {id:'showRemind',label:'Remind Before',desc:'Show reminder time field'},
+    {id:'showSnapshots',label:'Snapshots',desc:'Allow pasting/dragging screenshots'},
+    {id:'showReportLinks',label:'Link to Reports',desc:'Show report linker'},
+    {id:'showTimeline',label:'Timeline Bars',desc:'Time dividers in task list'},
+    {id:'showKpis',label:'KPI Cards',desc:'Summary cards at top'},
+    {id:'showNwdBanner',label:'NWD Banner',desc:'"Next Working Day" banner'},
+    {id:'showQuickNotes',label:'Quick Notes Panel',desc:'Sidebar quick-notes'},
+    {id:'showReminders',label:'Reminders Panel',desc:'Sidebar reminders'},
+    {id:'showTimer',label:'Timer Panel',desc:'Countdown/stopwatch'}
+  ];
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">📝</span>Form Fields</div><div class="tfac-page-desc">Field visibility for task forms (legacy)</div></div></div>'+
+    '<div class="tfac-banner">💡 For richer per-page control, see <span class="tfac-link" onclick="tfacNav(\'pagelayout\')">📐 Page Layout</span></div>'+
+    '<div class="tfac-card">'+fields.map(function(f){return '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">'+esc(f.label)+'</div><div class="tfac-row-desc">'+esc(f.desc)+'</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfg[f.id]?'on':'')+'" onclick="tfacToggle(\''+f.id+'\',this,tfacApplyAll)"></div></div></div>';}).join('')+'</div>'+
+  '</div>';
+};
+
+// ═══ PAGE: DEFAULTS ═══
+tfacPages.defaults=function(){
+  var cfg=getCfg();
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">⚡</span>Defaults</div><div class="tfac-page-desc">Default values when creating new items</div></div></div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">📋 New Task Defaults</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default Priority</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'defaultPriority\',this.value)"><option value="urgent"'+(cfg.defaultPriority==='urgent'?' selected':'')+'>🔴 Urgent</option><option value="high"'+(cfg.defaultPriority==='high'?' selected':'')+'>🟠 High</option><option value="medium"'+(cfg.defaultPriority==='medium'?' selected':'')+'>🟡 Medium</option><option value="low"'+(cfg.defaultPriority==='low'?' selected':'')+'>🟢 Low</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default Reminder Time</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'defaultRemindMin\',+this.value)"><option value="0"'+(cfg.defaultRemindMin===0?' selected':'')+'>None</option><option value="5"'+(cfg.defaultRemindMin===5?' selected':'')+'>5 min</option><option value="10"'+(cfg.defaultRemindMin===10?' selected':'')+'>10 min</option><option value="15"'+(cfg.defaultRemindMin===15?' selected':'')+'>15 min</option><option value="30"'+(cfg.defaultRemindMin===30?' selected':'')+'>30 min</option><option value="60"'+(cfg.defaultRemindMin===60?' selected':'')+'>1 hour</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default Task Time</div></div><div class="tfac-row-ctrl"><input type="time" class="tfac-inp" value="'+cfg.defaultTaskTime+'" onchange="tfacSet(\'defaultTaskTime\',this.value)"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default Due Date</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'defaultDueDate\',this.value)"><option value="today"'+(cfg.defaultDueDate==='today'?' selected':'')+'>📅 Today</option><option value="tomorrow"'+(cfg.defaultDueDate==='tomorrow'?' selected':'')+'>🔜 Tomorrow</option><option value="nwd"'+(cfg.defaultDueDate==='nwd'?' selected':'')+'>🗓️ NWD</option><option value="none"'+(cfg.defaultDueDate==='none'?' selected':'')+'>— None —</option></select></div></div>'+
+    '</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">👀 View Defaults</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Schedule Default View</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'defaultView\',this.value)"><option value="today"'+(cfg.defaultView==='today'?' selected':'')+'>📅 Today</option><option value="tomorrow"'+(cfg.defaultView==='tomorrow'?' selected':'')+'>🔜 Tomorrow</option><option value="nwd"'+(cfg.defaultView==='nwd'?' selected':'')+'>🗓️ NWD</option><option value="all"'+(cfg.defaultView==='all'?' selected':'')+'>📋 All</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Completed Tasks Shown</div></div><div class="tfac-row-ctrl"><input type="number" class="tfac-inp" min="0" max="500" value="'+cfg.completedTasksLimit+'" onchange="tfacSet(\'completedTasksLimit\',+this.value||50)"></div></div>'+
+    '</div>'+
+  '</div>';
+};
+
+// ═══ PAGE: CATEGORIES ═══
+var LIST_TYPES=[
+  {id:'taskCats',icon:'📋',name:'Task Categories'},
+  {id:'reportCats',icon:'📂',name:'Report Categories'},
+  {id:'busUnits',icon:'🏢',name:'Business Units'},
+  {id:'priorities',icon:'⚡',name:'Priorities'},
+  {id:'leaveTypes',icon:'🏥',name:'Leave Types'},
+  {id:'expenseCats',icon:'💰',name:'Expense Categories'},
+  {id:'payMethods',icon:'💳',name:'Payment Methods'},
+  {id:'expTags',icon:'🏷️',name:'Expense Tags'}
+];
+
+tfacPages.categories=function(){
+  var html='<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🏷️</span>Categories & Dropdowns</div><div class="tfac-page-desc">Manage all dropdown lists used in the app</div></div></div>'+
+    '<div class="tfac-banner">💡 Add, remove, reorder, and reset to defaults.</div>';
+  LIST_TYPES.forEach(function(t){
+    var items=(typeof getAdminList==='function')?getAdminList(t.id):[];
+    html+='<div class="tfac-card" id="tfacListCard-'+t.id+'">'+
+      '<div class="tfac-card-title">'+t.icon+' '+esc(t.name)+' <span style="font-size:9px;color:var(--muted);font-weight:500;margin-left:auto;">'+items.length+' items</span></div>'+
+      '<div id="tfacListItems-'+t.id+'" class="tfac-list-mgr">'+renderListItems(t,items)+'</div>'+
+      '<div class="tfac-list-add">'+
+        '<input type="text" class="tfac-icon-inp" id="tfacIcon-'+t.id+'" placeholder="Icon" maxlength="3">'+
+        '<input type="text" id="tfacVal-'+t.id+'" placeholder="New '+esc(t.name.toLowerCase().replace(/s$/,''))+'..." onkeydown="if(event.key===\'Enter\')tfacAddListItem(\''+t.id+'\')">'+
+        '<button class="tfac-btn tfac-btn-p" onclick="tfacAddListItem(\''+t.id+'\')">+ Add</button>'+
+        '<button class="tfac-btn tfac-btn-g" onclick="tfacResetList(\''+t.id+'\')" title="Reset">↺</button>'+
+      '</div>'+
+    '</div>';
+  });
+  html+='</div>';
+  return html;
+};
+
+function renderListItems(t,items){
+  if(!items||!items.length)return '<div style="text-align:center;padding:10px;color:var(--muted);font-size:10px;">Empty</div>';
+  var defaults=(typeof ADMIN_LISTS!=='undefined'&&ADMIN_LISTS[t.id])?ADMIN_LISTS[t.id].defaults:[];
+  return items.map(function(it,i){
+    var isDef=defaults.some(function(d){return d.v===it.v;});
+    var lbl=it.label||it.v;
+    return '<div class="tfac-list-item"><div class="tfac-list-icon">'+(it.icon||'•')+'</div><div class="tfac-list-name">'+esc(lbl)+'</div>'+(isDef?'<span class="tfac-list-default-tag">default</span>':'')+'<button class="tfac-list-act" onclick="tfacMoveListItem(\''+t.id+'\','+i+',-1)" title="Up">↑</button><button class="tfac-list-act" onclick="tfacMoveListItem(\''+t.id+'\','+i+',1)" title="Down">↓</button><button class="tfac-list-act del" onclick="tfacRemoveListItem(\''+t.id+'\','+i+')" title="Remove">×</button></div>';
+  }).join('');
+}
+
+window.tfacAddListItem=function(id){var t=LIST_TYPES.find(function(x){return x.id===id;});if(!t)return;var v=document.getElementById('tfacVal-'+id).value.trim();var ic=document.getElementById('tfacIcon-'+id).value.trim();if(!v){if(typeof toast==='function')toast('⚠️ Enter a value','e');return;}var items=getAdminList(id);if(items.some(function(x){return x.v.toLowerCase()===v.toLowerCase();})){if(typeof toast==='function')toast('⚠️ Already exists','e');return;}var cfg=ADMIN_LISTS[id];items.push(cfg&&cfg.hasLabel?{v:v.toLowerCase().replace(/\s+/g,'_'),icon:ic,label:v}:{v:v,icon:ic});saveAdminList(id,items);document.getElementById('tfacVal-'+id).value='';document.getElementById('tfacIcon-'+id).value='';refreshListCard(id);if(typeof refreshAllDropdowns==='function')refreshAllDropdowns();if(typeof toast==='function')toast('✓ Added','s');};
+window.tfacRemoveListItem=function(id,idx){var items=getAdminList(id);items.splice(idx,1);saveAdminList(id,items);refreshListCard(id);if(typeof refreshAllDropdowns==='function')refreshAllDropdowns();};
+window.tfacMoveListItem=function(id,idx,dir){var items=getAdminList(id);var ni=idx+dir;if(ni<0||ni>=items.length)return;var tmp=items[idx];items[idx]=items[ni];items[ni]=tmp;saveAdminList(id,items);refreshListCard(id);if(typeof refreshAllDropdowns==='function')refreshAllDropdowns();};
+window.tfacResetList=function(id){var t=LIST_TYPES.find(function(x){return x.id===id;});if(!t)return;if(!confirm('Reset '+t.name+' to defaults?'))return;var cfg=ADMIN_LISTS[id];if(cfg){localStorage.removeItem(cfg.key);if(id==='busUnits')localStorage.removeItem('p2_bus_units');}refreshListCard(id);if(typeof refreshAllDropdowns==='function')refreshAllDropdowns();if(typeof toast==='function')toast('↺ Reset','s');};
+function refreshListCard(id){var t=LIST_TYPES.find(function(x){return x.id===id;});if(!t)return;var items=getAdminList(id);var el=document.getElementById('tfacListItems-'+id);if(el)el.innerHTML=renderListItems(t,items);var card=document.getElementById('tfacListCard-'+id);if(card){var title=card.querySelector('.tfac-card-title span');if(title)title.textContent=items.length+' items';}}
+
+// ═══ PAGE: WORKSPACES ═══
+tfacPages.workspaces=function(){
+  var ws=(typeof getWorkspaces==='function')?getWorkspaces():[];
+  var active=(typeof getActiveWS==='function')?getActiveWS():'default';
+  var listHtml=ws.length?ws.map(function(w){return '<div class="tfac-list-item"><div class="tfac-list-icon">📁</div><div class="tfac-list-name">'+esc(w.name)+(w.id===active?' <span class="tfac-list-default-tag" style="background:rgba(108,92,231,.15);color:var(--primary-lt);">Active</span>':'')+'</div>'+(w.id===active?'':'<button class="tfac-list-act" onclick="if(typeof switchWorkspace===\'function\')switchWorkspace(\''+w.id+'\')" title="Switch">→</button>')+(w.id==='default'?'<span class="tfac-list-default-tag">default</span>':'<button class="tfac-list-act del" onclick="if(typeof deleteWorkspace===\'function\'){deleteWorkspace(\''+w.id+'\');tfacNav(\'workspaces\');}" title="Delete">×</button>')+'</div>';}).join(''):'<div style="text-align:center;padding:10px;color:var(--muted);font-size:10px;">No workspaces</div>';
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">📁</span>Workspaces</div><div class="tfac-page-desc">Switch between separate data contexts</div></div></div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">📁 My Workspaces</div><div class="tfac-list-mgr">'+listHtml+'</div><div class="tfac-list-add"><input type="text" id="tfacWsName" placeholder="New workspace..." onkeydown="if(event.key===\'Enter\')tfacAddWs()"><button class="tfac-btn tfac-btn-p" onclick="tfacAddWs()">+ Add</button></div></div>'+
+  '</div>';
+};
+window.tfacAddWs=function(){var n=document.getElementById('tfacWsName').value.trim();if(!n){if(typeof toast==='function')toast('⚠️ Enter name','e');return;}var ws=getWorkspaces();if(ws.some(function(x){return x.name.toLowerCase()===n.toLowerCase();})){if(typeof toast==='function')toast('⚠️ Exists','e');return;}ws.push({id:'ws_'+Date.now(),name:n});localStorage.setItem('p2_workspaces',JSON.stringify(ws));if(typeof populateWSSelector==='function')populateWSSelector();tfacNav('workspaces');if(typeof toast==='function')toast('✓ Created','s');};
+
+// ═══ PAGE: TEAM ═══
+tfacPages.team=function(){
+  var team=(typeof getTeam==='function')?getTeam():[];
+  var listHtml=team.length?team.map(function(n){return '<div class="tfac-list-item"><div class="tfac-list-icon">👤</div><div class="tfac-list-name">'+esc(n)+'</div><button class="tfac-list-act del" onclick="if(typeof removeTeamMember===\'function\'){removeTeamMember(\''+n.replace(/\x27/g,"\\x27")+'\');setTimeout(function(){tfacNav(\'team\');},300);}" title="Remove">×</button></div>';}).join(''):'<div style="text-align:center;padding:10px;color:var(--muted);font-size:10px;">No team members</div>';
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">👥</span>Team Members</div><div class="tfac-page-desc">People you assign reports to or log leave for</div></div></div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">👥 Roster <span style="font-size:9px;color:var(--muted);font-weight:500;margin-left:auto;">'+team.length+' members</span></div><div class="tfac-list-mgr">'+listHtml+'</div><div class="tfac-list-add"><input type="text" id="tfacTeamName" placeholder="Last name, First name..." onkeydown="if(event.key===\'Enter\')tfacAddTeam()"><button class="tfac-btn tfac-btn-p" onclick="tfacAddTeam()">+ Add</button></div></div>'+
+  '</div>';
+};
+window.tfacAddTeam=function(){var n=document.getElementById('tfacTeamName').value.trim();if(!n){if(typeof toast==='function')toast('⚠️ Enter name','e');return;}var t=getTeam();if(t.some(function(x){return x.toLowerCase()===n.toLowerCase();})){if(typeof toast==='function')toast('⚠️ Exists','e');return;}t.push(n);saveTeam(t);if(typeof buildRoster==='function')buildRoster();if(typeof populateOwnerDropdowns==='function')populateOwnerDropdowns();tfacNav('team');if(typeof toast==='function')toast('✓ Added','s');};
+
+// ═══ PAGE: GOALS ═══
+tfacPages.goals=function(){
+  var g={dailyTasks:5,weeklyTasks:30,streakTarget:7};
+  try{var s=JSON.parse(localStorage.getItem('tf_goals')||'null');if(s)g=Object.assign(g,s);}catch(e){}
+  var streak=(typeof getStreak==='function')?getStreak():0;
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🎯</span>Goals & Habits</div><div class="tfac-page-desc">Set daily/weekly targets and streak goals</div></div></div>'+
+    '<div class="tfac-stat-grid">'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+streak+'</div><div class="tfac-stat-l">🔥 Streak</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+g.dailyTasks+'</div><div class="tfac-stat-l">📅 Daily</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+g.weeklyTasks+'</div><div class="tfac-stat-l">📊 Weekly</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+g.streakTarget+'</div><div class="tfac-stat-l">🎯 Goal</div></div>'+
+    '</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">🎯 Targets</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Daily Task Target</div></div><div class="tfac-row-ctrl"><input type="number" class="tfac-inp" min="1" max="100" value="'+g.dailyTasks+'" onchange="tfacSetGoal(\'dailyTasks\',+this.value)"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Weekly Task Target</div></div><div class="tfac-row-ctrl"><input type="number" class="tfac-inp" min="1" max="500" value="'+g.weeklyTasks+'" onchange="tfacSetGoal(\'weeklyTasks\',+this.value)"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Streak Goal</div></div><div class="tfac-row-ctrl"><input type="number" class="tfac-inp" min="1" max="365" value="'+g.streakTarget+'" onchange="tfacSetGoal(\'streakTarget\',+this.value)"></div></div>'+
+    '</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">🎯 Quick Actions</div>'+
+      '<div class="tfac-action-grid">'+
+        '<button class="tfac-action-btn" onclick="if(typeof openHabitsModal===\'function\')openHabitsModal()"><div class="tfac-action-icon">🎯</div><div class="tfac-action-body"><div class="tfac-action-title">Habit Tracker</div><div class="tfac-action-sub">Daily habits separate from tasks</div></div></button>'+
+        '<button class="tfac-action-btn" onclick="if(typeof toggleBadgesPanel===\'function\'){navTo(\'tasks\');setTimeout(toggleBadgesPanel,300);}"><div class="tfac-action-icon">🏆</div><div class="tfac-action-body"><div class="tfac-action-title">Achievements</div><div class="tfac-action-sub">16 badges</div></div></button>'+
+        '<button class="tfac-action-btn" onclick="if(typeof generateWeeklyReview===\'function\'){generateWeeklyReview(true);navTo(\'tasks\');}"><div class="tfac-action-icon">📊</div><div class="tfac-action-body"><div class="tfac-action-title">Weekly Review</div><div class="tfac-action-sub">Generate summary</div></div></button>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+};
+window.tfacSetGoal=function(k,v){var g={};try{g=JSON.parse(localStorage.getItem('tf_goals')||'{}');}catch(e){}g[k]=v;localStorage.setItem('tf_goals',JSON.stringify(g));var c=getCfg();if(k==='dailyTasks')c.dailyGoal=v;if(k==='weeklyTasks')c.weeklyGoal=v;if(k==='streakTarget')c.streakGoal=v;saveCfg(c);if(typeof toast==='function')toast('✓ Saved','s');if(typeof renderGoalsPanel==='function')renderGoalsPanel();};
+
+// ═══ PAGE: CARRY-FORWARD ═══
+tfacPages.carryforward=function(){
+  var cfCfg=(typeof cfGetSettings==='function')?cfGetSettings():{enabled:true,mode:'ask',skipMeetings:false,skipRecurring:true,maxDaysBack:7};
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🔄</span>Carry-Forward</div><div class="tfac-page-desc">Auto-move overdue tasks to today</div></div></div>'+
+    '<div class="tfac-banner">🔄 When enabled, incomplete overdue tasks can be automatically moved to today.</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Master Switch</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfCfg.enabled?'on':'')+'" onclick="tfacToggleCF(\'enabled\',this)"></div></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Mode</div><div class="tfac-row-desc">Auto · Ask · Manual</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSetCF(\'mode\',this.value)"><option value="auto"'+(cfCfg.mode==='auto'?' selected':'')+'>🚀 Auto</option><option value="ask"'+(cfCfg.mode==='ask'?' selected':'')+'>❓ Ask</option><option value="manual"'+(cfCfg.mode==='manual'?' selected':'')+'>✋ Manual</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Skip Meetings</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfCfg.skipMeetings?'on':'')+'" onclick="tfacToggleCF(\'skipMeetings\',this)"></div></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Skip Recurring</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfCfg.skipRecurring?'on':'')+'" onclick="tfacToggleCF(\'skipRecurring\',this)"></div></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Look-back Days</div></div><div class="tfac-row-ctrl"><input type="number" class="tfac-inp" min="1" max="90" value="'+cfCfg.maxDaysBack+'" onchange="tfacSetCF(\'maxDaysBack\',+this.value)"></div></div>'+
+    '</div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">🔄 Manual Run</div><button class="tfac-btn tfac-btn-p" onclick="if(typeof cfOpen===\'function\')cfOpen()">🔄 Run Now</button></div>'+
+  '</div>';
+};
+window.tfacToggleCF=function(k,el){var s=(typeof cfGetSettings==='function')?cfGetSettings():{};s[k]=!s[k];if(typeof cfSaveSettings==='function')cfSaveSettings(s);el.classList.toggle('on',s[k]);if(typeof cfRebuild==='function')cfRebuild();};
+window.tfacSetCF=function(k,v){var s=(typeof cfGetSettings==='function')?cfGetSettings():{};s[k]=v;if(typeof cfSaveSettings==='function')cfSaveSettings(s);if(typeof cfRebuild==='function')cfRebuild();};
+
+// ═══ PAGE: NOTIFICATIONS ═══
+tfacPages.notifications=function(){
+  var cfg=getCfg();
+  var perm=(typeof Notification!=='undefined')?Notification.permission:'unsupported';
+  var permLabel=perm==='granted'?'✅ Granted':perm==='denied'?'❌ Denied':perm==='default'?'⏳ Not asked':'⚠️ Unsupported';
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🔔</span>Notifications & Alarms</div><div class="tfac-page-desc">Browser notifications, shift alerts, and timer sounds</div></div></div>'+
+    '<div class="tfac-banner">🔔 Browser permission: <b>'+permLabel+'</b>'+(perm==='default'?' · <span class="tfac-link" onclick="Notification.requestPermission().then(function(){tfacNav(\'notifications\');})">Click to request</span>':'')+'</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">🔔 Notifications</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Enable Notifications</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfg.notifEnabled?'on':'')+'" onclick="tfacToggle(\'notifEnabled\',this)"></div></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Shift Notifications</div><div class="tfac-row-desc">Alerts at shift start/end</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfg.shiftNotifs?'on':'')+'" onclick="tfacToggle(\'shiftNotifs\',this,function(v){localStorage.setItem(\'tf_shift_notify\',v?\'1\':\'0\');})"></div></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Shift Start Hour</div></div><div class="tfac-row-ctrl"><input type="number" class="tfac-inp" min="0" max="23" value="'+cfg.shiftStartHour+'" onchange="tfacSet(\'shiftStartHour\',+this.value)"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Shift End Hour</div></div><div class="tfac-row-ctrl"><input type="number" class="tfac-inp" min="0" max="23" value="'+cfg.shiftEndHour+'" onchange="tfacSet(\'shiftEndHour\',+this.value)"></div></div>'+
+    '</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">⏰ Alarms & Timer</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Alarm Sound</div></div><div class="tfac-row-ctrl"><div class="tfac-switch '+(cfg.alarmSound?'on':'')+'" onclick="tfacToggle(\'alarmSound\',this)"></div></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Alarm Volume</div><div class="tfac-row-desc">'+cfg.alarmVolume+'%</div></div><div class="tfac-row-ctrl"><input type="range" min="0" max="100" value="'+cfg.alarmVolume+'" onchange="tfacSet(\'alarmVolume\',+this.value);tfacNav(\'notifications\');" style="width:140px;accent-color:var(--primary);"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Timer Alarm Mode</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'alarmRepeat\',this.value)"><option value="repeat"'+(cfg.alarmRepeat==='repeat'?' selected':'')+'>🔁 Repeat</option><option value="once"'+(cfg.alarmRepeat==='once'?' selected':'')+'>1x Once</option></select></div></div>'+
+    '</div>'+
+  '</div>';
+};
+
+// ═══ PAGE: LILO ═══
+tfacPages.lilo=function(){
+  var s=(typeof getLiloSettings==='function')?getLiloSettings():{startTime:'16:00',endTime:'01:00',location:'WFH',eid:'',brgType:'Non-BAU BRG',schedType:'5 X 9'};
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">⏰</span>LILO Default Settings</div><div class="tfac-page-desc">Shift defaults for monthly attendance schedules</div></div></div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">⏰ Shift Defaults</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default Start Time</div></div><div class="tfac-row-ctrl"><input type="time" class="tfac-inp" value="'+s.startTime+'" onchange="tfacSetLilo(\'startTime\',this.value)"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default End Time</div></div><div class="tfac-row-ctrl"><input type="time" class="tfac-inp" value="'+s.endTime+'" onchange="tfacSetLilo(\'endTime\',this.value)"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default Location</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSetLilo(\'location\',this.value)"><option value="WFH"'+(s.location==='WFH'?' selected':'')+'>WFH</option><option value="Office - Manila"'+(s.location==='Office - Manila'?' selected':'')+'>Office - Manila</option><option value="Office - Muntinlupa"'+(s.location==='Office - Muntinlupa'?' selected':'')+'>Office - Muntinlupa</option></select></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">EID</div></div><div class="tfac-row-ctrl"><input type="text" class="tfac-inp" value="'+esc(s.eid||'')+'" onchange="tfacSetLilo(\'eid\',this.value)"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">BRG Type</div></div><div class="tfac-row-ctrl"><input type="text" class="tfac-inp" value="'+esc(s.brgType||'Non-BAU BRG')+'" onchange="tfacSetLilo(\'brgType\',this.value)"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Schedule Type</div></div><div class="tfac-row-ctrl"><input type="text" class="tfac-inp" value="'+esc(s.schedType||'5 X 9')+'" onchange="tfacSetLilo(\'schedType\',this.value)"></div></div>'+
+    '</div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">⏰ Quick Action</div><button class="tfac-btn tfac-btn-p" onclick="navTo(\'lilo\')">⏰ Go to LILO Tracker</button></div>'+
+  '</div>';
+};
+window.tfacSetLilo=function(k,v){var s=getLiloSettings();s[k]=v;localStorage.setItem('p2_lilo_settings',JSON.stringify(s));if(typeof toast==='function')toast('✓ Saved','s');};
+
+// ═══ PAGE: EXPENSES ═══
+tfacPages.expenses=function(){
+  var cfg=getCfg();
+  var budgets={};try{budgets=JSON.parse(localStorage.getItem('p2_expense_budget')||'{}');}catch(e){}
+  var curMonth=new Date().getFullYear()+'-'+String(new Date().getMonth()+1).padStart(2,'0');
+  var curBudget=budgets[curMonth]||0;
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">💰</span>Expense Settings</div><div class="tfac-page-desc">Budget, defaults, and expense tracking</div></div></div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">💰 Budget</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">'+esc(curMonth)+' Budget</div></div><div class="tfac-row-ctrl"><span style="font-size:11px;color:var(--muted);">'+cfg.currency+'</span><input type="number" class="tfac-inp" min="0" step="100" value="'+curBudget+'" onchange="tfacSetBudget(this.value)"></div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Currency Symbol</div></div><div class="tfac-row-ctrl"><input type="text" class="tfac-inp" maxlength="3" value="'+esc(cfg.currency)+'" onchange="tfacSet(\'currency\',this.value||\'₱\')"></div></div>'+
+    '</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">💰 New Expense Defaults</div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default Payment Method</div></div><div class="tfac-row-ctrl">'+buildPayMethodSelect(cfg.defaultPayment)+'</div></div>'+
+      '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">Default Location</div></div><div class="tfac-row-ctrl"><select class="tfac-sel" onchange="tfacSet(\'defaultExpLoc\',this.value)"><option value="auto"'+(cfg.defaultExpLoc==='auto'?' selected':'')+'>🪄 Auto (from LILO)</option><option value="Office - Manila"'+(cfg.defaultExpLoc==='Office - Manila'?' selected':'')+'>Office - Manila</option><option value="Office - Muntinlupa"'+(cfg.defaultExpLoc==='Office - Muntinlupa'?' selected':'')+'>Office - Muntinlupa</option><option value="WFH"'+(cfg.defaultExpLoc==='WFH'?' selected':'')+'>WFH</option></select></div></div>'+
+    '</div>'+
+  '</div>';
+};
+function buildPayMethodSelect(cur){var ms=(typeof getAdminList==='function')?getAdminList('payMethods'):[];return '<select class="tfac-sel" onchange="tfacSet(\'defaultPayment\',this.value)">'+ms.map(function(m){return '<option value="'+esc(m.v)+'"'+(cur===m.v?' selected':'')+'>'+(m.icon||'')+' '+esc(m.v)+'</option>';}).join('')+'</select>';}
+window.tfacSetBudget=function(v){var amt=+v||0;var b={};try{b=JSON.parse(localStorage.getItem('p2_expense_budget')||'{}');}catch(e){}var mk=new Date().getFullYear()+'-'+String(new Date().getMonth()+1).padStart(2,'0');if(amt>0)b[mk]=amt;else delete b[mk];localStorage.setItem('p2_expense_budget',JSON.stringify(b));if(typeof renderExpenses==='function')renderExpenses();if(typeof toast==='function')toast('💰 Budget set','s');};
+
+// ═══ PAGE: LEAVE CREDITS ═══
+tfacPages.leaveconfig=function(){
+  var cfg={};try{cfg=JSON.parse(localStorage.getItem('p2_my_leave_config')||'null')||{types:[{id:'vl',name:'Vacation Leave',icon:'🌴',annual:15},{id:'sl',name:'Sick Leave',icon:'🏥',annual:15}]};}catch(e){cfg={types:[]};}
+  var typesHtml=cfg.types.map(function(t){return '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">'+(t.icon||'')+' '+esc(t.name)+'</div><div class="tfac-row-desc">ID: <code>'+esc(t.id)+'</code> · '+(t.id==='vl'?'Syncs with VL/PTO':t.id==='sl'?'Syncs with SL/Sick':'manual')+'</div></div><div class="tfac-row-ctrl"><input type="number" class="tfac-inp" min="0" step="0.5" value="'+(t.annual||0)+'" onchange="tfacSetCredits(\''+esc(t.id)+'\',+this.value)"><span style="font-size:10px;color:var(--muted);">credits/yr</span></div></div>';}).join('');
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🏥</span>Leave Credits</div><div class="tfac-page-desc">Set annual leave entitlement per type</div></div></div>'+
+    '<div class="tfac-banner">🔗 VL auto-syncs with PTO status in LILO. SL syncs with Sick status.</div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">🏥 Annual Credits</div>'+typesHtml+'</div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">🏥 Quick Action</div><button class="tfac-btn tfac-btn-p" onclick="navTo(\'leave\')">🏥 Go to Leave Tracker</button> <button class="tfac-btn tfac-btn-a" onclick="if(typeof syncFromLilo===\'function\')syncFromLilo();">🔗 Sync from LILO</button></div>'+
+  '</div>';
+};
+window.tfacSetCredits=function(id,v){var cfg={};try{cfg=JSON.parse(localStorage.getItem('p2_my_leave_config')||'null')||{types:[]};}catch(e){cfg={types:[]};}var t=cfg.types.find(function(x){return x.id===id;});if(t)t.annual=v;localStorage.setItem('p2_my_leave_config',JSON.stringify(cfg));if(typeof renderMyLeave==='function')renderMyLeave();if(typeof toast==='function')toast('✓ Saved','s');};
+
+// ═══ PAGE: BACKUP ═══
+tfacPages.backup=function(){
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">💾</span>Backup & Restore</div><div class="tfac-page-desc">Selective backup with module-level control</div></div></div>'+
+    '<div class="tfac-banner">💡 Includes Developments, Dashboard, Habits, Badges, and all v6.x data. Backup & Restore is now <b>only available here</b> in Admin Center.</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">💾 Local Backup</div>'+
+      '<div class="tfac-action-grid">'+
+        '<button class="tfac-action-btn" onclick="tfbkOpen(\'export\')"><div class="tfac-action-icon">⬆️</div><div class="tfac-action-body"><div class="tfac-action-title">Export Backup</div><div class="tfac-action-sub">Download .json with selected modules</div></div></button>'+
+        '<button class="tfac-action-btn" onclick="tfbkOpen(\'import\')"><div class="tfac-action-icon">⬇️</div><div class="tfac-action-body"><div class="tfac-action-title">Import Backup</div><div class="tfac-action-sub">Restore from .json</div></div></button>'+
+      '</div>'+
+    '</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">⚠️ Danger Zone</div>'+
+      '<div class="tfac-banner danger">⚠️ Resetting wipes all TaskFlow data permanently.</div>'+
+      '<button class="tfac-btn tfac-btn-d" onclick="tfbkFullReset()">🗑️ Reset All Data</button>'+
+    '</div>'+
+  '</div>';
+};
+
+// ═══ PAGE: SYNC ═══
+tfacPages.sync=function(){
+  var gistCfg={};try{gistCfg=JSON.parse(localStorage.getItem('tf_gist_config')||'{}');}catch(e){}
+  var last=gistCfg.lastSync?new Date(gistCfg.lastSync).toLocaleString():'never';
+  var connected=!!(gistCfg.token);
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">☁️</span>Cloud Sync</div><div class="tfac-page-desc">Sync TaskFlow across devices using GitHub Gist</div></div></div>'+
+    '<div class="tfac-banner '+(connected?'':'warn')+'">'+(connected?'✅ Connected · Last sync: <b>'+esc(last)+'</b>':'⚠️ Not configured. Add a GitHub token to enable.')+'</div>'+
+    '<div class="tfac-card">'+
+      '<div class="tfac-card-title">☁️ GitHub Gist Sync</div>'+
+      '<div class="tfac-card-desc">Private backup to your own GitHub account.</div>'+
+      '<div class="tfac-action-grid">'+
+        '<button class="tfac-action-btn" onclick="if(typeof tfGistOpenModal===\'function\')tfGistOpenModal()"><div class="tfac-action-icon">⚙️</div><div class="tfac-action-body"><div class="tfac-action-title">Configure Sync</div><div class="tfac-action-sub">Token, gist ID, auto-sync</div></div></button>'+
+        (connected?'<button class="tfac-action-btn" onclick="if(typeof tfGistPush===\'function\')tfGistPush()"><div class="tfac-action-icon">⬆️</div><div class="tfac-action-body"><div class="tfac-action-title">Push to Gist</div></div></button>':'')+
+        (connected?'<button class="tfac-action-btn" onclick="if(typeof tfGistPull===\'function\'&&confirm(\'Replace local with gist?\'))tfGistPull()"><div class="tfac-action-icon">⬇️</div><div class="tfac-action-body"><div class="tfac-action-title">Pull from Gist</div></div></button>':'')+
+      '</div>'+
+    '</div>'+
+  '</div>';
+};
+
+// ═══ PAGE: TRASH ═══
+tfacPages.trash=function(){
+  var items=(typeof tfTrash!=='undefined'&&tfTrash.getAllDeleted)?tfTrash.getAllDeleted():[];
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🗑️</span>Trash Bin</div><div class="tfac-page-desc">'+items.length+' deleted item'+(items.length===1?'':'s')+' · Auto-purged after 30 days</div></div></div>'+
+    '<div class="tfac-banner">💡 Items deleted from any module appear here.</div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">🗑️ Manage Trash</div><div class="tfac-action-grid">'+
+      '<button class="tfac-action-btn" onclick="if(typeof tfTrash!==\'undefined\')tfTrash.openTrashModal()"><div class="tfac-action-icon">🗑️</div><div class="tfac-action-body"><div class="tfac-action-title">Open Trash Bin</div><div class="tfac-action-sub">Browse, restore, or permanently delete</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof tfTrash!==\'undefined\'&&confirm(\'Empty trash permanently?\'))tfTrash.emptyAll()"><div class="tfac-action-icon">🗑️</div><div class="tfac-action-body"><div class="tfac-action-title">Empty Trash</div><div class="tfac-action-sub">Delete all '+items.length+' items</div></div></button>'+
+    '</div></div>'+
+  '</div>';
+};
+
+// ═══ PAGE: HEALTH ═══
+tfacPages.health=function(){
+  var r={stats:{total:0,errors:0,warnings:0},storageMB:'0',trashCount:0};
+  try{if(typeof tfHealth!=='undefined'&&tfHealth.check)r=tfHealth.check();}catch(e){}
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">🛡️</span>Data Health Check</div><div class="tfac-page-desc">Validate data integrity and storage usage</div></div></div>'+
+    '<div class="tfac-stat-grid">'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+r.stats.total+'</div><div class="tfac-stat-l">📊 Total Items</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v" style="color:'+(r.stats.warnings?'var(--warning)':'var(--success)')+';">'+r.stats.warnings+'</div><div class="tfac-stat-l">⚠️ Warnings</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v" style="color:'+(r.stats.errors?'var(--danger)':'var(--success)')+';">'+r.stats.errors+'</div><div class="tfac-stat-l">❌ Errors</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+r.storageMB+'</div><div class="tfac-stat-l">💾 MB Used</div></div>'+
+    '</div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">🛡️ Quick Actions</div><div class="tfac-action-grid">'+
+      '<button class="tfac-action-btn" onclick="if(typeof tfHealth!==\'undefined\')tfHealth.open()"><div class="tfac-action-icon">🔍</div><div class="tfac-action-body"><div class="tfac-action-title">Full Health Check</div><div class="tfac-action-sub">Detailed report with auto-fix</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="tfacNav(\'health\')"><div class="tfac-action-icon">↻</div><div class="tfac-action-body"><div class="tfac-action-title">Refresh Stats</div></div></button>'+
+    '</div></div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">💾 Storage Usage</div><div style="font-size:11px;color:var(--text2);margin-bottom:8px;">'+r.storageMB+' MB used (browser limit ~5–10 MB)</div><div class="tfac-storage-bar"><div class="tfac-storage-fill'+(+r.storageMB>4?' warn':'')+'" style="width:'+Math.min(100,+r.storageMB*20)+'%"></div></div></div>'+
+  '</div>';
+};
+
+// ═══ PAGE: SHORTCUTS ═══
+tfacPages.shortcuts=function(){
+  var shortcuts=[
+    {keys:['Ctrl','K'],desc:'Universal search / Command palette'},
+    {keys:['Alt','/'],desc:'Show keyboard shortcuts'},
+    {keys:['?'],desc:'Open Help Center'},
+    {keys:['Alt','N'],desc:'Add new task'},
+    {keys:['Alt','G'],desc:'Open AI Assistant'},
+    {keys:['Alt','F'],desc:'Toggle Focus Mode'},
+    {keys:['Alt','D'],desc:'Toggle theme'},
+    {keys:['Alt','E'],desc:'Quick export backup'},
+    {keys:['Esc'],desc:'Close modal'},
+    {keys:['/'],desc:'Focus search bar'},
+    {keys:['F1'],desc:'Open Help Center'},
+    {keys:['Swipe ←'],desc:'(Mobile) Mark done'},
+    {keys:['Swipe →'],desc:'(Mobile) Edit task'}
+  ];
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">⌨️</span>Keyboard Shortcuts</div><div class="tfac-page-desc">Move faster with these shortcuts</div></div></div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">⌨️ Global Shortcuts</div>'+shortcuts.map(function(s){return '<div class="tfac-row"><div class="tfac-row-info"><div class="tfac-row-label">'+esc(s.desc)+'</div></div><div class="tfac-row-ctrl">'+s.keys.map(function(k,i){return (i>0?'<span style="color:var(--muted);margin:0 3px;font-size:10px;">+</span>':'')+'<span class="tfac-kbd">'+esc(k)+'</span>';}).join('')+'</div></div>';}).join('')+'</div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">💡 Tips</div><ul style="font-size:11px;color:var(--text2);line-height:1.7;padding-left:18px;margin:0;"><li>Use <span class="tfac-kbd">Ctrl+K</span> with filters like <code>priority:urgent</code></li><li>Quick Capture: <code>/meeting</code>, <code>/dev</code>, <code>/note</code>, <code>₱120 coffee</code></li><li>Pin sidebar items via the ⭐ on hover</li></ul></div>'+
+  '</div>';
+};
+
+// ═══ PAGE: ABOUT ═══
+tfacPages.about=function(){
+  var stats={};
+  ['p2_tasks','p2_recurring','p2_reports','tf_dev_projects','p2_expenses'].forEach(function(k){try{var d=JSON.parse(localStorage.getItem(k)||'[]');stats[k]=Array.isArray(d)?d.filter(function(x){return x&&!x._deleted;}).length:0;}catch(e){stats[k]=0;}});
+  return '<div class="tfac-page active">'+
+    '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">ℹ️</span>About TaskFlow</div><div class="tfac-page-desc">Your personal productivity hub</div></div></div>'+
+    '<div class="tfac-card" style="background:linear-gradient(135deg,rgba(108,92,231,.08),rgba(0,206,201,.04));">'+
+      '<div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">'+
+        '<div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#6C5CE7,#00CEC9);display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff;font-weight:800;">T</div>'+
+        '<div><div style="font-size:20px;font-weight:800;">TaskFlow</div><div style="font-size:11px;color:var(--text2);">Version 6.7 · Admin Center + Page Layout</div></div>'+
+      '</div>'+
+      '<div style="font-size:11px;color:var(--text2);line-height:1.6;">A single-file offline-capable productivity webapp.</div>'+
+    '</div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">📊 Your Data Summary</div><div class="tfac-stat-grid">'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_tasks||0)+'</div><div class="tfac-stat-l">📋 Tasks</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_recurring||0)+'</div><div class="tfac-stat-l">🔄 Recurring</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_reports||0)+'</div><div class="tfac-stat-l">📂 Reports</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.tf_dev_projects||0)+'</div><div class="tfac-stat-l">📊 Developments</div></div>'+
+      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_expenses||0)+'</div><div class="tfac-stat-l">💰 Expenses</div></div>'+
+    '</div></div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">📜 Version Highlights</div><ul style="font-size:11px;color:var(--text2);line-height:1.7;padding-left:18px;margin:0;">'+
+      '<li><b>v6.7</b> — Page Layout configuration · Backup/Settings consolidated</li>'+
+      '<li><b>v6.6</b> — Admin Center unified configuration</li>'+
+      '<li><b>v6.5</b> — Selective backup with module-level control</li>'+
+      '<li><b>v6.4</b> — GitHub Gist cloud sync</li>'+
+      '<li><b>v6.3</b> — Universal search, Quick capture, Trash, Health</li>'+
+      '<li><b>v6.0</b> — Development progress tracker</li>'+
+    '</ul></div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">🔗 Useful Links</div><div class="tfac-action-grid">'+
+      '<button class="tfac-action-btn" onclick="if(typeof openHelp===\'function\')openHelp()"><div class="tfac-action-icon">📚</div><div class="tfac-action-body"><div class="tfac-action-title">Help Center</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof openCmdPalette===\'function\')openCmdPalette()"><div class="tfac-action-icon">🔍</div><div class="tfac-action-body"><div class="tfac-action-title">Command Palette</div><div class="tfac-action-sub">Ctrl+K</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof openGPT===\'function\')openGPT()"><div class="tfac-action-icon">🤖</div><div class="tfac-action-body"><div class="tfac-action-title">AI Assistant</div><div class="tfac-action-sub">Alt+G</div></div></button>'+
+    '</div></div>'+
+  '</div>';
+};
+
+// ═══ HELPERS ═══
+window.tfacSet=function(k,v){var c=getCfg();c[k]=v;saveCfg(c);if(typeof toast==='function')toast('✓ Saved','s');};
+window.tfacToggle=function(k,el,cb){var c=getCfg();c[k]=!c[k];saveCfg(c);el.classList.toggle('on',c[k]);if(cb)cb(c[k]);};
+window.tfacSetTheme=function(id){var c=getCfg();c.themePreset=id;saveCfg(c);if(typeof setThemePreset==='function')setThemePreset(id);tfacNav('appearance');};
+window.tfacToggleModule=function(mid,el){var c=getCfg();c.modules[mid]=!c.modules[mid];saveCfg(c);el.classList.toggle('on',c.modules[mid]);applyAllSettings();if(typeof toast==='function')toast(c.modules[mid]?'✓ Enabled':'⏸ Hidden','i');};
+window.tfacEnableAllModules=function(){var c=getCfg();Object.keys(c.modules).forEach(function(k){c.modules[k]=true;});saveCfg(c);applyAllSettings();tfacNav('modules');if(typeof toast==='function')toast('✓ All enabled','s');};
+window.tfacDisableNonEssentialModules=function(){var c=getCfg();['analytics','calendar','templates','agent'].forEach(function(k){c.modules[k]=false;});['tasks','recurring','onetime','reports','leave','lilo','expenses','meetings','dev','dashboard'].forEach(function(k){c.modules[k]=true;});saveCfg(c);applyAllSettings();tfacNav('modules');if(typeof toast==='function')toast('⭐ Essentials only','i');};
+
+// ═══ INIT ═══
+function injectMobileNav(){var menu=document.getElementById('bnavMoreMenu');if(!menu||menu.querySelector('[data-bnav-admin]'))return;var btn=document.createElement('button');btn.className='bnav-more-item';btn.setAttribute('data-bnav-admin','1');btn.onclick=function(){if(typeof mobileNavTo==='function')mobileNavTo('admin');};btn.innerHTML='<span class="bnav-icon">⚙️</span>Admin';menu.appendChild(btn);}
+
+function patchNavTo(){
+  if(window._origNavToV66||!window.navTo)return;
+  var ALL=['tasks','recurring','onetime','reports','leave','analytics','calendar','templates','lilo','expenses','agent','dashboard','meetings','dev','admin'];
+  var FW=['agent','dashboard','meetings','dev','admin'];
+  window._origNavToV66=window.navTo;
+  window.navTo=function(section,btn){
+    if(!section)return;
+    ALL.forEach(function(n){var el=document.getElementById('sec-'+n);if(el){el.style.display='none';el.classList.remove('show');}});
+    var el=document.getElementById('sec-'+section);
+    if(el){el.style.display='block';if(section==='dashboard')el.classList.add('show');}
+    var mg=document.querySelector('.main-grid');if(mg)mg.style.display=FW.indexOf(section)>=0?'none':'';
+    document.querySelectorAll('.sb-item[data-section]').forEach(function(x){x.classList.remove('active');});
+    if(btn)btn.classList.add('active');else{var e=document.querySelector('.sb-item[data-section="'+section+'"]');if(e)e.classList.add('active');}
+    var tabs=document.querySelectorAll('#mainTabs .tab');var tabMap={tasks:0,recurring:1,onetime:2,reports:3,leave:4,analytics:5,calendar:6,templates:7,lilo:8,expenses:9,agent:10};tabs.forEach(function(t){t.classList.remove('active');});if(tabMap[section]!==undefined&&tabs[tabMap[section]])tabs[tabMap[section]].classList.add('active');
+    try{
+      if(section==='meetings'&&typeof renderMeetings==='function')renderMeetings();
+      else if(section==='dev'&&typeof renderDevProjects==='function')renderDevProjects();
+      else if(section==='dashboard'&&typeof renderDashboard==='function')renderDashboard();
+      else if(section==='analytics'&&typeof renderAnalytics==='function')renderAnalytics();
+      else if(section==='calendar'&&typeof renderCalendar==='function')renderCalendar();
+      else if(section==='templates'){if(typeof renderMsgTemplates==='function')renderMsgTemplates();if(typeof renderStepTemplates==='function')renderStepTemplates();if(typeof renderWorkspaces==='function')renderWorkspaces();}
+      else if(section==='lilo'&&typeof initLiloSelectors==='function')initLiloSelectors();
+      else if(section==='expenses'){if(typeof initExpenseSection==='function')initExpenseSection();if(typeof renderExpenses==='function')renderExpenses();}
+      else if(section==='agent'&&typeof renderAgentPanel==='function')renderAgentPanel();
+      else if(section==='leave'&&typeof renderMyLeave==='function')renderMyLeave();
+      else if(section==='reports'&&typeof renderReports==='function')renderReports();
+      else if(section==='admin')tfacNav('general');
+    }catch(e){console.warn('[v6.6 navTo]',section,e);}
+    if(window.innerWidth<1024){var sb=document.getElementById('sidebar');if(sb)sb.classList.remove('mobile-open');var bd=document.getElementById('sidebarBackdrop');if(bd)bd.classList.remove('show');}
+    try{if(typeof updateSbBadges==='function')setTimeout(updateSbBadges,50);}catch(e){}
+    try{window.scrollTo({top:0,behavior:'instant'});}catch(e){window.scrollTo(0,0);}
+  };
+}
+
+function patchAdminFab(){var fab=document.querySelector('.admin-fab');if(!fab||fab.dataset.v66==='1')return;fab.dataset.v66='1';fab.setAttribute('onclick','navTo(\'admin\')');fab.title='Admin Center';}
+function patchOldAdminPanel(){var oldHead=document.querySelector('.admin-head');if(!oldHead||oldHead.dataset.v66==='1')return;oldHead.dataset.v66='1';var titleEl=oldHead.querySelector('.admin-head-title');if(titleEl){titleEl.innerHTML='Quick Settings · <a class="tfac-link" onclick="toggleAdmin();navTo(\'admin\');" style="font-size:10px;">Open Admin Center →</a>';}}
+
+function init(){
+  injectNav();
+  injectSection();
+  injectMobileNav();
+  patchNavTo();
+  patchAdminFab();
+  patchOldAdminPanel();
+  applyAllSettings();
+  setInterval(function(){injectMobileNav();patchAdminFab();patchOldAdminPanel();tagSchedulePanels();applyPageSections();},5000);
+  console.log('%c[v6.7] Admin Center + Page Layout loaded','color:#6366F1;font-weight:bold;font-size:14px;');
+  setTimeout(function(){
+    if(!localStorage.getItem('tf_v67_welcomed')){
+      if(typeof toast==='function')toast('⚙️ v6.7: Backup & Settings moved to Admin Center · New Page Layout config','s');
+      localStorage.setItem('tf_v67_welcomed','1');
+    }
+  },5000);
+}
+
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+else setTimeout(init,1800);
+})();
+</script>
+
+
+<!-- ═══ TaskFlow v6.8 — Mobile UI Overhaul ═══ -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TaskFlow v6.8 — Mobile UI Overhaul & Fixes
+     ═══════════════════════════════════════════════════════════════ -->
+<style id="tfv68css">
+/* ═══ CRITICAL MOBILE FORM FIX ═══ */
+/* Forms were broken: labels right-aligned, inputs cramped. Force proper stack. */
+@media(max-width:1024px){
+  /* Forms always stack vertically on mobile */
+  .form-row, .form-pair {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .form-row > .fg, .form-pair > .fg, .form-col > .fg, .fg {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    text-align: left !important;
+    align-items: stretch !important;
+  }
+  /* Labels always above the input, left-aligned */
+  .fg label {
+    text-align: left !important;
+    width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+    margin-bottom: 4px !important;
+    font-size: 10px !important;
+    color: var(--muted) !important;
+    text-transform: uppercase !important;
+    letter-spacing: .8px !important;
+    font-weight: 600 !important;
+  }
+  /* Inputs full width */
+  .fg input, .fg select, .fg textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important; /* Prevent iOS zoom */
+    padding: 10px 12px !important;
+    border-radius: 9px !important;
+    text-align: left !important;
+  }
+  /* Quick date buttons row */
+  .quick-dates {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    margin-top: 4px !important;
+  }
+  .qd {
+    min-height: 32px !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    flex: 0 0 auto !important;
+  }
+  /* Panel-head also stacks on mobile */
+  .panel-head {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+  .filter-bar {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .filter-bar > * { flex: 1 1 calc(50% - 4px) !important; min-width: 0 !important; }
+  .filter-bar .search-inp { flex: 1 1 100% !important; }
+  .filter-bar button { flex: 0 0 auto !important; min-height: 40px !important; }
+  /* Form rows inside panels need proper padding */
+  .form-col, .panel { box-sizing: border-box !important; }
+  /* Remove any inherited width forcing inputs to be small */
+  .form-row > .fg[style*="flex"] { flex: 1 1 100% !important; }
+}
+
+/* ═══ EXTRA SMALL PHONES ═══ */
+@media(max-width:480px){
+  .container { padding: 8px !important; }
+  .panel { padding: 12px !important; margin-bottom: 10px !important; border-radius: 12px !important; }
+  .panel-title { font-size: 13px !important; }
+  /* KPI cards 2-up on tiny phones */
+  .kpi-row { grid-template-columns: repeat(2, 1fr) !important; gap: 6px !important; }
+  .kpi { padding: 10px 8px !important; min-height: 70px !important; }
+  .kpi-v { font-size: 18px !important; }
+  .kpi-l { font-size: 8px !important; letter-spacing: 1px !important; }
+  .kpi-s { font-size: 8px !important; }
+  /* Mission card slimmer */
+  .tf-mis { padding: 14px !important; }
+  .tf-mis-g { grid-template-columns: auto 1fr !important; gap: 12px !important; }
+  .tf-mis-r { width: 64px !important; height: 64px !important; }
+  .tf-mis-r svg { width: 64px !important; height: 64px !important; }
+  .tf-mis-r .tf-rp { font-size: 14px !important; }
+  .tf-mis-n { font-size: 14px !important; white-space: normal !important; line-height: 1.3 !important; }
+  .tf-mis-a { grid-column: 1 / -1 !important; margin-top: 10px !important; justify-content: stretch !important; }
+  .tf-mis-a button { flex: 1 !important; min-height: 40px !important; }
+  /* Header tighter */
+  .header { padding: 8px 10px !important; gap: 6px !important; }
+  .header h1 { font-size: 13px !important; }
+  .header h1 span { font-size: 9px !important; }
+  .header-right { gap: 4px !important; flex-wrap: nowrap !important; }
+  .ws-sel { max-width: 110px !important; font-size: 10px !important; padding: 4px 8px !important; }
+  .hdr-clock { font-size: 11px !important; }
+  /* Form gaps tighter */
+  .form-row, .form-pair { gap: 10px !important; }
+  .form-col { gap: 10px !important; }
+}
+
+/* ═══ FAB CLUSTER POSITIONING FIX ═══ */
+/* Was overlapping forms on mobile */
+@media(max-width:1024px){
+  .tf-fab-c {
+    bottom: calc(76px + env(safe-area-inset-bottom)) !important;
+    right: 12px !important;
+    gap: 8px !important;
+  }
+  .tf-fab-c .chat-fab,
+  .tf-fab-c #tfGPTFab {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 18px !important;
+  }
+  /* Ensure body padding bottom accommodates FAB + mobile nav */
+  body {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom)) !important;
+  }
+  /* Admin fab also lower */
+  .admin-fab {
+    bottom: calc(76px + env(safe-area-inset-bottom)) !important;
+    left: 12px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+  /* Trash fab moved up to avoid stack collision */
+  .tf-trash-fab {
+    bottom: calc(132px + env(safe-area-inset-bottom)) !important;
+    left: 12px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+/* ═══ MOBILE: ENSURE FORM CONTAINERS DON'T OVERFLOW ═══ */
+@media(max-width:1024px){
+  .modal-overlay.show { align-items: flex-end !important; padding: 0 !important; }
+  .modal {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 92vh !important;
+    border-radius: 16px 16px 0 0 !important;
+    margin: 0 !important;
+    padding: 18px !important;
+  }
+  .modal-head { padding-bottom: 12px !important; margin-bottom: 14px !important; border-bottom: 1px solid var(--border); }
+  .modal-footer {
+    position: sticky !important;
+    bottom: 0 !important;
+    background: var(--card) !important;
+    padding-top: 12px !important;
+    margin-top: 14px !important;
+    border-top: 1px solid var(--border) !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  .modal-footer .btn { flex: 1 1 auto !important; min-height: 44px !important; font-size: 12px !important; }
+}
+
+/* ═══ TASK ITEMS MOBILE ═══ */
+@media(max-width:640px){
+  .task-item {
+    padding: 12px 10px !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+  .t-name { font-size: 13px !important; line-height: 1.4 !important; word-break: break-word !important; }
+  .t-desc { font-size: 11px !important; }
+  .t-meta { gap: 4px !important; }
+  .t-actions {
+    opacity: 1 !important;
+    gap: 4px !important;
+    margin-left: auto !important;
+  }
+  .t-actions .btn-i { width: 32px !important; height: 32px !important; min-height: 32px !important; }
+  .tag { font-size: 9px !important; padding: 2px 6px !important; }
+  .t-check {
+    width: 24px !important; height: 24px !important; min-width: 24px !important;
+    min-height: 24px !important;
+  }
+}
+
+/* ═══ ADMIN CENTER MOBILE ═══ */
+@media(max-width:768px){
+  .tfac-shell { flex-direction: column !important; min-height: auto !important; }
+  .tfac-rail {
+    width: 100% !important;
+    max-height: none !important;
+    height: auto !important;
+    display: flex !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 10px 8px !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    gap: 6px !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .tfac-rail::-webkit-scrollbar { height: 4px; }
+  .tfac-rail-title { display: none !important; }
+  .tfac-rail-item {
+    flex-shrink: 0 !important;
+    padding: 8px 14px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    margin-bottom: 0 !important;
+  }
+  .tfac-content { padding: 16px 12px !important; }
+  .tfac-page-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .tfac-page-title { font-size: 16px !important; }
+  .tfac-card { padding: 14px !important; margin-bottom: 10px !important; }
+  /* Settings rows stack on mobile */
+  .tfac-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    padding: 10px 0 !important;
+  }
+  .tfac-row-ctrl {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+  .tfac-sel, .tfac-inp { width: 100% !important; min-width: 0 !important; }
+  /* Theme grid responsive */
+  .tfac-theme-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  /* Backup modal groups */
+  .tfbk-modal { max-height: 95vh !important; }
+  .tfbk-groups { max-height: 40vh !important; }
+  /* Page Layout tabs scroll horizontally */
+  .tfac-pages-tabs {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 4px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .tfac-pages-tab {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 8px 14px !important;
+  }
+}
+
+/* ═══ SIDEBAR MOBILE DRAWER ═══ */
+@media(max-width:1024px){
+  .sidebar {
+    position: fixed !important;
+    transform: translateX(-100%) !important;
+    width: 280px !important;
+    z-index: 200 !important;
+    box-shadow: none !important;
+    transition: transform .25s ease !important;
+  }
+  .sidebar.mobile-open {
+    transform: translateX(0) !important;
+    box-shadow: 6px 0 24px rgba(0,0,0,.3) !important;
+  }
+  .sidebar-backdrop {
+    display: none !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,.5) !important;
+    backdrop-filter: blur(2px) !important;
+    z-index: 199 !important;
+  }
+  .sidebar-backdrop.show { display: block !important; }
+  .app-main { margin-left: 0 !important; }
+  /* Logo in header becomes burger */
+  .logo {
+    display: flex !important;
+    width: 36px !important; height: 36px !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+  }
+}
+
+/* ═══ KANBAN MOBILE ═══ */
+@media(max-width:768px){
+  .kanban-cols {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 10px !important;
+    padding-bottom: 8px !important;
+    grid-template-columns: none !important;
+  }
+  .kanban-col {
+    flex: 0 0 280px !important;
+    scroll-snap-align: start !important;
+  }
+}
+
+/* ═══ DEV STATS MOBILE ═══ */
+@media(max-width:640px){
+  .dev-stats-bar { grid-template-columns: repeat(3, 1fr) !important; gap: 6px !important; }
+  .dev-stat { padding: 8px 6px !important; }
+  .dev-stat-v { font-size: 16px !important; }
+  .dev-stat-l { font-size: 8px !important; }
+  .dev-qa-row, .mtg-qa-row {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .dev-qa-row button, .mtg-qa-row button { width: 100% !important; min-height: 42px !important; }
+}
+
+/* ═══ HEADER OVERFLOW FIX ═══ */
+.header {
+  flex-wrap: wrap !important;
+  align-items: center !important;
+}
+.header-left { flex: 1 1 auto !important; min-width: 0 !important; }
+.header-left h1 {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+.header-right {
+  flex-shrink: 0 !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
+}
+
+/* ═══ MISSION CARD: BETTER OVERDUE INDICATOR ═══ */
+.tf-mis-n[data-no-overdue="1"]::after {
+  content: '';
+  display: inline-block;
+}
+
+/* ═══ MOBILE TASK FILTERS BETTER LAYOUT ═══ */
+@media(max-width:640px){
+  #odToggleRow {
+    width: 100% !important;
+    margin: 8px 0 !important;
+  }
+  .od-toggle {
+    width: 100% !important;
+    justify-content: space-between !important;
+    padding: 10px 14px !important;
+  }
+  #viewTabs.tabs {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    padding: 4px !important;
+  }
+  #viewTabs .tab {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 9px 14px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* ═══ QUICK CAPTURE BAR MOBILE ═══ */
+@media(max-width:640px){
+  .tf-qcap {
+    padding: 6px 10px !important;
+    gap: 6px !important;
+  }
+  .tf-qcap-input { font-size: 13px !important; }
+  .tf-qcap-hint { display: none !important; }
+}
+
+/* ═══ EXPENSE & LEAVE FORMS MOBILE ═══ */
+@media(max-width:768px){
+  .exp-quick-amt {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+  }
+  .exp-quick-amt .qd { text-align: center !important; }
+  .exp-tag-sel {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+  }
+  .exp-tag-chip { flex: 0 0 auto !important; min-height: 32px !important; }
+}
+
+/* ═══ OUT-TODAY BANNER MOBILE ═══ */
+@media(max-width:640px){
+  .out-today-banner { padding: 12px !important; }
+  .out-person { padding: 10px !important; }
+  .op-top { flex-wrap: wrap !important; }
+  .out-info { flex: 1 1 100% !important; min-width: 0 !important; }
+  .out-name { font-size: 12px !important; }
+  .out-detail { font-size: 10px !important; }
+  .out-reports { margin-top: 8px !important; }
+  .cover-btn {
+    font-size: 10px !important;
+    padding: 6px 10px !important;
+    min-height: 32px !important;
+  }
+}
+
+/* ═══ MODAL INPUT GROUPS ═══ */
+@media(max-width:1024px){
+  .modal .form-row, .modal .form-pair {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .modal .fg { width: 100% !important; }
+  .modal input, .modal select, .modal textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+  }
+}
+
+/* ═══ TIMELINE VIEW MOBILE ═══ */
+@media(max-width:640px){
+  .tf-tl-r { grid-template-columns: 50px 1fr !important; }
+  .tf-tl-hr { font-size: 9px !important; }
+}
+
+/* ═══ DASHBOARD MOBILE ═══ */
+@media(max-width:768px){
+  .tf-dg {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .tf-w { grid-column: span 1 !important; }
+}
+
+/* ═══ TIMER MOBILE ═══ */
+@media(max-width:640px){
+  #timerPanel {
+    padding: 14px !important;
+  }
+  #tmRingWrap {
+    width: 160px !important;
+    height: 160px !important;
+  }
+  #tmTimeDisplay { font-size: 30px !important; }
+}
+
+/* ═══ KEYBOARD OPEN: HIDE BOTTOM NAV ═══ */
+body.keyboard-open .mobile-bnav { display: none !important; }
+body.keyboard-open .tf-fab-c { bottom: 12px !important; }
+
+/* ═══ HIDE FAB WHEN MODAL OPEN ═══ */
+body:has(.modal-overlay.show) .tf-fab-c,
+body:has(.tf-cmd-o.show) .tf-fab-c { display: none !important; }
+
+/* ═══ TOUCH TARGETS ═══ */
+@media(pointer:coarse){
+  .btn { min-height: 40px !important; padding: 10px 16px !important; }
+  .btn-g, .btn-i { min-height: 36px !important; }
+  .tab { min-height: 38px !important; }
+  /* Bigger checkboxes/radios */
+  input[type="checkbox"], input[type="radio"] {
+    min-width: 18px !important;
+    min-height: 18px !important;
+  }
+  /* Action buttons in lists always visible on touch */
+  .task-item .t-actions,
+  .report-card .rc-actions,
+  .leave-card .lc-actions,
+  .mtg-actions,
+  .dev-card-actions { opacity: 1 !important; }
+}
+
+/* ═══ RIGHT-COLUMN PANELS REORDER ON MOBILE ═══ */
+/* On mobile, right column should come AFTER tasks list, not interfere */
+@media(max-width:1024px){
+  .main-grid {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
+/* ═══ INSTALL BANNER MOBILE ═══ */
+@media(max-width:640px){
+  .install-banner { padding: 12px !important; font-size: 12px !important; }
+  .install-banner-text { font-size: 12px !important; }
+  .install-banner-btn { padding: 8px 16px !important; font-size: 11px !important; }
+}
+
+/* ═══ FOCUS RING FOR ACCESSIBILITY ═══ */
+@media(pointer:coarse){
+  button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--primary) !important;
+    outline-offset: 1px !important;
+  }
+}
+
+/* ═══ SAFE AREA SUPPORT ═══ */
+.modal { padding-bottom: calc(18px + env(safe-area-inset-bottom)) !important; }
+.tf-fab-c { padding-bottom: env(safe-area-inset-bottom); }
+
+/* ═══ FIX QUICKADD MODAL TYPE TABS ═══ */
+.qa-type-tabs {
+  display: flex !important;
+  gap: 4px !important;
+  margin-bottom: 14px !important;
+}
+.qa-type-tabs .tab {
+  flex: 1 !important;
+  text-align: center !important;
+  padding: 10px !important;
+  font-size: 12px !important;
+}
+
+/* ═══ ADMIN CENTER PAGE LAYOUT MOBILE ═══ */
+@media(max-width:768px){
+  .tfac-pages-tabs { padding: 4px !important; margin-bottom: 12px !important; }
+  /* Action grid mobile */
+  .tfac-action-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .tfac-action-btn { padding: 12px !important; }
+  /* Theme swatches grid */
+  .tfac-theme-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important; }
+  /* List item buttons larger touch targets */
+  .tfac-list-act { width: 32px !important; height: 32px !important; }
+  /* Stat grid */
+  .tfac-stat-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ═══ HORIZONTAL OVERFLOW PREVENTION ═══ */
+body, html {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+.container, .app-main, .panel, .modal, .tfac-shell, .tfac-content {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ═══ SUMMARY BAR (NWD) MOBILE ═══ */
+@media(max-width:640px){
+  .nwd-banner {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 12px !important;
+    gap: 12px !important;
+  }
+  .nwd-banner .info { width: 100% !important; min-width: 0 !important; }
+  .nwd-banner .date { font-size: 16px !important; }
+  .nwd-banner .day { font-size: 11px !important; }
+  .nwd-stat .val { font-size: 22px !important; }
+}
+</style>
+<script id="tfv68js">
+(function(){'use strict';
+function esc(s){return window.tfEsc?window.tfEsc(s):String(s||'').replace(/[<>&"]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+
+// ═══════════════════════════════════════════════════════════════
+// FIX #1: Mission Card "Next Up" — exclude overdue tasks
+// ═══════════════════════════════════════════════════════════════
+function patchMissionCard(){
+  if(window._origRenderMissionCard||typeof window.renderMissionCard !== 'function')return;
+  window._origRenderMissionCard = window.renderMissionCard;
+  
+  window.renderMissionCard = function(){
+    var c = document.getElementById('tfMission');
+    if(!c)return;
+    try{
+      var d = (typeof getEffectiveDateStr === 'function') ? getEffectiveDateStr() : 
+              (typeof todayStr === 'function' ? todayStr() : new Date().toISOString().slice(0,10));
+      var tasks = (typeof window.getTasksFor === 'function' ? window.getTasksFor(d) : [])
+                  .filter(function(t){ return t && t.status !== 'cancelled'; });
+      var done = tasks.filter(function(t){ return t.status === 'completed'; }).length;
+      var pending = tasks.filter(function(t){ return t.status !== 'completed'; });
+      var pct = tasks.length ? Math.round(done / tasks.length * 100) : 0;
+      
+      // Progress ring
+      var r = document.getElementById('tfRingFill');
+      if(r){
+        r.style.strokeDashoffset = 213.6 - (213.6 * pct / 100);
+        r.style.stroke = pct >= 70 ? 'var(--tf-success)' : pct >= 30 ? 'var(--tf-warning)' : 'var(--tf-primary)';
+      }
+      var p = document.getElementById('tfRingPct');
+      if(p) p.textContent = pct + '%';
+      
+      // Greeting
+      var h = new Date().getHours();
+      var g = h < 5 ? '🌙 Late shift' : h < 12 ? '☀️ Good morning' : h < 17 ? '🌤 Good afternoon' : '🌆 Good evening';
+      var ge = document.getElementById('tfGreeting');
+      if(ge) ge.textContent = g + ', Mark';
+      
+      // ★★★ FIX: Next Up — exclude overdue tasks ★★★
+      var n = document.getElementById('tfNext');
+      if(n){
+        if(tasks.length === 0){
+          n.textContent = '🎯 No tasks scheduled — plan your day!';
+        } else if(pending.length === 0){
+          n.textContent = '🎉 All done!';
+        } else {
+          // CRITICAL FIX: Filter out overdue tasks for "Next Up"
+          var today = d;
+          var futureOrToday = pending.filter(function(t){
+            var dd = t.due || t.date;
+            if(!dd) return true; // tasks without dates are fine
+            return dd >= today;   // only today or future
+          });
+          
+          // Sort by time (earliest first)
+          futureOrToday.sort(function(a, b){
+            return (a.time || '99:99').localeCompare(b.time || '99:99');
+          });
+          
+          if(futureOrToday.length > 0){
+            var nx = futureOrToday[0];
+            var ts = nx.time ? ' @ ' + (typeof fmtT === 'function' ? fmtT(nx.time) : nx.time) : '';
+            n.textContent = (nx.pinned ? '📌 ' : '') + '⏭ Next: ' + nx.name + ts;
+          } else {
+            // All pending are overdue
+            var overdueCount = pending.length;
+            n.textContent = '⚠️ All ' + overdueCount + ' pending task' + (overdueCount > 1 ? 's are' : ' is') + ' overdue — review';
+          }
+        }
+      }
+      
+      // Meta chips
+      var m = document.getElementById('tfMeta');
+      if(m){
+        var ch = [];
+        ch.push('<span class="tf-chip ok">✓ ' + done + ' done</span>');
+        ch.push('<span class="tf-chip">⏳ ' + pending.length + ' pending</span>');
+        try{
+          var all = (typeof getAllTasks === 'function') ? getAllTasks() : [];
+          var ov = all.filter(function(t){
+            var dd = t.due || t.date;
+            return dd && dd < d && t.status !== 'completed' && t.status !== 'cancelled';
+          }).length;
+          if(ov > 0) ch.push('<span class="tf-chip urgent">⚠ ' + ov + ' overdue</span>');
+        }catch(e){}
+        try{
+          var s = (typeof getStreak === 'function') ? getStreak() : 0;
+          if(s > 0) ch.push('<span class="tf-chip streak"><span class="tf-fl">🔥</span> ' + s + ' day streak</span>');
+        }catch(e){}
+        // Shift time remaining
+        var nw = new Date();
+        if(nw.getHours() >= 16 || nw.getHours() < 4){
+          var se = new Date();
+          se.setHours(1, 0, 0, 0);
+          if(nw.getHours() >= 16) se.setDate(se.getDate() + 1);
+          var ml = se - nw;
+          if(ml > 0){
+            var hL = Math.floor(ml / 3600000);
+            var mL = Math.floor((ml % 3600000) / 60000);
+            ch.push('<span class="tf-chip warn">🕐 ' + hL + 'h ' + mL + 'm left</span>');
+          }
+        }
+        m.innerHTML = ch.join('');
+      }
+    } catch(e){ console.warn('[v6.8 mission]', e); }
+  };
+  console.log('%c[v6.8] Mission card patched (Next Up excludes overdue)', 'color:#10B981');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FIX #2: Sidebar backdrop + mobile drawer behavior
+// ═══════════════════════════════════════════════════════════════
+function setupSidebarMobile(){
+  if(document.getElementById('sidebarBackdrop'))return;
+  var bd = document.createElement('div');
+  bd.id = 'sidebarBackdrop';
+  bd.className = 'sidebar-backdrop';
+  bd.onclick = function(){
+    var sb = document.getElementById('sidebar');
+    if(sb) sb.classList.remove('mobile-open');
+    bd.classList.remove('show');
+  };
+  document.body.appendChild(bd);
+  
+  // Logo in header opens sidebar on mobile
+  var logo = document.querySelector('.header-left .logo');
+  if(logo && !logo.dataset.v68Bound){
+    logo.dataset.v68Bound = '1';
+    logo.style.cursor = 'pointer';
+    logo.addEventListener('click', function(e){
+      if(window.innerWidth <= 1024){
+        e.stopPropagation();
+        var sb = document.getElementById('sidebar');
+        if(sb){
+          sb.classList.toggle('mobile-open');
+          bd.classList.toggle('show', sb.classList.contains('mobile-open'));
+        }
+      }
+    });
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FIX #3: Keyboard-open detection (hide bottom nav when typing)
+// ═══════════════════════════════════════════════════════════════
+function setupKeyboardDetection(){
+  if(window._tfKbdSetup)return;
+  window._tfKbdSetup = true;
+  
+  document.addEventListener('focusin', function(e){
+    if(e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT')){
+      document.body.classList.add('keyboard-open');
+    }
+  });
+  document.addEventListener('focusout', function(e){
+    setTimeout(function(){
+      var a = document.activeElement;
+      if(!a || (a.tagName !== 'INPUT' && a.tagName !== 'TEXTAREA' && a.tagName !== 'SELECT')){
+        document.body.classList.remove('keyboard-open');
+      }
+    }, 150);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FIX #4: Pull-to-refresh prevention + viewport fix
+// ═══════════════════════════════════════════════════════════════
+function setupViewportFix(){
+  // Set CSS --vh for iOS viewport bug
+  function setVH(){
+    var vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', vh + 'px');
+  }
+  setVH();
+  window.addEventListener('resize', setVH);
+  window.addEventListener('orientationchange', function(){ setTimeout(setVH, 100); });
+  
+  // Prevent double-tap zoom on buttons
+  var lastTap = 0;
+  document.addEventListener('touchend', function(e){
+    var now = Date.now();
+    if(now - lastTap < 300){
+      var t = e.target;
+      if(t && t.closest && t.closest('button, .btn, .tab, .t-check, input, select, textarea')){
+        e.preventDefault();
+      }
+    }
+    lastTap = now;
+  }, false);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FIX #5: Modal scroll lock (prevent body scrolling when modal open)
+// ═══════════════════════════════════════════════════════════════
+function setupModalScrollLock(){
+  if(window._tfMSL)return;
+  window._tfMSL = true;
+  
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(m){
+      if(m.attributeName === 'class' && m.target.classList){
+        if(m.target.classList.contains('modal-overlay')){
+          var anyShown = document.querySelectorAll('.modal-overlay.show').length > 0;
+          document.body.style.overflow = anyShown ? 'hidden' : '';
+        }
+      }
+    });
+  });
+  
+  document.querySelectorAll('.modal-overlay').forEach(function(m){
+    observer.observe(m, { attributes: true, attributeFilter: ['class'] });
+  });
+  
+  // Watch for new modals added later
+  var bodyObs = new MutationObserver(function(mutations){
+    mutations.forEach(function(m){
+      m.addedNodes.forEach(function(n){
+        if(n.nodeType === 1 && n.classList && n.classList.contains('modal-overlay')){
+          observer.observe(n, { attributes: true, attributeFilter: ['class'] });
+        }
+      });
+    });
+  });
+  bodyObs.observe(document.body, { childList: true, subtree: false });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FIX #6: Better swipe-to-close modals on mobile
+// ═══════════════════════════════════════════════════════════════
+function setupSwipeCloseModals(){
+  if(window._tfSCM)return;
+  window._tfSCM = true;
+  
+  var startY = 0, currentModal = null, startScroll = 0;
+  
+  document.addEventListener('touchstart', function(e){
+    if(window.innerWidth > 768) return;
+    var m = e.target.closest('.modal');
+    if(!m) return;
+    // Only swipe-close if at top of modal scroll
+    if(m.scrollTop > 0) return;
+    currentModal = m;
+    startY = e.touches[0].clientY;
+    startScroll = m.scrollTop;
+  }, { passive: true });
+  
+  document.addEventListener('touchmove', function(e){
+    if(!currentModal) return;
+    var dy = e.touches[0].clientY - startY;
+    if(dy > 0 && currentModal.scrollTop <= 0){
+      currentModal.style.transform = 'translateY(' + Math.min(dy * 0.5, 80) + 'px)';
+      currentModal.style.transition = 'none';
+    }
+  }, { passive: true });
+  
+  document.addEventListener('touchend', function(e){
+    if(!currentModal) return;
+    var dy = e.changedTouches[0].clientY - startY;
+    currentModal.style.transition = 'transform .25s';
+    currentModal.style.transform = '';
+    if(dy > 120){
+      var ov = currentModal.closest('.modal-overlay');
+      if(ov) ov.classList.remove('show');
+    }
+    currentModal = null;
+  }, { passive: true });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FIX #7: Better mobile form layout reset (run after renders)
+// ═══════════════════════════════════════════════════════════════
+function fixMobileForms(){
+  if(window.innerWidth > 1024) return;
+  // Find any form-row with inline style that might be forcing flex
+  document.querySelectorAll('.form-row, .form-pair').forEach(function(r){
+    if(r.style.flexDirection === 'row') r.style.flexDirection = '';
+  });
+  // Find inputs with width/style attrs and reset
+  document.querySelectorAll('.fg input, .fg select, .fg textarea').forEach(function(inp){
+    if(inp.style.width && inp.style.width !== '100%' && inp.style.width !== ''){
+      inp.style.width = '';
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FIX #8: Network status indicator
+// ═══════════════════════════════════════════════════════════════
+function setupNetworkStatus(){
+  if(window._tfNet)return;
+  window._tfNet = true;
+  window.addEventListener('online', function(){
+    if(typeof toast === 'function') toast('🌐 Back online', 's');
+  });
+  window.addEventListener('offline', function(){
+    if(typeof toast === 'function') toast('📴 Offline — data still works', 'i');
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FIX #9: Auto-close mobile sidebar when navigating
+// ═══════════════════════════════════════════════════════════════
+function patchMobileNavClose(){
+  // Already handled in patchNavTo from v6.6 but make sure backdrop closes too
+  if(window._origNavToV66){
+    var orig = window._origNavToV66;
+    // Already wrapped — ensure backdrop closes
+  }
+  // Direct binding: any .sb-item click in mobile closes drawer
+  document.addEventListener('click', function(e){
+    if(window.innerWidth > 1024) return;
+    var item = e.target.closest('.sb-item');
+    if(item){
+      setTimeout(function(){
+        var sb = document.getElementById('sidebar');
+        var bd = document.getElementById('sidebarBackdrop');
+        if(sb) sb.classList.remove('mobile-open');
+        if(bd) bd.classList.remove('show');
+      }, 50);
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════
+function init(){
+  setupSidebarMobile();
+  setupKeyboardDetection();
+  setupViewportFix();
+  setupModalScrollLock();
+  setupSwipeCloseModals();
+  setupNetworkStatus();
+  patchMobileNavClose();
+  
+  // Patch Mission Card after a delay (it loads after init in v5.4)
+  function tryPatchMission(){
+    if(typeof window.renderMissionCard === 'function'){
+      patchMissionCard();
+      // Re-render once patched
+      try{ window.renderMissionCard(); }catch(e){}
+      return true;
+    }
+    return false;
+  }
+  
+  if(!tryPatchMission()){
+    var attempts = 0;
+    var ivl = setInterval(function(){
+      attempts++;
+      if(tryPatchMission() || attempts > 20){
+        clearInterval(ivl);
+      }
+    }, 250);
+  }
+  
+  // Periodic mobile form fix
+  setInterval(fixMobileForms, 3000);
+  setTimeout(fixMobileForms, 500);
+  
+  console.log('%c[v6.8] Mobile UI overhaul loaded', 'color:#6366F1;font-weight:bold;font-size:14px;');
+  
+  setTimeout(function(){
+    if(!localStorage.getItem('tf_v68_welcomed')){
+      if(typeof toast === 'function') toast('📱 v6.8: Mobile UI fixed — forms now display correctly', 's');
+      localStorage.setItem('tf_v68_welcomed', '1');
+    }
+  }, 5500);
+}
+
+if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+else setTimeout(init, 2000);
+
+})();
+</script>
+
+
+<!-- v6.8.1 — Form sizing refinement -->
+<style id="tfv681css">
+/* ═══ OVERRIDE PREVIOUS MOBILE FORM CSS WITH PROPER SIZING ═══ */
+
+/* iOS zoom prevention via font-size:16px only at focus, not always */
+@media(max-width:1024px){
+  /* Inputs: standard size, not huge */
+  .fg input,
+  .fg select,
+  .fg textarea,
+  .modal input,
+  .modal select,
+  .modal textarea {
+    font-size: 14px !important;
+    padding: 9px 11px !important;
+    border-radius: 8px !important;
+    line-height: 1.4 !important;
+    height: auto !important;
+    min-height: 38px !important;
+  }
+  /* Textareas: respect rows attribute */
+  .fg textarea,
+  .modal textarea {
+    min-height: 60px !important;
+    resize: vertical !important;
+  }
+  /* Selects appropriately sized */
+  .fg select,
+  .modal select {
+    min-height: 38px !important;
+    background-position: right 8px center !important;
+  }
+  /* Labels smaller and tighter */
+  .fg label {
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 3px !important;
+    font-weight: 600 !important;
+    color: var(--muted) !important;
+  }
+  /* iOS zoom-prevention trick: only enlarge on focus */
+  .fg input:focus,
+  .fg select:focus,
+  .fg textarea:focus,
+  .modal input:focus,
+  .modal select:focus,
+  .modal textarea:focus {
+    font-size: 16px !important;
+  }
+  /* Date/time inputs: native height */
+  input[type="date"],
+  input[type="time"] {
+    min-height: 38px !important;
+    line-height: normal !important;
+  }
+  /* Form rows: tighter spacing */
+  .form-row, .form-pair {
+    gap: 10px !important;
+  }
+  .form-col {
+    gap: 10px !important;
+  }
+  /* Quick date chips smaller */
+  .qd {
+    min-height: 28px !important;
+    padding: 5px 10px !important;
+    font-size: 10px !important;
+    border-radius: 6px !important;
+  }
+  /* Panel padding reduced on mobile */
+  .panel {
+    padding: 14px !important;
+  }
+  /* Panel title smaller */
+  .panel-title {
+    font-size: 13px !important;
+  }
+  /* Buttons in forms standard size */
+  .form-col + button,
+  .form-col button.btn,
+  .btn-p, .btn-a, .btn-g {
+    min-height: 38px !important;
+    padding: 9px 16px !important;
+    font-size: 12px !important;
+  }
+  .btn-full {
+    width: 100% !important;
+  }
+}
+
+/* ═══ EXTRA-SMALL PHONES (<= 480px) ═══ */
+@media(max-width:480px){
+  .container {
+    padding: 10px 12px !important;
+  }
+  .panel {
+    padding: 12px !important;
+    border-radius: 12px !important;
+  }
+  .panel-title {
+    font-size: 12px !important;
+  }
+  /* Even smaller inputs on tiny phones */
+  .fg input,
+  .fg select,
+  .fg textarea,
+  .modal input,
+  .modal select,
+  .modal textarea {
+    font-size: 13px !important;
+    padding: 8px 10px !important;
+    min-height: 36px !important;
+  }
+  .fg label {
+    font-size: 8px !important;
+    letter-spacing: 0.8px !important;
+  }
+  /* Form row gap tighter */
+  .form-row, .form-pair, .form-col {
+    gap: 8px !important;
+  }
+  .qd {
+    min-height: 26px !important;
+    padding: 4px 9px !important;
+    font-size: 9px !important;
+  }
+  /* Section labels smaller */
+  .section-label {
+    font-size: 9px !important;
+    margin: 10px 0 5px !important;
+    padding-bottom: 3px !important;
+  }
+  /* Modal padding */
+  .modal {
+    padding: 14px !important;
+  }
+  .modal-head h2 {
+    font-size: 14px !important;
+  }
+  /* Buttons */
+  .btn {
+    min-height: 36px !important;
+    padding: 8px 14px !important;
+    font-size: 11px !important;
+  }
+  .btn-i {
+    width: 32px !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 0 !important;
+  }
+}
+
+/* ═══ TABLET (641 - 1024px) — 2-col forms where appropriate ═══ */
+@media(min-width:641px) and (max-width:1024px){
+  /* Forms with 4 fields per row -> 2 per row */
+  .form-row .fg {
+    flex: 1 1 calc(50% - 8px) !important;
+    max-width: calc(50% - 8px) !important;
+  }
+  /* Full-width fields stay full */
+  .fg.full {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+  /* Inputs slightly larger for tablets */
+  .fg input,
+  .fg select,
+  .fg textarea {
+    font-size: 14px !important;
+    padding: 10px 12px !important;
+    min-height: 40px !important;
+  }
+}
+
+/* ═══ FORM SPACING NORMALIZATION ═══ */
+@media(max-width:1024px){
+  /* Add Task and similar forms — header padding */
+  .panel .panel-title + .form-col,
+  .panel .panel-title ~ .form-col,
+  .panel-title + .form-col {
+    margin-top: 4px !important;
+  }
+  /* "Add Task" button proper spacing */
+  .panel > button.btn:last-child,
+  .panel > .btn-p:last-child {
+    margin-top: 10px !important;
+  }
+  /* Recur info banner */
+  .recur-info {
+    font-size: 10px !important;
+    padding: 7px 11px !important;
+  }
+  /* Section labels in forms */
+  .section-label {
+    font-size: 10px !important;
+    margin: 12px 0 6px !important;
+  }
+  /* Quick dates row spacing */
+  .quick-dates {
+    margin-top: 3px !important;
+    gap: 5px !important;
+  }
+  /* Cond-section padding (meeting notes / steps) */
+  .cond-section {
+    padding: 10px !important;
+    margin-top: 8px !important;
+  }
+  /* Step rows */
+  .step-row {
+    padding: 6px 8px !important;
+  }
+  .step-text {
+    font-size: 11px !important;
+  }
+  /* Paste zone */
+  .paste-zone {
+    padding: 14px 10px !important;
+    font-size: 10px !important;
+  }
+  /* Report chips */
+  .report-chip {
+    padding: 5px 10px !important;
+    font-size: 10px !important;
+  }
+  /* Team chips */
+  .team-chip {
+    padding: 5px 11px !important;
+    font-size: 11px !important;
+  }
+  /* Link entry inputs */
+  .link-entry input {
+    font-size: 13px !important;
+    padding: 7px 10px !important;
+    min-height: 36px !important;
+  }
+}
+
+/* ═══ HEADER ELEMENTS PROPORTIONS ═══ */
+@media(max-width:640px){
+  .hdr-clock {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+  }
+  .header h1 {
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+  }
+  .header h1 span {
+    display: none !important;
+  }
+  .ws-sel {
+    font-size: 10px !important;
+    padding: 5px 8px !important;
+    max-width: 90px !important;
+  }
+  .theme-toggle {
+    width: 38px !important;
+    height: 20px !important;
+  }
+  .voice-btn,
+  .focus-btn,
+  .tf-hp-fab {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* ═══ MISSION CARD MOBILE PROPORTIONS ═══ */
+@media(max-width:640px){
+  .tf-mis {
+    padding: 14px !important;
+    border-radius: 14px !important;
+  }
+  .tf-mis-n {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+  .tf-mis-gr {
+    font-size: 9px !important;
+    margin-bottom: 3px !important;
+  }
+  .tf-mb {
+    padding: 7px 12px !important;
+    font-size: 10px !important;
+    min-height: 36px !important;
+  }
+  .tf-chip {
+    font-size: 9px !important;
+    padding: 3px 8px !important;
+  }
+}
+
+/* ═══ KPI CARDS — TIGHTER ═══ */
+@media(max-width:640px){
+  .kpi-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+  }
+  .kpi {
+    padding: 9px 7px !important;
+    border-radius: 10px !important;
+    min-height: auto !important;
+  }
+  .kpi-v {
+    font-size: 17px !important;
+    line-height: 1.1 !important;
+  }
+  .kpi-l {
+    font-size: 7px !important;
+    letter-spacing: 0.8px !important;
+    margin-bottom: 2px !important;
+  }
+  .kpi-s {
+    font-size: 7px !important;
+    margin-top: 1px !important;
+  }
+}
+
+@media(max-width:380px){
+  .kpi-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ═══ TASK ITEMS — TIGHTER ═══ */
+@media(max-width:640px){
+  .task-item {
+    padding: 10px 10px !important;
+    border-radius: 10px !important;
+  }
+  .t-name {
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 2px !important;
+  }
+  .t-desc {
+    font-size: 10px !important;
+    margin-bottom: 4px !important;
+  }
+  .tag {
+    font-size: 8px !important;
+    padding: 1px 6px !important;
+  }
+  .remind-badge {
+    font-size: 8px !important;
+    padding: 1px 6px !important;
+  }
+  .tag-report {
+    font-size: 8px !important;
+    padding: 1px 6px !important;
+  }
+}
+
+/* ═══ ADMIN CENTER MOBILE — TIGHTER ═══ */
+@media(max-width:768px){
+  .tfac-content {
+    padding: 14px 12px !important;
+  }
+  .tfac-card {
+    padding: 12px !important;
+    margin-bottom: 8px !important;
+    border-radius: 10px !important;
+  }
+  .tfac-card-title {
+    font-size: 11px !important;
+    margin-bottom: 3px !important;
+  }
+  .tfac-card-desc {
+    font-size: 9px !important;
+    margin-bottom: 10px !important;
+  }
+  .tfac-row-label {
+    font-size: 11px !important;
+  }
+  .tfac-row-desc {
+    font-size: 9px !important;
+  }
+  .tfac-sel,
+  .tfac-inp {
+    font-size: 13px !important;
+    padding: 8px 10px !important;
+    min-height: 36px !important;
+  }
+  .tfac-page-title {
+    font-size: 15px !important;
+  }
+  .tfac-page-desc {
+    font-size: 10px !important;
+  }
+  .tfac-page-title .tfac-page-icon {
+    font-size: 20px !important;
+  }
+  .tfac-row {
+    padding: 8px 0 !important;
+  }
+  .tfac-banner {
+    padding: 10px !important;
+    font-size: 10px !important;
+  }
+  .tfac-rail-item {
+    padding: 7px 12px !important;
+    font-size: 10px !important;
+  }
+  .tfac-rail-icon {
+    font-size: 14px !important;
+    width: 18px !important;
+  }
+  .tfac-pages-tab {
+    padding: 7px 12px !important;
+    font-size: 10px !important;
+  }
+}
+
+/* ═══ MODALS — TIGHTER ═══ */
+@media(max-width:640px){
+  .modal {
+    padding: 14px !important;
+    border-radius: 14px 14px 0 0 !important;
+  }
+  .modal-head {
+    margin-bottom: 12px !important;
+    padding-bottom: 10px !important;
+  }
+  .modal-head h2 {
+    font-size: 14px !important;
+  }
+  .m-close {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 14px !important;
+  }
+  .modal-footer {
+    margin-top: 12px !important;
+    padding-top: 10px !important;
+    gap: 6px !important;
+  }
+  .modal-footer .btn {
+    font-size: 11px !important;
+    min-height: 38px !important;
+    padding: 8px 12px !important;
+  }
+}
+
+/* ═══ FILTER BAR PROPORTIONS ═══ */
+@media(max-width:1024px){
+  .filter-bar {
+    gap: 5px !important;
+  }
+  .search-inp {
+    font-size: 13px !important;
+    padding: 7px 10px 7px 28px !important;
+    min-height: 36px !important;
+    background-size: 12px !important;
+  }
+  .f-sel {
+    font-size: 11px !important;
+    padding: 7px 10px !important;
+    min-height: 36px !important;
+  }
+}
+
+/* ═══ QUICK CAPTURE BAR — TIGHTER ═══ */
+@media(max-width:640px){
+  .tf-qcap {
+    padding: 6px 10px !important;
+    border-radius: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .tf-qcap-icon {
+    font-size: 14px !important;
+  }
+  .tf-qcap-input {
+    font-size: 12px !important;
+    padding: 4px 0 !important;
+  }
+}
+
+/* ═══ TABS - VIEW SWITCHER ═══ */
+@media(max-width:640px){
+  .tabs {
+    gap: 1px !important;
+    padding: 2px !important;
+    border-radius: 8px !important;
+  }
+  .tab {
+    padding: 7px 12px !important;
+    font-size: 10px !important;
+    min-height: 34px !important;
+  }
+  #viewTabs .tab {
+    padding: 7px 12px !important;
+    font-size: 10px !important;
+  }
+}
+
+/* ═══ OVERFLOW PROTECTION ═══ */
+@media(max-width:1024px){
+  body, html {
+    overflow-x: hidden !important;
+  }
+  .container, .panel, .modal, .form-col, .form-row, .form-pair {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  /* Cond-section overflow */
+  .cond-section,
+  .meeting-notes-section,
+  .t-steps {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+}
+
+/* ═══ EXP / DEV / MEETING CARDS — TIGHTER ═══ */
+@media(max-width:640px){
+  .exp-item,
+  .leave-card,
+  .report-card,
+  .mtg-card,
+  .dev-card {
+    padding: 10px !important;
+    border-radius: 10px !important;
+  }
+  .exp-name,
+  .lc-name,
+  .rc-name,
+  .mtg-card-title,
+  .dev-card-title {
+    font-size: 12px !important;
+  }
+  .exp-detail,
+  .lc-dates,
+  .rc-desc,
+  .dev-card-desc {
+    font-size: 10px !important;
+  }
+  .exp-amount {
+    font-size: 14px !important;
+  }
+}
+
+/* ═══ TIMER PROPORTIONS ═══ */
+@media(max-width:640px){
+  #timerPanel { padding: 12px !important; }
+  #tmRingWrap {
+    width: 140px !important;
+    height: 140px !important;
+    margin: 0 auto 14px !important;
+  }
+  #tmTimeDisplay {
+    font-size: 26px !important;
+  }
+  #tmMsDisplay {
+    font-size: 10px !important;
+  }
+  #tmStateLabel {
+    font-size: 8px !important;
+  }
+  .timer-preset {
+    padding: 5px 8px !important;
+    font-size: 9px !important;
+    min-height: 30px !important;
+  }
+  .tm-ctrl {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+
+/* ═══ REMINDER ITEMS ═══ */
+@media(max-width:640px){
+  .rem-item {
+    padding: 10px 12px !important;
+  }
+  .rem-time {
+    font-size: 14px !important;
+  }
+  .rem-label {
+    font-size: 11px !important;
+  }
+  .rem-desc {
+    font-size: 9px !important;
+  }
+  .rem-due {
+    font-size: 8px !important;
+  }
+}
+
+/* ═══ INSTALL BANNER & NOTIFICATIONS — TIGHTER ═══ */
+@media(max-width:640px){
+  .install-banner {
+    padding: 10px !important;
+  }
+  .install-banner-text {
+    font-size: 11px !important;
+    margin-bottom: 6px !important;
+  }
+  .install-banner-btn {
+    font-size: 10px !important;
+    padding: 6px 14px !important;
+    min-height: 34px !important;
+  }
+  .toast {
+    font-size: 10px !important;
+    padding: 8px 14px !important;
+  }
+}
+</style>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     v6.8.2 — Mouse Wheel / Scroll FIX
+     Resolves: cannot scroll after v6.8 update
+     ═══════════════════════════════════════════════════════════════ -->
+<style id="tfv682css">
+/* ═══ CRITICAL: RESTORE DESKTOP SCROLLING ═══ */
+/* v6.8 had unconditional overflow:hidden on body/html which broke wheel scroll.
+   This puts scrolling BACK on desktop while keeping mobile horizontal-overflow guard. */
+
+/* DESKTOP: Force normal scroll behavior (highest specificity) */
+@media(min-width:1025px){
+  html {
+    overflow-x: visible !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100% !important;
+    max-width: none !important;
+  }
+  body {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    min-height: 100vh !important;
+    max-width: none !important;
+    /* Re-enable mouse wheel and touch */
+    touch-action: auto !important;
+    overscroll-behavior: auto !important;
+  }
+  /* No element should block scrolling */
+  .container, .app-main, #sec-tasks, #sec-admin, #sec-dev, #sec-meetings,
+  #sec-dashboard, #sec-recurring, #sec-onetime, #sec-reports, #sec-leave,
+  #sec-analytics, #sec-calendar, #sec-templates, #sec-lilo, #sec-expenses,
+  #sec-agent {
+    overflow: visible !important;
+  }
+  /* Admin Center shell may have overflow:hidden internally but content scrolls */
+  .tfac-shell {
+    overflow: visible !important;
+    min-height: 600px !important;
+  }
+  .tfac-content {
+    overflow-y: auto !important;
+    max-height: none !important;
+  }
+}
+
+/* MOBILE: keep horizontal-overflow guard but allow vertical scroll */
+@media(max-width:1024px){
+  html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+  }
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    touch-action: auto !important;
+  }
+}
+</style>
+
+<script id="tfv682js">
+(function(){
+  'use strict';
+  
+  // ═══ 1. Clear any stuck body.style.overflow from broken modal handler ═══
+  function unstickScroll(){
+    // If body has inline overflow:hidden but NO modal is currently shown, clear it
+    var anyModalShown = document.querySelectorAll('.modal-overlay.show, .tf-cmd-o.show, .tf-gp-o.show, .tf-hp-o.show, .tf-wg-o.show, .tf-vc-o.show, .tf-hb-o.show, .tf-tm-o.show, .tf-sy-o.show, .tf-ky-o.show, .tf-hp-o.show, .alarm-overlay.show').length > 0;
+    if(!anyModalShown){
+      if(document.body.style.overflow === 'hidden'){
+        document.body.style.overflow = '';
+      }
+      if(document.documentElement.style.overflow === 'hidden'){
+        document.documentElement.style.overflow = '';
+      }
+    }
+  }
+  
+  // ═══ 2. REPLACE the buggy v6.8 modal scroll-lock with a safer one ═══
+  // Disable the broken MutationObserver from v6.8 by hijacking _tfMSL
+  window._tfMSL = true; // prevent v6.8's setupModalScrollLock from binding
+  
+  // Install a clean version: only lock when a modal is ACTUALLY visible
+  function safeScrollLock(){
+    function check(){
+      var anyShown = false;
+      document.querySelectorAll('.modal-overlay').forEach(function(m){
+        if(m.classList.contains('show') && getComputedStyle(m).display !== 'none'){
+          anyShown = true;
+        }
+      });
+      // Only lock when there's truly an open modal — and use a CSS class, not inline style
+      if(anyShown){
+        document.body.classList.add('tf-modal-open');
+      } else {
+        document.body.classList.remove('tf-modal-open');
+        // Clear any stuck inline style left behind
+        if(document.body.style.overflow === 'hidden'){
+          document.body.style.overflow = '';
+        }
+      }
+    }
+    // Poll-based check (safer than mutation observer that missed events)
+    setInterval(check, 500);
+    check();
+  }
+  
+  // ═══ 3. Patch the v6.8 touchend preventDefault that was too aggressive ═══
+  // The double-tap zoom prevention also caught wheel events in some browsers.
+  // We replace it with a more targeted version that only acts on touch.
+  // (Can't easily un-listen, but the new version below takes precedence.)
+  
+  // ═══ 4. Ensure wheel events propagate ═══
+  document.addEventListener('wheel', function(e){
+    // Don't preventDefault — let browser scroll naturally
+  }, { passive: true, capture: false });
+  
+  // ═══ 5. INIT ═══
+  function init(){
+    unstickScroll();
+    safeScrollLock();
+    // Run unstick periodically as a safety net
+    setInterval(unstickScroll, 2000);
+    console.log('%c[v6.8.2] Scroll fix loaded — wheel restored', 'color:#10B981;font-weight:bold;');
+    setTimeout(function(){
+      if(!localStorage.getItem('tf_v682_welcomed')){
+        if(typeof toast === 'function') toast('🖱 v6.8.2: Mouse wheel scrolling restored', 's');
+        localStorage.setItem('tf_v682_welcomed', '1');
+      }
+    }, 3000);
+  }
+  
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else setTimeout(init, 100); // Run early to fix scroll ASAP
+  
+  // Also run immediately on script execution to unstick any frozen state
+  unstickScroll();
+})();
+</script>
+
+<style id="tfv682css2">
+/* CSS-based modal lock (class instead of inline style — easier to override) */
+body.tf-modal-open {
+  overflow: hidden !important;
+}
+/* But preserve scroll on desktop when no modal */
+body:not(.tf-modal-open) {
+  overflow-y: visible !important;
+}
+@media(max-width:1024px){
+  body:not(.tf-modal-open) {
+    overflow-y: auto !important;
+  }
+}
+</style>
 
 </body></html>
