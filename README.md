@@ -10,7 +10,7 @@ A comprehensive, single-file, offline-capable personal productivity web app buil
 
 ## Live Demo
 
-[Open TaskFlow →](./TaskFlow_v7.0_DOWNLOAD.html)
+[Open TaskFlow →](./index.html)
 
 Or host it on **GitHub Pages**: just rename the file to `index.html`, push to a repo, and enable Pages in **Settings → Pages**.
 
@@ -110,7 +110,7 @@ Or host it on **GitHub Pages**: just rename the file to `index.html`, push to a 
 
 ### Option 1 — Run locally (zero setup)
 
-1. Download `TaskFlow_v7.0_DOWNLOAD.html`
+1. Download `index.html`
 2. Double-click to open in any modern browser (Chrome, Edge, Safari, Firefox)
 3. Click **Install** (Chrome) or **Add to Home Screen** (mobile) for app-like experience
 
@@ -120,7 +120,7 @@ Or host it on **GitHub Pages**: just rename the file to `index.html`, push to a 
 git init
 git remote add origin https://github.com/<your-username>/<your-repo>.git
 # rename file so GitHub Pages serves it as the home page
-mv TaskFlow_v7.0_DOWNLOAD.html index.html
+mv index.html index.html
 git add index.html README.md
 git commit -m "Initial TaskFlow deploy"
 git push -u origin main
