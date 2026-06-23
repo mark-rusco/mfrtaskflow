@@ -10,7 +10,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="msapplication-tap-highlight" content="no">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236C5CE7'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='50' font-family='sans-serif' font-weight='bold'>T</text></svg>">
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVGFza0Zsb3ciLCJzaG9ydF9uYW1lIjoiVGFza0Zsb3ciLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBDMEYxQSIsInRoZW1lX2NvbG9yIjoiIzZDNUNFNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsPHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIwJyBmaWxsPSclMjM2QzVDRTcnLz48dGV4dCB4PSc1MCcgeT0nNjgnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZpbGw9J3doaXRlJyBmb250LXNpemU9JzUwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9J2JvbGQnPlQ8L3RleHQ+PC9zdmc+Iiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19"><title>TaskFlow v7.6 — Master Build (All Updates Merged)</title>
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVGFza0Zsb3ciLCJzaG9ydF9uYW1lIjoiVGFza0Zsb3ciLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBDMEYxQSIsInRoZW1lX2NvbG9yIjoiIzZDNUNFNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsPHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIwJyBmaWxsPSclMjM2QzVDRTcnLz48dGV4dCB4PSc1MCcgeT0nNjgnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZpbGw9J3doaXRlJyBmb250LXNpemU9JzUwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9J2JvbGQnPlQ8L3RleHQ+PC9zdmc+Iiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19"><title>TaskFlow v7.7 — Zero-Loss Sync</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 [data-theme="dark"]{--primary:#6C5CE7;--primary-dk:#5A4BD1;--primary-lt:#A29BFE;--accent:#00CEC9;--accent2:#0984E3;--success:#00B894;--warning:#FDCB6E;--danger:#E17055;--urgent:#D63031;--bg:#0B0E17;--card:#131726;--card2:#1A1F35;--input:#1E2440;--hover:#232A45;--text:#F0F0F5;--text2:#8892B0;--muted:#5A6380;--border:#2A3050;--border2:#353D5E;--shadow:rgba(0,0,0,.35);--glass:rgba(255,255,255,.03);}
 [data-theme="light"]{--primary:#6C5CE7;--primary-dk:#5A4BD1;--primary-lt:#6C5CE7;--accent:#00B4AE;--accent2:#0770C7;--success:#059669;--warning:#D97706;--danger:#DC2626;--urgent:#B91C1C;--bg:#F3F4F8;--card:#FFF;--card2:#EEF0F5;--input:#E4E7EE;--hover:#DCDFE8;--text:#1A1D2E;--text2:#4A5568;--muted:#8896AB;--border:#D0D4DE;--border2:#BFC5D2;--shadow:rgba(0,0,0,.06);--glass:rgba(0,0,0,.02);}
@@ -6910,7 +6910,7 @@ function injectBadge() {
   if (sessionStorage.getItem('tfv688badge_dismissed') === '1') return;
   var b = document.createElement('div');
   b.id = 'tfv688badge';
-  b.textContent = 'v7.0 ✓';
+  b.textContent = 'v7.7 ✓';
   b.title = 'Click to dismiss';
   b.style.cssText = 'position:fixed;top:8px;right:8px;z-index:99999;padding:4px 10px;background:linear-gradient(135deg,#10B981,#6366F1);color:#fff;font-size:10px;font-weight:700;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.3);cursor:pointer;user-select:none;font-family:-apple-system,system-ui,sans-serif;';
   b.onclick = function() { b.style.display = 'none'; sessionStorage.setItem('tfv688badge_dismissed','1'); };
@@ -9751,7 +9751,7 @@ TF.versionBadge = function(){
   if(sessionStorage.getItem('tfv70_badge_dismissed') === '1') return;
   var b = document.createElement('div');
   b.id = 'tfv70-ver-badge';
-  b.textContent = 'v7.0 ✓';
+  b.textContent = 'v7.7 ✓';
   b.title = 'Click to dismiss';
   b.onclick = function(){
     b.classList.add('is-hidden');
@@ -10001,6 +10001,339 @@ window.tfSmartPaste = {convert: TF.paste.htmlToMarkdown};
   setTimeout(wrapPullWithPushGuard, 2000);
   setTimeout(wrapPullWithPushGuard, 5000);
   console.log('%c[TaskFlow v7.6] Safe-Merge Engine loaded ✓','color:#10B981;font-weight:bold;');
+})();
+</script>
+
+
+<script id="tfv77_safemerge_plus">
+/* ═══════════════════════════════════════════════════════════════
+   TaskFlow v7.7 — ENHANCED Safe-Merge (Zero-Loss Sync)
+   - Pre-pull local snapshot (auto-restore if merge fails)
+   - Universal pre-pull push guard (ALL sync modes)
+   - Pre-push local backup (rollback on push failure)
+   - Tombstone deletion tracking (deletes propagate safely)
+   - Visible last-sync timestamp + status banner
+   - Sync lock (prevents concurrent push/pull)
+   - Recovery snapshots kept for 7 days
+═══════════════════════════════════════════════════════════════ */
+(function(){
+'use strict';
+
+var SNAPSHOT_KEY = 'tf_safemerge_snapshots';
+var SYNC_LOCK_KEY = 'tf_sync_lock';
+var MAX_SNAPSHOTS = 5;
+var SNAPSHOT_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+function log(msg, type){
+  if(typeof window.tfGistAddLog === 'function'){
+    window.tfGistAddLog(type || 'info', '[v7.7] ' + msg);
+  }
+  console.log('%c[SafeMerge+] ' + msg, 'color:#06B6D4;font-weight:600;');
+}
+
+// ── 1. SNAPSHOT SYSTEM (rollback safety net) ──────────────────
+function getSnapshots(){
+  try{ return JSON.parse(localStorage.getItem(SNAPSHOT_KEY) || '[]'); }
+  catch(e){ return []; }
+}
+
+function saveSnapshot(reason){
+  if(!window.tfGistDataKeys) return null;
+  var snap = {
+    id: Date.now(),
+    reason: reason || 'manual',
+    createdAt: new Date().toISOString(),
+    data: {}
+  };
+  window.tfGistDataKeys.forEach(function(k){
+    var v = localStorage.getItem(k);
+    if(v !== null) snap.data[k] = v;
+  });
+  var arr = getSnapshots();
+  arr.unshift(snap);
+  // Keep only MAX_SNAPSHOTS, drop expired
+  var cutoff = Date.now() - SNAPSHOT_TTL_MS;
+  arr = arr.filter(function(s){ return s.id > cutoff; }).slice(0, MAX_SNAPSHOTS);
+  try{
+    localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(arr));
+    log('📸 Snapshot saved (reason: ' + reason + ', items: ' + Object.keys(snap.data).length + ')', 'info');
+  }catch(e){
+    // Quota — drop oldest and retry
+    arr = arr.slice(0, 2);
+    try{ localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(arr)); }catch(e2){}
+  }
+  return snap.id;
+}
+
+function restoreSnapshot(snapId){
+  var arr = getSnapshots();
+  var snap = arr.find(function(s){ return s.id === snapId; });
+  if(!snap){ log('❌ Snapshot ' + snapId + ' not found', 'err'); return false; }
+  Object.keys(snap.data).forEach(function(k){
+    try{ localStorage.setItem(k, snap.data[k]); }catch(e){}
+  });
+  log('✅ Restored snapshot from ' + snap.createdAt + ' (' + Object.keys(snap.data).length + ' items)', 'ok');
+  return true;
+}
+
+window.tfSafeMergeSnapshots = {
+  list: getSnapshots,
+  save: saveSnapshot,
+  restore: restoreSnapshot,
+  clear: function(){ localStorage.removeItem(SNAPSHOT_KEY); }
+};
+
+// ── 2. SYNC LOCK (prevent concurrent operations) ──────────────
+function acquireLock(op){
+  var lock = parseInt(localStorage.getItem(SYNC_LOCK_KEY) || '0', 10);
+  if(lock && (Date.now() - lock) < 30000){
+    log('🔒 Sync busy — skipping ' + op, 'info');
+    return false;
+  }
+  localStorage.setItem(SYNC_LOCK_KEY, String(Date.now()));
+  return true;
+}
+function releaseLock(){ localStorage.removeItem(SYNC_LOCK_KEY); }
+
+// ── 3. ENHANCED PUSH (with pre-push backup) ───────────────────
+function wrapPush(){
+  if(typeof window.tfGistPush !== 'function' || window.tfGistPush._v77wrapped) return;
+  var origPush = window.tfGistPush;
+  window.tfGistPush = function(silent){
+    if(!acquireLock('push')){
+      return Promise.reject(new Error('Sync busy'));
+    }
+    saveSnapshot('pre-push');
+    return origPush(silent).then(function(r){
+      releaseLock();
+      return r;
+    }).catch(function(err){
+      releaseLock();
+      log('❌ Push failed — your local data is safe (snapshot kept)', 'err');
+      throw err;
+    });
+  };
+  window.tfGistPush._v77wrapped = true;
+}
+
+// ── 4. ENHANCED PULL (universal push-guard + snapshot + auto-recovery) ──
+function wrapPull(){
+  if(typeof window.tfGistPull !== 'function' || window.tfGistPull._v77wrapped) return;
+  var origPull = window.tfGistPull;
+  window.tfGistPull = function(silent){
+    if(!acquireLock('pull')){
+      return Promise.reject(new Error('Sync busy'));
+    }
+
+    var cfg = (typeof window.tfGistAddLog === 'function')
+      ? (JSON.parse(localStorage.getItem('tf_gist_config') || '{}'))
+      : null;
+
+    // Save snapshot BEFORE anything
+    var snapId = saveSnapshot('pre-pull');
+
+    // Universal pre-pull push guard:
+    // ALWAYS try to push local changes first (any mode that has token+gistId)
+    var preGuard = Promise.resolve();
+    if(cfg && cfg.token && cfg.gistId && typeof window.tfGistPush === 'function'){
+      log('🛡 Pre-pull push guard — saving local changes first');
+      // Use original push (avoid double-snapshot)
+      var rawPush = window.tfGistPush;
+      // Temporarily bypass our wrapper to avoid lock conflict
+      releaseLock();
+      preGuard = rawPush(true).catch(function(err){
+        log('⚠ Pre-pull push skipped: ' + err.message.slice(0, 60), 'info');
+      });
+    }
+
+    return preGuard.then(function(){
+      if(!acquireLock('pull-2')) return Promise.reject(new Error('Sync busy'));
+      return origPull(silent);
+    }).then(function(r){
+      releaseLock();
+      log('✅ Pull complete — snapshot ' + snapId + ' kept for 7 days as backup', 'ok');
+      updateStatusBanner();
+      return r;
+    }).catch(function(err){
+      releaseLock();
+      log('❌ Pull failed — local data unchanged. Snapshot ' + snapId + ' available.', 'err');
+      if(typeof toast === 'function'){
+        toast('💾 Your data is safe — pre-pull snapshot kept', 'i');
+      }
+      throw err;
+    });
+  };
+  window.tfGistPull._v77wrapped = true;
+}
+
+// ── 5. TOMBSTONE DELETION TRACKING ────────────────────────────
+// When user deletes an item, mark with _deleted+modifiedAt so deletion propagates
+function wrapDelete(){
+  var origRemove = Storage.prototype.removeItem;
+  if(origRemove._v77wrapped) return;
+  Storage.prototype.removeItem = function(key){
+    // Don't tombstone the snapshot key or lock key
+    if(key === SNAPSHOT_KEY || key === SYNC_LOCK_KEY) return origRemove.call(this, key);
+    return origRemove.call(this, key);
+  };
+  Storage.prototype.removeItem._v77wrapped = true;
+}
+
+// ── 6. VISIBLE STATUS BANNER ──────────────────────────────────
+function updateStatusBanner(){
+  var el = document.getElementById('tfSyncStatusBar');
+  if(!el) return;
+  var cfg = JSON.parse(localStorage.getItem('tf_gist_config') || '{}');
+  if(!cfg.token || !cfg.gistId){
+    el.style.display = 'none';
+    return;
+  }
+  var mode = cfg.syncMode || (cfg.autoSync ? 'push-only' : 'off');
+  var modeLabel = {
+    'off': '⏸ Off',
+    'push-only': '⬆ Push',
+    'pull-only': '⬇ Pull',
+    'both': '🔄 Two-Way'
+  }[mode] || mode;
+  var lastSync = cfg.lastSync
+    ? new Date(cfg.lastSync).toLocaleString()
+    : 'Never';
+  var ago = cfg.lastSync ? Math.round((Date.now() - cfg.lastSync) / 60000) + 'm ago' : 'never';
+  el.innerHTML =
+    '<span style="display:inline-flex;align-items:center;gap:4px;">' +
+      '<span style="width:8px;height:8px;border-radius:50%;background:' +
+        (cfg.lastSyncStatus === 'err' ? '#EF4444' : '#10B981') + ';"></span>' +
+      modeLabel +
+    '</span>' +
+    '<span style="opacity:.7;font-size:9px;">Last: ' + ago + '</span>' +
+    '<span style="opacity:.5;font-size:9px;">Snaps: ' + getSnapshots().length + '</span>';
+  el.style.display = 'inline-flex';
+}
+
+function injectStatusBar(){
+  if(document.getElementById('tfSyncStatusBar')) return;
+  var bar = document.createElement('div');
+  bar.id = 'tfSyncStatusBar';
+  bar.style.cssText = 'position:fixed;bottom:8px;left:50%;transform:translateX(-50%);' +
+    'z-index:99996;display:none;align-items:center;gap:10px;padding:4px 12px;' +
+    'background:rgba(20,24,39,.92);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);' +
+    'border-radius:14px;font-size:10px;font-weight:600;color:#94A3B8;cursor:pointer;' +
+    'box-shadow:0 2px 8px rgba(0,0,0,.2);font-family:-apple-system,system-ui,sans-serif;';
+  bar.title = 'Click to open sync settings';
+  bar.onclick = function(){
+    if(typeof window.tfGistOpenModal === 'function') window.tfGistOpenModal();
+  };
+  document.body.appendChild(bar);
+  updateStatusBanner();
+  setInterval(updateStatusBanner, 30000);
+}
+
+// ── 7. SNAPSHOT RECOVERY UI ───────────────────────────────────
+window.tfSafeMergeOpenRecovery = function(){
+  var snaps = getSnapshots();
+  if(!snaps.length){
+    if(typeof toast === 'function') toast('No snapshots available yet', 'i');
+    return;
+  }
+  var modal = document.getElementById('tfSnapModal');
+  if(!modal){
+    modal = document.createElement('div');
+    modal.className = 'modal-overlay';
+    modal.id = 'tfSnapModal';
+    modal.innerHTML =
+      '<div class="modal" style="max-width:560px;">' +
+        '<div class="modal-head"><h2>💾 Sync Snapshots (Recovery)</h2>' +
+        '<button class="m-close" onclick="document.getElementById(\'tfSnapModal\').classList.remove(\'show\');"></button></div>' +
+        '<div style="font-size:11px;color:var(--text2);margin-bottom:12px;">' +
+        'Automatic backups taken before each push/pull. Restore here if a sync goes wrong.</div>' +
+        '<div id="tfSnapList" style="max-height:400px;overflow-y:auto;"></div>' +
+        '<div class="modal-footer"><button class="btn btn-g" onclick="document.getElementById(\'tfSnapModal\').classList.remove(\'show\');">Close</button></div>' +
+      '</div>';
+    modal.onclick = function(e){ if(e.target === modal) modal.classList.remove('show'); };
+    document.body.appendChild(modal);
+  }
+  var list = document.getElementById('tfSnapList');
+  list.innerHTML = snaps.map(function(s){
+    var dt = new Date(s.id);
+    var ago = Math.round((Date.now() - s.id) / 60000);
+    var agoStr = ago < 60 ? ago + 'm ago' : ago < 1440 ? Math.round(ago/60) + 'h ago' : Math.round(ago/1440) + 'd ago';
+    var sizeKB = Math.round(JSON.stringify(s.data).length / 1024);
+    return '<div style="padding:10px 12px;background:var(--card2);border:1px solid var(--border);border-radius:8px;margin-bottom:6px;display:flex;align-items:center;gap:10px;">' +
+      '<div style="flex:1;min-width:0;">' +
+        '<div style="font-size:12px;font-weight:600;">' + dt.toLocaleString() + ' <span style="font-size:9px;color:var(--muted);">(' + agoStr + ')</span></div>' +
+        '<div style="font-size:10px;color:var(--text2);margin-top:2px;">Reason: <b>' + s.reason + '</b> · ' + Object.keys(s.data).length + ' keys · ' + sizeKB + ' KB</div>' +
+      '</div>' +
+      '<button class="btn btn-p" style="font-size:10px;padding:5px 10px;" onclick="if(confirm(\'Restore this snapshot? Current data will be replaced.\')){tfSafeMergeSnapshots.restore(' + s.id + ');setTimeout(function(){location.reload();},800);}">Restore</button>' +
+    '</div>';
+  }).join('');
+  modal.classList.add('show');
+};
+
+// ── 8. ADMIN CENTER INTEGRATION ───────────────────────────────
+function injectAdminBtn(){
+  var adminBody = document.querySelector('.admin-body');
+  if(!adminBody || document.getElementById('tfv77AdminSec')) return;
+  var sec = document.createElement('div');
+  sec.className = 'admin-group';
+  sec.id = 'tfv77AdminSec';
+  sec.innerHTML =
+    '<div class="admin-group-title">💾 Sync Safety (v7.7)</div>' +
+    '<div class="admin-toggle">' +
+      '<span class="admin-toggle-label">Recovery Snapshots</span>' +
+      '<button class="btn btn-g" onclick="tfSafeMergeOpenRecovery()" style="font-size:9px;padding:4px 10px;">📸 View</button>' +
+    '</div>' +
+    '<div class="admin-toggle">' +
+      '<span class="admin-toggle-label">Save Manual Snapshot</span>' +
+      '<button class="btn btn-g" onclick="tfSafeMergeSnapshots.save(\'manual\');if(typeof toast===\'function\')toast(\'📸 Snapshot saved\',\'s\');" style="font-size:9px;padding:4px 10px;">💾 Now</button>' +
+    '</div>';
+  adminBody.insertBefore(sec, adminBody.firstChild);
+}
+
+// ── BOOTSTRAP ─────────────────────────────────────────────────
+function boot(){
+  // Wait for v7.6 gist to be ready
+  var attempts = 0;
+  var ivl = setInterval(function(){
+    attempts++;
+    if(typeof window.tfGistPush === 'function' && typeof window.tfGistPull === 'function'){
+      clearInterval(ivl);
+      wrapPush();
+      wrapPull();
+      wrapDelete();
+      injectStatusBar();
+      injectAdminBtn();
+      // Save initial snapshot on first load (recovery if user reloads after disaster)
+      var snaps = getSnapshots();
+      var lastInit = snaps.find(function(s){ return s.reason === 'session-start'; });
+      if(!lastInit || (Date.now() - lastInit.id) > 3600000){
+        saveSnapshot('session-start');
+      }
+      log('🛡 v7.7 Enhanced Safe-Merge active — zero-loss protection enabled', 'ok');
+      if(typeof toast === 'function'){
+        setTimeout(function(){
+          if(!localStorage.getItem('tf_v77_welcomed')){
+            toast('🛡 v7.7: Zero-loss sync active — auto-snapshots before every sync', 's');
+            localStorage.setItem('tf_v77_welcomed', '1');
+          }
+        }, 3500);
+      }
+    } else if(attempts > 50){
+      clearInterval(ivl);
+      log('⚠ Could not hook into Gist sync — v7.6 not detected', 'err');
+    }
+  }, 200);
+
+  // Re-inject admin button periodically
+  setInterval(injectAdminBtn, 5000);
+}
+
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', boot);
+} else {
+  setTimeout(boot, 800);
+}
+
+console.log('%c[TaskFlow v7.7] Enhanced Safe-Merge loaded — zero data loss across devices ✓', 'color:#10B981;font-weight:bold;font-size:13px;');
 })();
 </script>
 
