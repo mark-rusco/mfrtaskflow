@@ -10,7 +10,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="msapplication-tap-highlight" content="no">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236C5CE7'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='50' font-family='sans-serif' font-weight='bold'>T</text></svg>">
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVGFza0Zsb3ciLCJzaG9ydF9uYW1lIjoiVGFza0Zsb3ciLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBDMEYxQSIsInRoZW1lX2NvbG9yIjoiIzZDNUNFNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsPHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIwJyBmaWxsPSclMjM2QzVDRTcnLz48dGV4dCB4PSc1MCcgeT0nNjgnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZpbGw9J3doaXRlJyBmb250LXNpemU9JzUwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9J2JvbGQnPlQ8L3RleHQ+PC9zdmc+Iiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19"><title>TaskFlow v7.0</title>
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVGFza0Zsb3ciLCJzaG9ydF9uYW1lIjoiVGFza0Zsb3ciLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBDMEYxQSIsInRoZW1lX2NvbG9yIjoiIzZDNUNFNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsPHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIwJyBmaWxsPSclMjM2QzVDRTcnLz48dGV4dCB4PSc1MCcgeT0nNjgnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZpbGw9J3doaXRlJyBmb250LXNpemU9JzUwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9J2JvbGQnPlQ8L3RleHQ+PC9zdmc+Iiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19"><title>TaskFlow v7.4 — Categories + Environment Tags</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 [data-theme="dark"]{--primary:#6C5CE7;--primary-dk:#5A4BD1;--primary-lt:#A29BFE;--accent:#00CEC9;--accent2:#0984E3;--success:#00B894;--warning:#FDCB6E;--danger:#E17055;--urgent:#D63031;--bg:#0B0E17;--card:#131726;--card2:#1A1F35;--input:#1E2440;--hover:#232A45;--text:#F0F0F5;--text2:#8892B0;--muted:#5A6380;--border:#2A3050;--border2:#353D5E;--shadow:rgba(0,0,0,.35);--glass:rgba(255,255,255,.03);}
 [data-theme="light"]{--primary:#6C5CE7;--primary-dk:#5A4BD1;--primary-lt:#6C5CE7;--accent:#00B4AE;--accent2:#0770C7;--success:#059669;--warning:#D97706;--danger:#DC2626;--urgent:#B91C1C;--bg:#F3F4F8;--card:#FFF;--card2:#EEF0F5;--input:#E4E7EE;--hover:#DCDFE8;--text:#1A1D2E;--text2:#4A5568;--muted:#8896AB;--border:#D0D4DE;--border2:#BFC5D2;--shadow:rgba(0,0,0,.06);--glass:rgba(0,0,0,.02);}
@@ -424,7 +424,7 @@ if ('serviceWorker' in navigator) {
 console.log('%c[v6.8.8] Cache cleanup ran','color:#10B981;font-weight:bold;');
 </script>
 <script>if("serviceWorker" in navigator){const c=`const CACHE='taskflow-v688';self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./'])));self.skipWaiting()});self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>clients.claim()))});self.addEventListener("fetch",e=>{if(e.request.method!=='GET')return;e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(nr=>{if(nr.ok){const c2=nr.clone();caches.open(CACHE).then(ca=>ca.put(e.request,c2))}return nr}).catch(()=>caches.match('./').then(r2=>r2||new Response('Offline',{status:503})))))});`;navigator.serviceWorker.register(URL.createObjectURL(new Blob([c],{type:"application/javascript"}))).catch(()=>{})}</script></head>
-<body><aside class="sidebar" id="sidebar"><div class="sb-logo" onclick="toggleSidebarCollapse()" title="Expand / Collapse"><div class="sb-logo-icon">T</div><span class="sb-logo-text">TaskFlow</span></div><nav class="sb-nav"><div class="sb-group-label">Work</div><button class="sb-item active" data-section="tasks" title="Schedule" onclick="navTo('tasks',this)"><span class="sb-icon"><i class="ico ico-schedule"></i></span><span class="sb-label">Schedule</span><span class="sb-badge" id="sbTaskBadge"></span></button><button class="sb-item" data-section="recurring" title="Recurring" onclick="navTo('recurring',this)"><span class="sb-icon"><i class="ico ico-recurring"></i></span><span class="sb-label">Recurring</span></button><button class="sb-item" data-section="onetime" title="One-Time" onclick="navTo('onetime',this)"><span class="sb-icon"><i class="ico ico-pin"></i></span><span class="sb-label">One-Time</span></button><div class="sb-group-label">Manage</div><button class="sb-item" data-section="reports" title="Reports" onclick="navTo('reports',this)"><span class="sb-icon"><i class="ico ico-folder"></i></span><span class="sb-label">Reports</span></button><button class="sb-item" data-section="leave" title="Leave" onclick="navTo('leave',this)"><span class="sb-icon"><i class="ico ico-leave"></i></span><span class="sb-label">Leave</span><span class="sb-badge" id="sbLeaveBadge"></span></button><button class="sb-item" data-section="lilo" title="LILO" onclick="navTo('lilo',this)"><span class="sb-icon"><i class="ico ico-clock"></i></span><span class="sb-label">LILO</span></button><button class="sb-item" data-section="expenses" title="Expenses" onclick="navTo('expenses',this)"><span class="sb-icon"><i class="ico ico-wallet"></i></span><span class="sb-label">Expenses</span></button>
+<body><aside class="sidebar" id="sidebar"><div class="sb-logo" onclick="toggleSidebarCollapse()" title="Expand / Collapse"><div class="sb-logo-icon">T</div><span class="sb-logo-text">TaskFlow</span></div><nav class="sb-nav"><div class="sb-group-label">Work</div><button class="sb-item active" data-section="tasks" title="Schedule" onclick="navTo('tasks',this)"><span class="sb-icon"><i class="ico ico-schedule"></i></span><span class="sb-label">Schedule</span><span class="sb-badge" id="sbTaskBadge"></span></button><button class="sb-item" data-section="recurring" title="Recurring" onclick="navTo('recurring',this)"><span class="sb-icon"><i class="ico ico-recurring"></i></span><span class="sb-label">Recurring</span></button><button class="sb-item" data-section="onetime" title="One-Time" onclick="navTo('onetime',this)"><span class="sb-icon"><i class="ico ico-pin"></i></span><span class="sb-label">One-Time</span></button><div class="sb-group-label">Manage</div><button class="sb-item" data-section="reports" title="Reports" onclick="navTo('reports',this)"><span class="sb-icon"><i class="ico ico-folder"></i></span><span class="sb-label">Reports</span></button><button class="sb-item" data-section="qlinks" title="Quick Links" onclick="navTo('qlinks',this)"><span class="sb-icon">🔗</span><span class="sb-label">Quick Links</span></button><button class="sb-item" data-section="leave" title="Leave" onclick="navTo('leave',this)"><span class="sb-icon"><i class="ico ico-leave"></i></span><span class="sb-label">Leave</span><span class="sb-badge" id="sbLeaveBadge"></span></button><button class="sb-item" data-section="lilo" title="LILO" onclick="navTo('lilo',this)"><span class="sb-icon"><i class="ico ico-clock"></i></span><span class="sb-label">LILO</span></button><button class="sb-item" data-section="expenses" title="Expenses" onclick="navTo('expenses',this)"><span class="sb-icon"><i class="ico ico-wallet"></i></span><span class="sb-label">Expenses</span></button>
 <div class="sb-group-label">AI</div>
 <button class="sb-item" data-section="agent" title="AI Agent" onclick="navTo('agent',this)"><span class="sb-icon"><i class="ico ico-agent"></i></span><span class="sb-label">AI Agent</span></button>
 <div class="sb-group-label">Insights</div><button class="sb-item" data-section="analytics" title="Analytics" onclick="navTo('analytics',this)"><span class="sb-icon"><i class="ico ico-chart"></i></span><span class="sb-label">Analytics</span></button><button class="sb-item" data-section="calendar" title="Calendar" onclick="navTo('calendar',this)"><span class="sb-icon"><i class="ico ico-calendar"></i></span><span class="sb-label">Calendar</span></button><button class="sb-item" data-section="templates" title="Templates" onclick="navTo('templates',this)"><span class="sb-icon"><i class="ico ico-template"></i></span><span class="sb-label">Templates</span></button></nav><div class="sb-footer"><button class="sb-item sb-compact" title="Collapse" onclick="toggleSidebarCollapse()"><span class="sb-icon"><i class="ico ico-collapse"></i></span><span class="sb-label">Collapse</span></button><button class="sb-item" title="Settings" onclick="toggleAdmin()"><span class="sb-icon"><i class="ico ico-settings"></i></span><span class="sb-label">Settings</span></button></div></aside>
@@ -436,7 +436,7 @@ console.log('%c[v6.8.8] Cache cleanup ran','color:#10B981;font-weight:bold;');
 <div class="kpi-row"><div class="kpi"><div class="kpi-l">Today</div><div class="kpi-v" id="kToday">0</div><div class="kpi-s">Tasks</div></div><div class="kpi"><div class="kpi-l">Pending</div><div class="kpi-v" id="kPend" style="color:var(--warning)">0</div><div class="kpi-s">Not started</div></div><div class="kpi"><div class="kpi-l">In Progress</div><div class="kpi-v" id="kProg" style="color:var(--accent2)">0</div><div class="kpi-s">Working on</div></div><div class="kpi"><div class="kpi-l">Done</div><div class="kpi-v" id="kDone" style="color:var(--success)">0</div><div class="kpi-s">Completed</div></div><div class="kpi"><div class="kpi-l">Overdue</div><div class="kpi-v" id="kOver" style="color:var(--danger)">0</div><div class="kpi-s">Past due</div></div><div class="kpi"><div class="kpi-l">Recurring</div><div class="kpi-v" id="kRecur" style="color:var(--accent)">0</div><div class="kpi-s">Templates</div></div><div class="kpi"><div class="kpi-l">On Leave</div><div class="kpi-v" id="kLeave" style="color:var(--danger)">0</div><div class="kpi-s">Out today</div></div></div>
 <div id="sec-agent" style="display:none;"><div class="panel ai-briefing-panel"><div class="panel-head"><div class="panel-title"><div class="dot" style="background:var(--accent);"></div>Daily Briefing</div><div style="display:flex;gap:6px;"><span class="ai-ts" id="aiBriefTime"></span><button class="btn btn-g" onclick="renderAgentPanel()" style="font-size:9px;padding:5px 10px;">Refresh</button></div></div><div id="aiBriefing" class="ai-brief-body"></div></div><div class="panel"><div class="panel-head"><div class="panel-title"><div class="dot" style="background:var(--danger);"></div>Risk Alerts</div><span class="ai-badge" id="aiRiskCount">0</span></div><div id="aiRisks" class="ai-cards"></div></div><div class="panel"><div class="panel-head"><div class="panel-title"><div class="dot" style="background:var(--primary);"></div>Smart Suggestions</div><span class="ai-badge" id="aiSugCount" style="background:var(--primary);">0</span></div><div id="aiSuggestions" class="ai-cards"></div></div><div class="panel"><div class="panel-head"><div class="panel-title"><div class="dot" style="background:var(--warning);"></div>Workload Forecast</div></div><div id="aiWorkload" class="ai-cards"></div></div><div class="panel"><div class="panel-head"><div class="panel-title"><div class="dot" style="background:var(--success);"></div>Weekly Review</div><button class="btn btn-g" onclick="copyWeeklyReview()" style="font-size:9px;padding:5px 10px;">Copy</button></div><div id="aiWeekly" class="ai-weekly-body"></div></div><div class="panel"><div class="panel-head"><div class="panel-title"><div class="dot" style="background:var(--accent2);"></div>Patterns & Insights</div></div><div id="aiPatterns" class="ai-cards"></div></div></div>
 <div class="main-grid"><div>
-<div class="tabs" id="mainTabs"><button class="tab active" onclick="mainTab('tasks',this)">📋 Tasks</button><button class="tab" onclick="mainTab('recurring',this)">🔄 Recurring</button><button class="tab" onclick="mainTab('onetime',this)">📌 One-Time</button><button class="tab" onclick="mainTab('reports',this)">📂 Reports</button><button class="tab" onclick="mainTab('leave',this)">🏥 Leave</button><button class="tab" onclick="mainTab('analytics',this)">📊 Analytics</button><button class="tab" onclick="mainTab('calendar',this)">📅 Calendar</button><button class="tab" onclick="mainTab('templates',this)">📝 Templates</button>
+<div class="tabs" id="mainTabs"><button class="tab active" onclick="mainTab('tasks',this)">📋 Tasks</button><button class="tab" onclick="mainTab('recurring',this)">🔄 Recurring</button><button class="tab" onclick="mainTab('onetime',this)">📌 One-Time</button><button class="tab" onclick="mainTab('reports',this)">📂 Reports</button><button class="tab" onclick="mainTab('qlinks',this)">🔗 Quick Links</button><button class="tab" onclick="mainTab('leave',this)">🏥 Leave</button><button class="tab" onclick="mainTab('analytics',this)">📊 Analytics</button><button class="tab" onclick="mainTab('calendar',this)">📅 Calendar</button><button class="tab" onclick="mainTab('templates',this)">📝 Templates</button>
 <button class="tab" onclick="mainTab('lilo',this)">📅 LILO</button>
 <button class="tab" onclick="mainTab('expenses',this)">💰 Expenses</button>
 <button class="tab" onclick="mainTab('agent',this)">🤖 AI Agent</button></div>
@@ -461,6 +461,77 @@ console.log('%c[v6.8.8] Cache cleanup ran','color:#10B981;font-weight:bold;');
 
 <div id="sec-reports" style="display:none;"><div class="panel"><div class="panel-title" style="margin-bottom:14px;"><div class="dot" style="background:var(--accent2)"></div>Add Report</div><div class="form-col"><div class="form-pair"><div class="fg"><label>Report Name</label><input type="text" id="rpName" placeholder="e.g., 24 Hours Aging Dashboard"></div><div class="fg"><label>Category</label><select id="rpCat"></select></div></div><div class="fg full"><label>Links</label><div id="rpLinksContainer"><div class="link-entry"><input type="text" class="link-label-inp" placeholder="Label"><input type="url" class="link-url-inp" placeholder="https://..."><button type="button" class="link-del" onclick="this.parentElement.remove()" title="Remove">×</button></div></div><button type="button" class="btn btn-g" onclick="addLinkEntry('rpLinksContainer')" style="margin-top:4px;font-size:10px;">+ Add Link</button></div><div class="fg full"><label>Description</label><input type="text" id="rpDesc" placeholder="Brief description..."></div><div class="form-pair"><div class="fg"><label>Primary Owner</label><select id="rpPrimary"><option value="">— Select —</option></select></div><div class="fg"><label>Backup</label><select id="rpBackup"><option value="">— None —</option></select></div><div class="fg"><label>2nd Backup</label><select id="rpBackup2"><option value="">— None —</option></select></div></div></div><button class="btn btn-p" onclick="addReport()" style="margin-top:6px;">Add Report</button></div><div class="panel"><div class="panel-head"><div class="panel-title"><div class="dot" style="background:var(--accent2)"></div>Report Directory</div><div class="filter-bar"><input type="text" class="search-inp" id="rpSearch" placeholder="Search..." oninput="renderReports()"><select class="f-sel" id="rpFilterCat" onchange="renderReports()"></select></div></div><div id="reportList"></div></div></div>
 
+<div id="sec-qlinks" style="display:none;">
+<div class="panel">
+  <div class="panel-head">
+    <div class="panel-title"><div class="dot" style="background:var(--accent2)"></div>Quick Links — Your Work Apps</div>
+    <div class="filter-bar">
+      <input type="text" class="search-inp" id="qlSearch" placeholder="Search links..." oninput="renderQuickLinks()">
+      <select class="f-sel" id="qlEnvFilter" onchange="renderQuickLinks()">
+        <option value="">All Environments</option>
+        <option value="Accenture">🟣 Accenture</option>
+        <option value="Client">🔵 Client</option>
+        <option value="Personal">🟢 Personal</option>
+        <option value="Other">⚪ Other</option>
+      </select>
+      <select class="f-sel" id="qlCatFilter" onchange="renderQuickLinks()"><option value="">All Categories</option></select>
+      <button class="btn btn-g" onclick="openQLCategoryMgr()" style="gap:4px;">🏷 Categories</button>
+      <button class="btn btn-p" onclick="openQLAddModal()" style="gap:4px;"><i class="ico ico-plus" style="width:14px;height:14px;"></i> Add Link</button>
+    </div>
+  </div>
+  <div style="font-size:11px;color:var(--text2);margin-bottom:14px;line-height:1.5;">📌 Your personal launchpad — add shortcuts to LILO Tracker, GPH, dashboards, or any work app. Tag each link as <b style="color:var(--primary-lt);">Accenture</b> or <b style="color:var(--accent2);">Client</b> environment for easy access control. Links sync across devices via Gist.</div>
+  <div id="qlinksContainer"></div>
+</div>
+</div>
+
+<div class="modal-overlay" id="qlEditModal"><div class="modal" style="max-width:520px;">
+  <div class="modal-head"><h2 id="qlModalTitle">🔗 Add Quick Link</h2><button class="m-close" onclick="closeM('qlEditModal')">×</button></div>
+  <div class="form-col">
+    <div class="form-pair">
+      <div class="fg" style="flex:2"><label>Link Label *</label><input type="text" id="qlLabel" placeholder="e.g. LILO Tracker, GPH"></div>
+      <div class="fg" style="max-width:90px;"><label>Icon</label><input type="text" id="qlIcon" placeholder="🔗" maxlength="4" style="text-align:center;font-size:18px;"></div>
+    </div>
+    <div class="fg full"><label>Full URL *</label><input type="url" id="qlUrl" placeholder="https://..."></div>
+    <div class="fg full">
+      <label>Environment *</label>
+      <div class="ql-env-grid">
+        <label class="ql-env-radio acn"><input type="radio" name="qlEnv" value="Accenture"><span class="ql-env-dot"></span><span>🟣 Accenture</span></label>
+        <label class="ql-env-radio client"><input type="radio" name="qlEnv" value="Client"><span class="ql-env-dot"></span><span>🔵 Client</span></label>
+        <label class="ql-env-radio personal"><input type="radio" name="qlEnv" value="Personal"><span class="ql-env-dot"></span><span>🟢 Personal</span></label>
+        <label class="ql-env-radio other"><input type="radio" name="qlEnv" value="Other"><span class="ql-env-dot"></span><span>⚪ Other</span></label>
+      </div>
+    </div>
+    <div class="form-pair">
+      <div class="fg" style="flex:2"><label>Category</label>
+        <div style="display:flex;gap:6px;">
+          <select id="qlCategorySel" style="flex:1;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;"></select>
+          <button type="button" class="btn btn-g" onclick="openQLCategoryMgr()" style="white-space:nowrap;font-size:10px;">🏷 Manage</button>
+        </div>
+      </div>
+      <div class="fg" style="flex:2"><label>Description (optional)</label><input type="text" id="qlDesc" placeholder="Short note..."></div>
+    </div>
+    <div style="font-size:9px;color:var(--muted);"><b>Common icons:</b> 🕒 LILO · 📊 GPH/BI · 📧 Email · 💬 Chat · 📅 Calendar · 📁 Files · 🎓 Learning · 👔 HR · 🎫 Tickets · 📈 Reports · 💼 Dashboards</div>
+  </div>
+  <input type="hidden" id="qlEditIdx">
+  <div class="modal-footer"><button class="btn btn-g" onclick="closeM('qlEditModal')">Cancel</button><button class="btn btn-p" onclick="saveQuickLink()">💾 Save Link</button></div>
+</div></div>
+
+<div class="modal-overlay" id="qlCatMgrModal"><div class="modal" style="max-width:480px;">
+  <div class="modal-head"><h2>🏷 Manage Categories</h2><button class="m-close" onclick="closeM('qlCatMgrModal')">×</button></div>
+  <div style="margin-bottom:12px;">
+    <div style="display:flex;gap:6px;">
+      <input type="text" id="qlNewCatInput" placeholder="New category (e.g. Attendance, BI, Project XYZ)..." style="flex:1;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;" onkeydown="if(event.key==='Enter'){addQLCategory();event.preventDefault();}">
+      <input type="text" id="qlNewCatIcon" placeholder="Icon" maxlength="4" style="width:50px;padding:8px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:14px;font-family:inherit;text-align:center;">
+      <button class="btn btn-p" onclick="addQLCategory()">+ Add</button>
+    </div>
+    <div style="font-size:9px;color:var(--muted);margin-top:4px;">Categories help organize your links (e.g. Attendance, BI Dashboards, HR Tools, Project XYZ).</div>
+  </div>
+  <div id="qlCatList" style="max-height:340px;overflow-y:auto;"></div>
+  <div class="modal-footer">
+    <button class="btn btn-g" onclick="resetQLCategories()">Reset Defaults</button>
+    <button class="btn btn-g" onclick="closeM('qlCatMgrModal')">Close</button>
+  </div>
+</div></div>
 <div id="sec-leave" style="display:none;">
 
 <!-- ═══ MY LEAVE BALANCE ═══ -->
@@ -591,12 +662,12 @@ console.log('%c[v6.8.8] Cache cleanup ran','color:#10B981;font-weight:bold;');
 <div class="modal-overlay" id="adminListModal"><div class="modal" style="max-width:480px;"><div class="modal-head"><h2 id="almTitle">Manage List</h2><button class="m-close" onclick="closeM('adminListModal')">x</button></div><div style="margin-bottom:12px;"><div style="display:flex;gap:6px;"><input type="text" id="almNewVal" placeholder="New value..." style="flex:1;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;" onkeydown="if(event.key==='Enter'){addAdminListItem();event.preventDefault();}"><input type="text" id="almNewIcon" placeholder="Icon" style="width:50px;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;text-align:center;"><button class="btn btn-p" onclick="addAdminListItem()">+ Add</button></div></div><div id="almItems" style="max-height:340px;overflow-y:auto;"></div><div class="modal-footer"><button class="btn btn-g" onclick="resetAdminList()">Reset Defaults</button><button class="btn btn-g" onclick="closeM('adminListModal')">Close</button></div></div></div>
 <div class="alarm-overlay" id="alarmOverlay"><div class="alarm-modal"><div class="alarm-header"><div class="alarm-icon">🔔</div><div class="alarm-htext"><div class="alarm-title" id="alarmTitle"></div><div class="alarm-subtitle" id="alarmSubtitle"></div></div></div><div class="alarm-body"><div class="alarm-task-name" id="alarmTaskName"></div><div class="alarm-task-desc" id="alarmTaskDesc"></div><div class="alarm-meta" id="alarmMeta"></div><div class="alarm-actions"><button class="alarm-btn alarm-btn-complete" onclick="alarmComplete()">✅ Complete</button><div class="alarm-btn-row"><button class="alarm-btn alarm-btn-snooze" onclick="alarmSnooze(5)">⏰5m</button><button class="alarm-btn alarm-btn-snooze" onclick="alarmSnooze(10)">⏰10m</button></div><div class="alarm-btn-row"><button class="alarm-btn alarm-btn-secondary" onclick="alarmMinimize()">🔽 Min</button><button class="alarm-btn alarm-btn-secondary" onclick="alarmDismiss()">🔇 Dismiss</button></div></div><div class="alarm-queue" id="alarmQueue" style="display:none;"></div></div></div></div><div class="alarm-mini" id="alarmMini" onclick="alarmMaximize()"><div class="alarm-mini-head"><span>🔔</span><span class="alarm-mini-title" id="miniTitle"></span></div><div class="alarm-mini-actions" onclick="event.stopPropagation();"><button class="alarm-mini-btn cpl" onclick="alarmComplete()">✅</button><button class="alarm-mini-btn" onclick="alarmSnooze(5)">⏰</button><button class="alarm-mini-btn" onclick="alarmDismiss()">🔇</button></div></div><div class="voice-bar" id="voiceBar"><div style="font-size:24px;">🎤</div><div class="voice-bar-body"><div class="voice-bar-status on" id="voiceStatus">● LISTENING</div><div class="voice-bar-transcript" id="voiceTranscript">Say a command...</div><div class="voice-bar-hint">Try: "add task", "show today", "help"</div></div><button class="voice-bar-close" onclick="stopVoice()">×</button></div><button class="chat-fab" onclick="toggleChat()">💬</button><div class="chat-panel" id="chatPanel"><div class="chat-head"><div style="font-size:22px;">🤖</div><div class="chat-head-text"><div class="chat-head-title">Smart Assistant</div><div class="chat-head-sub">Tasks · Expenses · BI Expert · Everything</div></div><button class="chat-head-close" onclick="toggleChat()">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg bot">👋 Hi Mark! I can help with:<br>• <b>Tasks</b> — "add task Review SLA at 3pm high"<br>• <b>Expenses</b> — "expense Coffee 150" or "add expense KFC 160 gcash"<br>• <b>BI Expert</b> — "CALCULATE", "XLOOKUP", "power query merge"<br><br>Type <b>help</b> for all commands!<br>• <b>Leave</b> — "my leave balance" or "log vl today"</div></div><div class="chat-input-area"><textarea class="chat-input" id="chatInput" placeholder="Type..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat();}"></textarea><button class="chat-send" onclick="sendChat()">➤</button></div></div><div class="install-banner" id="installBanner"><div class="install-banner-text">📲 Install as app!</div><div class="install-banner-btns"><button class="install-banner-btn primary" onclick="doInstall()">Install</button><button class="install-banner-btn dismiss" onclick="dismissInstall()">Later</button></div></div>
 <div id="sbTooltip" style="display:none;position:fixed;z-index:9999;padding:6px 14px;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;font-size:11px;font-weight:600;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.3);pointer-events:none;"></div>
-<nav class="mobile-bnav" id="mobileNav"><button class="bnav-item active" data-tab="tasks" onclick="mobileNavTo('tasks',this)"><span class="bnav-icon"><i class="ico ico-schedule"></i></span><span>Tasks</span></button><button class="bnav-item" data-tab="recurring" onclick="mobileNavTo('recurring',this)"><span class="bnav-icon"><i class="ico ico-recurring"></i></span><span>Recurring</span></button><button class="bnav-item" data-tab="onetime" onclick="mobileNavTo('onetime',this)"><span class="bnav-icon"><i class="ico ico-plus"></i></span><span>Add</span></button><button class="bnav-item" data-tab="calendar" onclick="mobileNavTo('calendar',this)"><span class="bnav-icon"><i class="ico ico-calendar"></i></span><span>Calendar</span></button><button class="bnav-item" data-tab="more" onclick="toggleBnavMore(this)"><span class="bnav-icon"><i class="ico ico-dots"></i></span><span>More</span></button></nav><div class="bnav-more-menu" id="bnavMoreMenu"><button class="bnav-more-item" onclick="mobileNavTo('reports')"><span class="bnav-icon"><i class="ico ico-folder"></i></span>Reports</button><button class="bnav-more-item" onclick="mobileNavTo('leave')"><span class="bnav-icon"><i class="ico ico-leave"></i></span>Leave</button><button class="bnav-more-item" onclick="mobileNavTo('analytics')"><span class="bnav-icon"><i class="ico ico-chart"></i></span>Analytics</button><button class="bnav-more-item" onclick="mobileNavTo('templates')"><span class="bnav-icon"><i class="ico ico-template"></i></span>Templates</button><button class="bnav-more-item" onclick="mobileNavTo('lilo')"><span class="bnav-icon"><i class="ico ico-clock"></i></span>LILO</button>
+<nav class="mobile-bnav" id="mobileNav"><button class="bnav-item active" data-tab="tasks" onclick="mobileNavTo('tasks',this)"><span class="bnav-icon"><i class="ico ico-schedule"></i></span><span>Tasks</span></button><button class="bnav-item" data-tab="recurring" onclick="mobileNavTo('recurring',this)"><span class="bnav-icon"><i class="ico ico-recurring"></i></span><span>Recurring</span></button><button class="bnav-item" data-tab="onetime" onclick="mobileNavTo('onetime',this)"><span class="bnav-icon"><i class="ico ico-plus"></i></span><span>Add</span></button><button class="bnav-item" data-tab="calendar" onclick="mobileNavTo('calendar',this)"><span class="bnav-icon"><i class="ico ico-calendar"></i></span><span>Calendar</span></button><button class="bnav-item" data-tab="more" onclick="toggleBnavMore(this)"><span class="bnav-icon"><i class="ico ico-dots"></i></span><span>More</span></button></nav><div class="bnav-more-menu" id="bnavMoreMenu"><button class="bnav-more-item" onclick="mobileNavTo('reports')"><span class="bnav-icon"><i class="ico ico-folder"></i></span>Reports</button><button class="bnav-more-item" onclick="mobileNavTo('qlinks')"><span class="bnav-icon">🔗</span>Quick Links</button><button class="bnav-more-item" onclick="mobileNavTo('leave')"><span class="bnav-icon"><i class="ico ico-leave"></i></span>Leave</button><button class="bnav-more-item" onclick="mobileNavTo('analytics')"><span class="bnav-icon"><i class="ico ico-chart"></i></span>Analytics</button><button class="bnav-more-item" onclick="mobileNavTo('templates')"><span class="bnav-icon"><i class="ico ico-template"></i></span>Templates</button><button class="bnav-more-item" onclick="mobileNavTo('lilo')"><span class="bnav-icon"><i class="ico ico-clock"></i></span>LILO</button>
 <button class="bnav-more-item" onclick="mobileNavTo('expenses')"><span class="bnav-icon"><i class="ico ico-wallet"></i></span>Expenses</button>
 <button class="bnav-more-item" onclick="mobileNavTo('agent')"><span class="bnav-icon"><i class="ico ico-agent"></i></span>AI Agent</button></div>
 <div class="toast-c" id="toastC"></div><script>
 
-function navTo(s,b){var t=document.querySelectorAll('#mainTabs .tab'),m={tasks:0,recurring:1,onetime:2,reports:3,leave:4,analytics:5,calendar:6,templates:7,lilo:8,expenses:9,agent:10};if(m[s]!==undefined&&t[m[s]])t[m[s]].click();document.querySelectorAll('.sb-item[data-section]').forEach(function(x){x.classList.remove('active');});if(b)b.classList.add('active');else{var e=document.querySelector('.sb-item[data-section="'+s+'"]');if(e)e.classList.add('active');}setTimeout(updateSbBadges,50);if(window.innerWidth<1024){var sb=document.getElementById('sidebar');if(sb)sb.classList.remove('mobile-open');}}
+function navTo(s,b){var t=document.querySelectorAll('#mainTabs .tab'),m={tasks:0,recurring:1,onetime:2,reports:3,qlinks:4,leave:5,analytics:6,calendar:7,templates:8,lilo:9,expenses:10,agent:11};if(m[s]!==undefined&&t[m[s]])t[m[s]].click();document.querySelectorAll('.sb-item[data-section]').forEach(function(x){x.classList.remove('active');});if(b)b.classList.add('active');else{var e=document.querySelector('.sb-item[data-section="'+s+'"]');if(e)e.classList.add('active');}setTimeout(updateSbBadges,50);if(window.innerWidth<1024){var sb=document.getElementById('sidebar');if(sb)sb.classList.remove('mobile-open');}}
 function toggleSidebarCollapse(){var sb=document.getElementById('sidebar'),am=document.querySelector('.app-main');sb.classList.toggle('collapsed');am.classList.toggle('sb-collapsed');localStorage.setItem('p2_sb_collapsed',sb.classList.contains('collapsed')?'1':'0');}
 function mobileNavTo(t,b){document.getElementById('bnavMoreMenu').classList.remove('show');navTo(t);document.querySelectorAll('.bnav-item').forEach(function(x){x.classList.remove('active');});if(b)b.classList.add('active');else{var p=['tasks','recurring','onetime','calendar'],i=p.indexOf(t);if(i>=0)document.querySelectorAll('.bnav-item')[i].classList.add('active');else{var mb=document.querySelector('.bnav-item[data-tab="more"]');if(mb)mb.classList.add('active');}}window.scrollTo({top:0,behavior:'smooth'});}
 function toggleBnavMore(b){var m=document.getElementById('bnavMoreMenu');m.classList.toggle('show');if(m.classList.contains('show'))document.addEventListener('click',function c(e){if(!m.contains(e.target)&&e.target!==b&&!b.contains(e.target)){m.classList.remove('show');document.removeEventListener('click',c);}});}
@@ -688,6 +759,314 @@ function editReport(id){const r=ld(K.RP).find(x=>x.id===id);if(!r)return;documen
 function saveReport(){const id=+document.getElementById('epId').value;const r=ld(K.RP);const i=r.findIndex(x=>x.id===id);if(i===-1)return;const lnks=getLinksFromContainer('epLinksContainer');Object.assign(r[i],{name:document.getElementById('epName').value.trim(),links:lnks,url:lnks.length?lnks[0].url:'',category:document.getElementById('epCat').value,desc:document.getElementById('epDesc').value.trim(),primary:document.getElementById('epPrimary').value,backup:document.getElementById('epBackup').value,backup2:document.getElementById('epBackup2').value});sv(K.RP,r);closeM('editReportModal');renderAll();toast('Updated!','s');}
 function deleteReport(id){cfm('🗑️','Delete this report?',()=>{sv(K.RP,ld(K.RP).filter(x=>x.id!==id));renderAll();toast('🗑️','i');});}
 function renderReports(){const rps=ld(K.RP);const el=document.getElementById('reportList');const q=(document.getElementById('rpSearch')?.value||'').toLowerCase();const fc=document.getElementById('rpFilterCat')?.value||'';let f=rps;if(q)f=f.filter(r=>r.name.toLowerCase().includes(q));if(fc)f=f.filter(r=>r.category===fc);if(!f.length){el.innerHTML='<div class="empty">No reports.</div>';return;}el.innerHTML=f.map(r=>{let ow='';if(r.primary)ow+='<span class="owner-badge owner-primary">'+esc(r.primary.split(',')[0])+' (Primary)</span>';if(r.backup)ow+='<span class="owner-badge owner-backup">'+esc(r.backup.split(',')[0])+' (Backup)</span>';if(r.backup2)ow+='<span class="owner-badge owner-backup2">'+esc(r.backup2.split(',')[0])+' (2nd)</span>';const lk=getReportLinks(r),lh=lk.length?'<div class="rc-links-list">'+lk.map(l=>'<a href="'+esc(l.url)+'" target="_blank" class="tag-report" style="margin:1px 2px;">'+esc(l.label||'Link')+'</a>').join('')+'</div>':'';return '<div class="report-card"><div class="rc-icon">'+(getCatIcon('reportCats',r.category)||r.category)+'</div><div class="rc-body"><div class="rc-name">'+esc(r.name)+'</div>'+lh+(r.desc?'<div class="rc-desc">'+esc(r.desc)+'</div>':'')+'<div class="rc-tags"><span class="rc-tag">'+getCatDisplay('reportCats',r.category)+'</span>'+ow+'</div></div><div class="rc-actions"><button class="btn btn-i btn-g" onclick="editReport('+r.id+')"><i class="ico ico-edit" style="width:14px;height:14px;"></i></button><button class="btn btn-i btn-g" onclick="deleteReport('+r.id+')" style="color:var(--danger);"><i class="ico ico-trash" style="width:14px;height:14px;"></i></button></div></div>';}).join('');}
+
+// ═══ QUICK LINKS PAGE (v7.4 — Categories + Environment Tags) ═══
+var QL_DEFAULT_CATS = [
+  {name:'Attendance',icon:'🕒'},
+  {name:'Reports',icon:'📊'},
+  {name:'BI',icon:'📈'},
+  {name:'Communication',icon:'💬'},
+  {name:'Files',icon:'📁'},
+  {name:'HR',icon:'👔'},
+  {name:'IT Tools',icon:'🎫'},
+  {name:'Learning',icon:'🎓'},
+  {name:'Dashboards',icon:'💼'},
+  {name:'Project',icon:'📌'},
+  {name:'Other',icon:'🔗'}
+];
+var QL_ENV_META = {
+  'Accenture':{color:'#A29BFE',bg:'rgba(108,92,231,.12)',emoji:'🟣',label:'Accenture'},
+  'Client':   {color:'#74B9FF',bg:'rgba(9,132,227,.12)',emoji:'🔵',label:'Client'},
+  'Personal': {color:'#55EFC4',bg:'rgba(0,184,148,.12)',emoji:'🟢',label:'Personal'},
+  'Other':    {color:'#B2BEC3',bg:'rgba(178,190,195,.12)',emoji:'⚪',label:'Other'}
+};
+
+function getQuickLinks(){
+  try{return JSON.parse(localStorage.getItem('tf_quick_links')||'null')||[];}catch(e){return [];}
+}
+function saveQuickLinks(arr){
+  localStorage.setItem('tf_quick_links',JSON.stringify(arr));
+}
+function getQLCategories(){
+  try{
+    var c=JSON.parse(localStorage.getItem('tf_quick_link_cats')||'null');
+    if(!c||!Array.isArray(c)||!c.length){
+      localStorage.setItem('tf_quick_link_cats',JSON.stringify(QL_DEFAULT_CATS));
+      return QL_DEFAULT_CATS.slice();
+    }
+    return c;
+  }catch(e){return QL_DEFAULT_CATS.slice();}
+}
+function saveQLCategories(arr){
+  localStorage.setItem('tf_quick_link_cats',JSON.stringify(arr));
+}
+function getCatIconByName(name){
+  var c=getQLCategories().find(function(x){return x.name===name;});
+  return c?(c.icon||'🔗'):'🔗';
+}
+function seedDefaultLinksIfEmpty(){
+  var l=getQuickLinks();
+  if(l.length)return;
+  var defaults=[
+    {label:'LILO Tracker',url:'',icon:'🕒',category:'Attendance',environment:'Accenture',desc:'Login/Logout time tracker'},
+    {label:'GPH',url:'',icon:'📊',category:'Reports',environment:'Accenture',desc:'Group Performance Hub'},
+    {label:'Power BI',url:'https://app.powerbi.com',icon:'📈',category:'BI',environment:'Accenture',desc:'Dashboards & reports'},
+    {label:'Outlook',url:'https://outlook.office.com',icon:'📧',category:'Communication',environment:'Accenture',desc:'Email'},
+    {label:'Teams',url:'https://teams.microsoft.com',icon:'💬',category:'Communication',environment:'Accenture',desc:'Chat & meetings'},
+    {label:'SharePoint',url:'',icon:'📁',category:'Files',environment:'Accenture',desc:'Document library'}
+  ];
+  saveQuickLinks(defaults);
+}
+
+function renderQuickLinks(){
+  seedDefaultLinksIfEmpty();
+  var links=getQuickLinks();
+  var cats=getQLCategories();
+  var q=(document.getElementById('qlSearch')&&document.getElementById('qlSearch').value||'').toLowerCase();
+  var fc=document.getElementById('qlCatFilter')&&document.getElementById('qlCatFilter').value||'';
+  var fenv=document.getElementById('qlEnvFilter')&&document.getElementById('qlEnvFilter').value||'';
+  // Category filter dropdown
+  var catSel=document.getElementById('qlCatFilter');
+  if(catSel){
+    var cur=catSel.value;
+    catSel.innerHTML='<option value="">All Categories</option>'+cats.map(function(c){return '<option value="'+esc(c.name)+'">'+(c.icon?c.icon+' ':'')+esc(c.name)+'</option>';}).join('');
+    catSel.value=cur;
+  }
+  // Filter
+  var filtered=links.map(function(l,i){return {l:l,i:i};}).filter(function(o){
+    var l=o.l;
+    if(q && !((l.label||'').toLowerCase().includes(q) || (l.category||'').toLowerCase().includes(q) || (l.desc||'').toLowerCase().includes(q) || (l.environment||'').toLowerCase().includes(q))) return false;
+    if(fc && l.category!==fc) return false;
+    if(fenv && (l.environment||'Other')!==fenv) return false;
+    return true;
+  });
+  var c=document.getElementById('qlinksContainer');
+  if(!c)return;
+  if(!filtered.length){
+    c.innerHTML='<div class="empty"><div class="empty-icon">🔗</div>'+(q||fc||fenv?'No links match your filter.':'No quick links yet. Click <b>Add Link</b> to create your first one.')+'</div>';
+    return;
+  }
+  // Group by environment, then category
+  var byEnv={};
+  filtered.forEach(function(o){
+    var env=o.l.environment||'Other';
+    if(!byEnv[env])byEnv[env]={};
+    var cat=o.l.category||'Uncategorized';
+    if(!byEnv[env][cat])byEnv[env][cat]=[];
+    byEnv[env][cat].push(o);
+  });
+  var envOrder=['Accenture','Client','Personal','Other'];
+  var html='';
+  envOrder.forEach(function(env){
+    if(!byEnv[env])return;
+    var meta=QL_ENV_META[env]||QL_ENV_META.Other;
+    var envCount=0;
+    Object.keys(byEnv[env]).forEach(function(cat){envCount+=byEnv[env][cat].length;});
+    html+='<div class="ql-env-header" style="border-left:4px solid '+meta.color+';background:'+meta.bg+';">'+
+      '<span class="ql-env-emoji">'+meta.emoji+'</span>'+
+      '<span class="ql-env-name">'+meta.label+' Environment</span>'+
+      '<span class="ql-env-count">'+envCount+' link'+(envCount!==1?'s':'')+'</span>'+
+    '</div>';
+    Object.keys(byEnv[env]).sort().forEach(function(cat){
+      var catIcon=getCatIconByName(cat);
+      html+='<div class="ql-cat-header"><span class="ql-cat-icon">'+catIcon+'</span><span class="ql-cat-label">'+esc(cat)+'</span><span class="ql-cat-line"></span><span class="ql-cat-count">'+byEnv[env][cat].length+'</span></div>';
+      html+='<div class="ql-grid">';
+      byEnv[env][cat].forEach(function(o){
+        var l=o.l, i=o.i;
+        var ic=l.icon||'🔗';
+        var hasUrl=l.url && l.url.trim();
+        var envMeta=QL_ENV_META[l.environment||'Other']||QL_ENV_META.Other;
+        html+='<div class="ql-card'+(hasUrl?'':' ql-no-url')+'" style="border-top:3px solid '+envMeta.color+';">';
+        html+=  '<div class="ql-card-actions">';
+        html+=    '<button class="ql-btn" onclick="openQLEditModal('+i+')" title="Edit"><i class="ico ico-edit" style="width:12px;height:12px;"></i></button>';
+        html+=    '<button class="ql-btn ql-btn-del" onclick="deleteQuickLink('+i+')" title="Delete"><i class="ico ico-trash" style="width:12px;height:12px;"></i></button>';
+        html+=  '</div>';
+        if(hasUrl){
+          html+='<a href="'+esc(l.url)+'" target="_blank" rel="noopener" class="ql-card-body">';
+        }else{
+          html+='<div class="ql-card-body" onclick="openQLEditModal('+i+');" style="cursor:pointer;">';
+        }
+        html+=    '<div class="ql-icon">'+ic+'</div>';
+        html+=    '<div class="ql-text">';
+        html+=      '<div class="ql-label">'+esc(l.label||'(no label)')+'</div>';
+        html+=      '<div class="ql-badges">';
+        html+=        '<span class="ql-env-badge" style="color:'+envMeta.color+';background:'+envMeta.bg+';">'+envMeta.emoji+' '+envMeta.label+'</span>';
+        if(l.category) html+= '<span class="ql-cat-badge">'+catIcon+' '+esc(l.category)+'</span>';
+        html+=      '</div>';
+        if(l.desc) html+=  '<div class="ql-desc">'+esc(l.desc)+'</div>';
+        if(!hasUrl) html+= '<div class="ql-desc" style="color:var(--warning);font-style:italic;">⚠ No URL set — click to add</div>';
+        html+=    '</div>';
+        html+= hasUrl?'</a>':'</div>';
+        html+='</div>';
+      });
+      html+='</div>';
+    });
+  });
+  c.innerHTML=html;
+}
+
+function populateQLCategoryDropdown(selectedVal){
+  var sel=document.getElementById('qlCategorySel');
+  if(!sel)return;
+  var cats=getQLCategories();
+  sel.innerHTML='<option value="">— None —</option>'+cats.map(function(c){return '<option value="'+esc(c.name)+'">'+(c.icon?c.icon+' ':'')+esc(c.name)+'</option>';}).join('');
+  if(selectedVal) sel.value=selectedVal;
+}
+
+function openQLAddModal(){
+  document.getElementById('qlModalTitle').innerHTML='🔗 Add Quick Link';
+  document.getElementById('qlEditIdx').value='-1';
+  document.getElementById('qlLabel').value='';
+  document.getElementById('qlUrl').value='';
+  document.getElementById('qlIcon').value='🔗';
+  document.getElementById('qlDesc').value='';
+  populateQLCategoryDropdown('');
+  // Default to Accenture
+  document.querySelectorAll('input[name="qlEnv"]').forEach(function(r){r.checked=(r.value==='Accenture');});
+  document.getElementById('qlEditModal').classList.add('show');
+  setTimeout(function(){document.getElementById('qlLabel').focus();},80);
+}
+function openQLEditModal(idx){
+  var links=getQuickLinks();
+  var l=links[idx];
+  if(!l)return;
+  document.getElementById('qlModalTitle').innerHTML='✏️ Edit Quick Link';
+  document.getElementById('qlEditIdx').value=idx;
+  document.getElementById('qlLabel').value=l.label||'';
+  document.getElementById('qlUrl').value=l.url||'';
+  document.getElementById('qlIcon').value=l.icon||'🔗';
+  document.getElementById('qlDesc').value=l.desc||'';
+  populateQLCategoryDropdown(l.category||'');
+  var env=l.environment||'Accenture';
+  document.querySelectorAll('input[name="qlEnv"]').forEach(function(r){r.checked=(r.value===env);});
+  document.getElementById('qlEditModal').classList.add('show');
+  setTimeout(function(){document.getElementById('qlUrl').focus();},80);
+}
+function saveQuickLink(){
+  var idx=parseInt(document.getElementById('qlEditIdx').value);
+  var label=document.getElementById('qlLabel').value.trim();
+  var url=document.getElementById('qlUrl').value.trim();
+  var icon=document.getElementById('qlIcon').value.trim()||'🔗';
+  var category=document.getElementById('qlCategorySel').value;
+  var desc=document.getElementById('qlDesc').value.trim();
+  var envRadio=document.querySelector('input[name="qlEnv"]:checked');
+  var environment=envRadio?envRadio.value:'Accenture';
+  if(!label){toast('Label is required','e');document.getElementById('qlLabel').focus();return;}
+  if(url && !/^https?:\/\//i.test(url)) url='https://'+url;
+  var links=getQuickLinks();
+  var entry={label:label,url:url,icon:icon,category:category,environment:environment,desc:desc};
+  if(idx>=0 && idx<links.length){
+    links[idx]=entry;
+    toast('✏️ Link updated','s');
+  }else{
+    links.push(entry);
+    toast('🔗 Link added','s');
+  }
+  saveQuickLinks(links);
+  closeM('qlEditModal');
+  renderQuickLinks();
+}
+function deleteQuickLink(idx){
+  var links=getQuickLinks();
+  var l=links[idx];
+  if(!l)return;
+  cfm('🗑','Delete <b>'+esc(l.label)+'</b>?',function(){
+    links.splice(idx,1);
+    saveQuickLinks(links);
+    renderQuickLinks();
+    toast('🗑 Link removed','i');
+  });
+}
+
+// ═══ QUICK LINK CATEGORY MANAGER ═══
+function openQLCategoryMgr(){
+  renderQLCategoryList();
+  document.getElementById('qlCatMgrModal').classList.add('show');
+}
+function renderQLCategoryList(){
+  var cats=getQLCategories();
+  var links=getQuickLinks();
+  var el=document.getElementById('qlCatList');
+  if(!el)return;
+  if(!cats.length){el.innerHTML='<div class="empty" style="padding:14px;font-size:11px;">No categories yet.</div>';return;}
+  el.innerHTML=cats.map(function(c,i){
+    var used=links.filter(function(l){return l.category===c.name;}).length;
+    return '<div class="alm-item">'+
+      '<span class="alm-icon">'+(c.icon||'🔗')+'</span>'+
+      '<span class="alm-text">'+esc(c.name)+(used?'<span style="font-size:9px;color:var(--muted);margin-left:6px;">('+used+' link'+(used!==1?'s':'')+')</span>':'')+'</span>'+
+      '<button class="alm-act" onclick="editQLCategory('+i+')" title="Edit">✏️</button>'+
+      '<button class="alm-act del" onclick="deleteQLCategory('+i+')" title="Delete">🗑</button>'+
+    '</div>';
+  }).join('');
+}
+function addQLCategory(){
+  var name=document.getElementById('qlNewCatInput').value.trim();
+  var icon=document.getElementById('qlNewCatIcon').value.trim()||'🔗';
+  if(!name){toast('Enter a category name','e');return;}
+  var cats=getQLCategories();
+  if(cats.some(function(c){return c.name.toLowerCase()===name.toLowerCase();})){toast('Category already exists','e');return;}
+  cats.push({name:name,icon:icon});
+  saveQLCategories(cats);
+  document.getElementById('qlNewCatInput').value='';
+  document.getElementById('qlNewCatIcon').value='';
+  renderQLCategoryList();
+  // refresh the link page filter + edit modal dropdown if open
+  renderQuickLinks();
+  if(document.getElementById('qlEditModal').classList.contains('show')){
+    populateQLCategoryDropdown(document.getElementById('qlCategorySel').value);
+  }
+  toast('🏷 Category added','s');
+}
+function editQLCategory(idx){
+  var cats=getQLCategories();
+  var c=cats[idx];
+  if(!c)return;
+  var newName=prompt('Category name:',c.name);
+  if(newName===null)return;
+  newName=newName.trim();
+  if(!newName){toast('Name required','e');return;}
+  var newIcon=prompt('Icon (emoji):',c.icon||'🔗');
+  if(newIcon===null)newIcon=c.icon||'🔗';
+  newIcon=newIcon.trim()||'🔗';
+  // Rename in links
+  if(newName!==c.name){
+    var links=getQuickLinks();
+    links.forEach(function(l){if(l.category===c.name)l.category=newName;});
+    saveQuickLinks(links);
+  }
+  cats[idx]={name:newName,icon:newIcon};
+  saveQLCategories(cats);
+  renderQLCategoryList();
+  renderQuickLinks();
+  toast('✏️ Category updated','s');
+}
+function deleteQLCategory(idx){
+  var cats=getQLCategories();
+  var c=cats[idx];
+  if(!c)return;
+  var links=getQuickLinks();
+  var used=links.filter(function(l){return l.category===c.name;}).length;
+  var msg='Delete <b>'+esc(c.name)+'</b>?';
+  if(used) msg+='<br><span style="color:var(--warning);font-size:10px;">'+used+' link'+(used!==1?'s':'')+' will be set to no category.</span>';
+  cfm('🗑',msg,function(){
+    cats.splice(idx,1);
+    saveQLCategories(cats);
+    links.forEach(function(l){if(l.category===c.name)l.category='';});
+    saveQuickLinks(links);
+    renderQLCategoryList();
+    renderQuickLinks();
+    toast('🗑 Category removed','i');
+  });
+}
+function resetQLCategories(){
+  cfm('🔄','Reset categories to defaults? (Existing link categories are kept)',function(){
+    saveQLCategories(QL_DEFAULT_CATS.slice());
+    renderQLCategoryList();
+    renderQuickLinks();
+    toast('🔄 Categories reset','s');
+  });
+}
+
 function buildReportChips(cid,sel){const rps=ld(K.RP);const el=document.getElementById(cid);if(!rps.length){el.innerHTML='<span style="font-size:10px;color:var(--muted);">No reports</span>';return;}const s=new Set(sel||[]);el.innerHTML=rps.map(r=>`<div class="report-chip ${s.has(r.id)?'selected':''}" data-id="${r.id}" onclick="this.classList.toggle('selected')">${esc(r.name)}</div>`).join('');}
 function getChips(cid){return[...document.querySelectorAll('#'+cid+' .report-chip.selected')].map(c=>+c.dataset.id);}
 function populateReportFilter(){const rps=ld(K.RP);const s=document.getElementById('fReport');const v=s.value;s.innerHTML='<option value="">Reports</option>'+rps.map(r=>`<option value="${r.id}">${r.name}</option>`).join('');s.value=v;}
@@ -773,8 +1152,8 @@ function delRem(id){sv(K.M,ld(K.M).filter(x=>x.id!==id));renderAll();}
 function clearPastRem(){const a=ld(K.M).filter(r=>r.date>=todayStr()&&!r.dismissed);if(a.length===ld(K.M).length)return;cfm('🧹','Clear?',()=>{sv(K.M,a);renderAll();});}
 
 // ═══ RENDERING ═══
-function renderAll(){setTimeout(updateSbBadges,100);setTimeout(renderKanban,50);setTimeout(renderRecentlyCompleted,60);dailyGen();if(typeof refreshAllDropdowns==='function')refreshAllDropdowns();renderToday();if(typeof updateBackupStats==='function')updateBackupStats();renderRecurList();renderReminders();renderReports();renderLeave();renderOutBanner();renderKPIs();renderNwdBanner();populateReportFilter();populateOwnerDropdowns();populateBUDropdowns();populateDependsDropdowns();buildReportChips('rcReportSel',[]);buildReportChips('otReportSel',[]);populateWSSelector();populateStepTplChips();}
-function mainTab(s,b){document.querySelectorAll('#mainTabs .tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');['tasks','recurring','onetime','reports','leave','analytics','calendar','templates','lilo','expenses','agent'].forEach(x=>{const el=document.getElementById('sec-'+x);if(el)el.style.display=x===s?'block':'none';});if(s==='analytics')renderAnalytics();if(s==='calendar')renderCalendar();if(s==='templates'){renderMsgTemplates();renderStepTemplates();renderWorkspaces();}if(s==='lilo'){initLiloSelectors();}
+function renderAll(){setTimeout(updateSbBadges,100);setTimeout(renderKanban,50);setTimeout(renderRecentlyCompleted,60);dailyGen();if(typeof refreshAllDropdowns==='function')refreshAllDropdowns();renderToday();if(typeof updateBackupStats==='function')updateBackupStats();renderRecurList();renderReminders();renderReports();renderLeave();if(typeof renderQuickLinks==='function')renderQuickLinks();renderOutBanner();renderKPIs();renderNwdBanner();populateReportFilter();populateOwnerDropdowns();populateBUDropdowns();populateDependsDropdowns();buildReportChips('rcReportSel',[]);buildReportChips('otReportSel',[]);populateWSSelector();populateStepTplChips();}
+function mainTab(s,b){document.querySelectorAll('#mainTabs .tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');['tasks','recurring','onetime','reports','qlinks','leave','analytics','calendar','templates','lilo','expenses','agent'].forEach(x=>{const el=document.getElementById('sec-'+x);if(el)el.style.display=x===s?'block':'none';});if(s==='qlinks')renderQuickLinks();if(s==='analytics')renderAnalytics();if(s==='calendar')renderCalendar();if(s==='templates'){renderMsgTemplates();renderStepTemplates();renderWorkspaces();}if(s==='lilo'){initLiloSelectors();}
 if(s==='expenses'){initExpenseSection();renderExpenses();}
 if(s==='agent'){if(typeof renderAgentPanel==='function')renderAgentPanel();}
 var mg=document.querySelector('.main-grid');if(mg)mg.style.display=s==='agent'?'none':'';}
@@ -5043,11 +5422,15 @@ function stopAutoSync(){
 window.tfGistToggleAuto=function(){
   var cfg=getCfg();
   cfg.autoSync=!cfg.autoSync;
+  cfg.syncMode=cfg.autoSync?(cfg.syncMode==='both'?'both':'push-only'):'off';
   saveCfg(cfg);
-  var sw=document.querySelector('.tf-gist-switch');
+  var sw=document.getElementById('tfGistAutoSwitch');
   if(sw)sw.classList.toggle('on',cfg.autoSync);
-  if(cfg.autoSync){startAutoSync();if(typeof toast==='function')toast('🔄 Auto-sync ON','s');}
-  else{stopAutoSync();if(typeof toast==='function')toast('⏸ Auto-sync OFF','i');}
+  var mEl=document.getElementById('tfGistSyncMode');
+  if(mEl) mEl.value=cfg.syncMode;
+  if(TF.autoSync && TF.autoSync.apply) TF.autoSync.apply();
+  if(cfg.autoSync){if(typeof toast==='function')toast('\uD83D\uDD04 Auto-sync ON','s');}
+  else{if(typeof toast==='function')toast('⏸ Auto-sync OFF','i');}
 };
 
 // ── UI ──
@@ -5106,15 +5489,31 @@ function injectGistModal(){
       '<div class="tf-gist-help" style="margin-top:8px;"><b>Push</b> = upload local data to gist. <b>Pull</b> = download from gist (overwrites local!).</div>'+
     '</div>'+
     '<div class="tf-gist-section">'+
-      '<div class="tf-gist-section-title">🔄 Auto-Sync</div>'+
-      '<div class="tf-gist-auto">'+
-        '<div><div class="tf-gist-auto-label">Auto-push to gist</div>'+
-        '<div class="tf-gist-auto-desc">Periodically uploads changes</div></div>'+
-        '<div class="tf-gist-switch" id="tfGistAutoSwitch" onclick="tfGistToggleAuto()"></div>'+
+      '<div class="tf-gist-section-title">\uD83D\uDD04 Auto-Sync (Two-Way Capable)</div>'+
+      '<div class="tf-gist-field">'+
+        '<label>Sync Mode</label>'+
+        '<select id="tfGistSyncMode" onchange="tfGistSetSyncMode(this.value)" style="width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;">'+
+          '<option value="off">\u23F8 Off (manual only)</option>'+
+          '<option value="push-only">\u2B06\uFE0F Push only (Local \u2192 Gist)</option>'+
+          '<option value="pull-only">\u2B07\uFE0F Pull only (Gist \u2192 Local)</option>'+
+          '<option value="both">\uD83D\uDD04 Two-Way Sync (Recommended)</option>'+
+        '</select>'+
+        '<div class="tf-gist-help">Two-Way: pushes local changes AND pulls remote changes from your other devices.</div>'+
       '</div>'+
       '<div class="tf-gist-field">'+
-        '<label>Interval (minutes)</label>'+
-        '<input type="number" id="tfGistInterval" min="1" max="120" value="15" onchange="tfGistUpdateInterval(this.value)">'+
+        '<label>Sync Interval (minutes)</label>'+
+        '<input type="number" id="tfGistInterval" min="1" max="120" value="1" onchange="tfGistUpdateInterval(this.value)">'+
+        '<div class="tf-gist-help">Recommended: 1 min for near real-time multi-device sync.</div>'+
+      '</div>'+
+      '<div class="tf-gist-auto">'+
+        '<div><div class="tf-gist-auto-label">Pull on Window Focus</div>'+
+        '<div class="tf-gist-auto-desc">Auto-check for remote changes when you return to the app</div></div>'+
+        '<div class="tf-gist-switch" id="tfGistFocusSwitch" onclick="tfGistTogglePullOnFocus()"></div>'+
+      '</div>'+
+      '<div class="tf-gist-auto">'+
+        '<div><div class="tf-gist-auto-label">Pull on Startup</div>'+
+        '<div class="tf-gist-auto-desc">Fetch latest from Gist when app opens</div></div>'+
+        '<div class="tf-gist-switch" id="tfGistStartupSwitch" onclick="tfGistTogglePullOnStartup()"></div>'+
       '</div>'+
     '</div>'+
     '<div class="tf-gist-section">'+
@@ -5133,11 +5532,44 @@ window.tfGistOpenModal=function(){
   var cfg=getCfg();
   document.getElementById('tfGistToken').value=cfg.token||'';
   document.getElementById('tfGistId').value=cfg.gistId||'';
-  document.getElementById('tfGistInterval').value=cfg.autoInterval||15;
-  document.getElementById('tfGistAutoSwitch').classList.toggle('on',!!cfg.autoSync);
+  document.getElementById('tfGistInterval').value=cfg.autoInterval||1;
+  var modeEl=document.getElementById('tfGistSyncMode');
+  if(modeEl){var m=cfg.syncMode || (cfg.autoSync?'push-only':'off');modeEl.value=m;}
+  var fs=document.getElementById('tfGistFocusSwitch');
+  if(fs) fs.classList.toggle('on', cfg.pullOnFocus!==false);
+  var ss=document.getElementById('tfGistStartupSwitch');
+  if(ss) ss.classList.toggle('on', cfg.pullOnStartup!==false);
   updateStatusDisplay();
   updateLogDisplay();
   document.getElementById('tfGistModal').classList.add('show');
+};
+
+window.tfGistSetSyncMode=function(mode){
+  var cfg=getCfg();
+  cfg.syncMode=mode;
+  cfg.autoSync=(mode==='push-only'||mode==='both');
+  saveCfg(cfg);
+  if(TF.autoSync && TF.autoSync.apply) TF.autoSync.apply();
+  if(typeof toast==='function'){
+    var lbl={'off':'\u23F8 Off','pull-only':'\u2B07\uFE0F Pull only','push-only':'\u2B06\uFE0F Push only','both':'\uD83D\uDD04 Two-Way Sync'}[mode]||mode;
+    toast('Sync mode: '+lbl,'s');
+  }
+};
+window.tfGistTogglePullOnFocus=function(){
+  var cfg=getCfg();
+  cfg.pullOnFocus=!(cfg.pullOnFocus!==false);
+  saveCfg(cfg);
+  var sw=document.getElementById('tfGistFocusSwitch');
+  if(sw) sw.classList.toggle('on', cfg.pullOnFocus);
+  if(typeof toast==='function') toast(cfg.pullOnFocus?'\uD83D\uDD04 Pull on focus ON':'\u23F8 Pull on focus OFF','i');
+};
+window.tfGistTogglePullOnStartup=function(){
+  var cfg=getCfg();
+  cfg.pullOnStartup=!(cfg.pullOnStartup!==false);
+  saveCfg(cfg);
+  var sw=document.getElementById('tfGistStartupSwitch');
+  if(sw) sw.classList.toggle('on', cfg.pullOnStartup);
+  if(typeof toast==='function') toast(cfg.pullOnStartup?'\uD83D\uDD04 Pull on startup ON':'\u23F8 Pull on startup OFF','i');
 };
 
 window.tfGistSaveCfg=function(){
@@ -5165,9 +5597,11 @@ window.tfGistClearCfg=function(){
 
 window.tfGistUpdateInterval=function(v){
   var cfg=getCfg();
-  cfg.autoInterval=Math.max(1,Math.min(120,+v||15));
+  cfg.autoInterval=Math.max(1,Math.min(120,+v||1));
   saveCfg(cfg);
-  if(cfg.autoSync){stopAutoSync();startAutoSync();}
+  if(typeof stopAutoSync==='function') stopAutoSync();
+  if(cfg.autoSync && typeof startAutoSync==='function') startAutoSync();
+  if(TF.autoSync && TF.autoSync.apply) TF.autoSync.apply();
 };
 
 // ── FAB indicator ──
@@ -6255,38 +6689,108 @@ tfacPages.shortcuts=function(){
   '</div>';
 };
 
-// ═══ PAGE: ABOUT ═══
+// ═══ PAGE: ABOUT (v7.3 — Full Stats + Latest Versions + Feature Overview) ═══
 tfacPages.about=function(){
   var stats={};
-  ['p2_tasks','p2_recurring','p2_reports','tf_dev_projects','p2_expenses'].forEach(function(k){try{var d=JSON.parse(localStorage.getItem(k)||'[]');stats[k]=Array.isArray(d)?d.filter(function(x){return x&&!x._deleted;}).length:0;}catch(e){stats[k]=0;}});
+  var dataKeys=[
+    ['p2_tasks','One-Time Tasks','📋'],
+    ['p2_recurring','Recurring','🔄'],
+    ['p2_reports','Reports','📂'],
+    ['p2_reminders','Reminders','🔔'],
+    ['p2_leave','Team Leave','🏥'],
+    ['p2_my_leave_log','My Leave','🧍'],
+    ['p2_lilo_data','LILO Days','🕒'],
+    ['p2_expenses','Expenses','💰'],
+    ['p2_msg_tpl','Msg Templates','📝'],
+    ['p2_step_tpl','Step Templates','✅'],
+    ['p2_team','Team Members','👥'],
+    ['p2_workspaces','Workspaces','🗂'],
+    ['tf_dev_projects','Developments','📊'],
+    ['tf_goals','Goals','🎯'],
+    ['tf_habits','Habits','🔁'],
+    ['tf_focus_sessions','Focus Sessions','⏱'],
+    ['tf_meeting_drafts','Meeting Drafts','📋'],
+    ['p2_comp_history','Completed','✔️'],
+    ['tf_quick_links','Quick Links','🔗']
+  ];
+  dataKeys.forEach(function(row){
+    var k=row[0];
+    try{
+      var raw=localStorage.getItem(k);
+      if(!raw){stats[k]=0;return;}
+      var d=JSON.parse(raw);
+      if(Array.isArray(d)) stats[k]=d.filter(function(x){return x&&!x._deleted;}).length;
+      else if(typeof d==='object'&&d) stats[k]=Object.keys(d).length;
+      else stats[k]=0;
+    }catch(e){stats[k]=0;}
+  });
+  var totalRecords=0; Object.keys(stats).forEach(function(k){totalRecords+=stats[k]||0;});
+  var gistCfg={}; try{gistCfg=JSON.parse(localStorage.getItem('tf_gist_config')||'{}');}catch(e){}
+  var syncMode=gistCfg.syncMode||(gistCfg.autoSync?'push-only':'off');
+  var syncLabel={'off':'⏸ Off','push-only':'⬆️ Push only','pull-only':'⬇️ Pull only','both':'🔄 Two-Way Sync'}[syncMode]||syncMode;
+  var syncColor=syncMode==='both'?'var(--success)':(syncMode==='off'?'var(--muted)':'var(--accent)');
+  var lastSync=gistCfg.lastSync?new Date(gistCfg.lastSync).toLocaleString():'Never';
+  var statHtml=dataKeys.map(function(row){
+    var k=row[0],lbl=row[1],ic=row[2];
+    return '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats[k]||0)+'</div><div class="tfac-stat-l">'+ic+' '+lbl+'</div></div>';
+  }).join('');
+
   return '<div class="tfac-page active">'+
     '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">ℹ️</span>About TaskFlow</div><div class="tfac-page-desc">Your personal productivity hub</div></div></div>'+
     '<div class="tfac-card" style="background:linear-gradient(135deg,rgba(108,92,231,.08),rgba(0,206,201,.04));">'+
       '<div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">'+
         '<div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#6C5CE7,#00CEC9);display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff;font-weight:800;">T</div>'+
-        '<div><div style="font-size:20px;font-weight:800;">TaskFlow</div><div style="font-size:11px;color:var(--text2);">Version 6.7 · Admin Center + Page Layout</div></div>'+
+        '<div><div style="font-size:20px;font-weight:800;">TaskFlow</div><div style="font-size:11px;color:var(--text2);">Version 7.3 · Quick Links Page + Two-Way Sync</div></div>'+
       '</div>'+
-      '<div style="font-size:11px;color:var(--text2);line-height:1.6;">A single-file offline-capable productivity webapp.</div>'+
+      '<div style="font-size:11px;color:var(--text2);line-height:1.6;">A single-file offline-capable productivity webapp with cloud sync, AI insights, voice control, and full multi-device support.</div>'+
+      '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">'+
+        '<span style="font-size:10px;padding:4px 10px;border-radius:12px;background:'+syncColor+';color:#fff;font-weight:700;">Sync: '+syncLabel+'</span>'+
+        '<span style="font-size:10px;padding:4px 10px;border-radius:12px;background:var(--card2);border:1px solid var(--border);color:var(--text2);font-weight:600;">Last sync: '+lastSync+'</span>'+
+        '<span style="font-size:10px;padding:4px 10px;border-radius:12px;background:var(--card2);border:1px solid var(--border);color:var(--text2);font-weight:600;">'+totalRecords+' total records</span>'+
+      '</div>'+
     '</div>'+
-    '<div class="tfac-card"><div class="tfac-card-title">📊 Your Data Summary</div><div class="tfac-stat-grid">'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_tasks||0)+'</div><div class="tfac-stat-l">📋 Tasks</div></div>'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_recurring||0)+'</div><div class="tfac-stat-l">🔄 Recurring</div></div>'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_reports||0)+'</div><div class="tfac-stat-l">📂 Reports</div></div>'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.tf_dev_projects||0)+'</div><div class="tfac-stat-l">📊 Developments</div></div>'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_expenses||0)+'</div><div class="tfac-stat-l">💰 Expenses</div></div>'+
-    '</div></div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">📊 Your Data Summary</div>'+
+      '<div class="tfac-stat-grid">'+statHtml+'</div>'+
+    '</div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">✨ Core Features</div>'+
+      '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">📋 Task Management</div><div style="font-size:10px;color:var(--text2);">Schedule, recurring, kanban, priorities, dependencies</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🔗 Quick Links Hub</div><div style="font-size:10px;color:var(--text2);">Personal launchpad for LILO, GPH, dashboards & more</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🔄 Two-Way Cloud Sync</div><div style="font-size:10px;color:var(--text2);">Sync across devices via GitHub Gist</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🤖 AI Agent</div><div style="font-size:10px;color:var(--text2);">Daily briefings, risk alerts, smart suggestions</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🎤 Voice Control</div><div style="font-size:10px;color:var(--text2);">Add tasks and navigate by voice</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">📝 Markdown Notes</div><div style="font-size:10px;color:var(--text2);">Rich notes for meetings, dev logs, quick notes</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🎯 Focus Mode</div><div style="font-size:10px;color:var(--text2);">Pomodoro timer + distraction-free UI</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🕒 LILO Attendance</div><div style="font-size:10px;color:var(--text2);">Shift-aware time tracking with CSV export</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">💰 Expense Tracker</div><div style="font-size:10px;color:var(--text2);">Budget, categories, tags, daily charts</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🏥 Leave Balance</div><div style="font-size:10px;color:var(--text2);">VL/SL tracking, team leave, LILO sync</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">📊 Analytics</div><div style="font-size:10px;color:var(--text2);">Productivity insights, streaks, patterns</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">📅 Calendar View</div><div style="font-size:10px;color:var(--text2);">Monthly task overview with priority dots</div></div>'+
+      '</div>'+
+    '</div>'+
     '<div class="tfac-card"><div class="tfac-card-title">📜 Version Highlights</div><ul style="font-size:11px;color:var(--text2);line-height:1.7;padding-left:18px;margin:0;">'+
+      '<li><b>v7.3</b> — 🔗 Quick Links as full sidebar page · sleek modal · drag-to-reorder ready</li>'+
+      '<li><b>v7.2</b> — Quick Links / Important Links manager (in About)</li>'+
+      '<li><b>v7.1</b> — 🔄 Two-Way Gist Sync · Pull on focus · Pull on startup</li>'+
+      '<li><b>v7.0</b> — Professional Polish · UI redesign · Consolidated stylesheet</li>'+
+      '<li><b>v6.9</b> — Markdown rendering for Notes, Meetings & Dev logs</li>'+
+      '<li><b>v6.8</b> — Configurable Next Up · Persistent timer state · Scroll-preserving updates</li>'+
       '<li><b>v6.7</b> — Page Layout configuration · Backup/Settings consolidated</li>'+
       '<li><b>v6.6</b> — Admin Center unified configuration</li>'+
       '<li><b>v6.5</b> — Selective backup with module-level control</li>'+
-      '<li><b>v6.4</b> — GitHub Gist cloud sync</li>'+
-      '<li><b>v6.3</b> — Universal search, Quick capture, Trash, Health</li>'+
+      '<li><b>v6.4</b> — GitHub Gist cloud sync (one-way)</li>'+
+      '<li><b>v6.3</b> — Universal search · Quick capture · Trash · Health Check</li>'+
       '<li><b>v6.0</b> — Development progress tracker</li>'+
     '</ul></div>'+
-    '<div class="tfac-card"><div class="tfac-card-title">🔗 Useful Links</div><div class="tfac-action-grid">'+
+    '<div class="tfac-card"><div class="tfac-card-title">🛠 App Tools</div><div class="tfac-action-grid">'+
+      '<button class="tfac-action-btn" onclick="navTo(\'qlinks\')"><div class="tfac-action-icon">🔗</div><div class="tfac-action-body"><div class="tfac-action-title">Quick Links</div><div class="tfac-action-sub">LILO, GPH, etc.</div></div></button>'+
       '<button class="tfac-action-btn" onclick="if(typeof openHelp===\'function\')openHelp()"><div class="tfac-action-icon">📚</div><div class="tfac-action-body"><div class="tfac-action-title">Help Center</div></div></button>'+
       '<button class="tfac-action-btn" onclick="if(typeof openCmdPalette===\'function\')openCmdPalette()"><div class="tfac-action-icon">🔍</div><div class="tfac-action-body"><div class="tfac-action-title">Command Palette</div><div class="tfac-action-sub">Ctrl+K</div></div></button>'+
       '<button class="tfac-action-btn" onclick="if(typeof openGPT===\'function\')openGPT()"><div class="tfac-action-icon">🤖</div><div class="tfac-action-body"><div class="tfac-action-title">AI Assistant</div><div class="tfac-action-sub">Alt+G</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof tfGistOpenModal===\'function\')tfGistOpenModal()"><div class="tfac-action-icon">☁️</div><div class="tfac-action-body"><div class="tfac-action-title">Gist Sync</div><div class="tfac-action-sub">Two-Way enabled</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof exportBackup===\'function\')exportBackup()"><div class="tfac-action-icon">💾</div><div class="tfac-action-body"><div class="tfac-action-title">Backup Data</div><div class="tfac-action-sub">JSON export</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof toggleAdmin===\'function\')toggleAdmin()"><div class="tfac-action-icon">⚙️</div><div class="tfac-action-body"><div class="tfac-action-title">Admin Center</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof toggleTheme===\'function\')toggleTheme()"><div class="tfac-action-icon">🎨</div><div class="tfac-action-body"><div class="tfac-action-title">Toggle Theme</div></div></button>'+
     '</div></div>'+
   '</div>';
 };
@@ -7744,6 +8248,55 @@ body.tf-dock-on #tfGistFab{display:none !important;}
 .tf-sync-badge.is-err .tf-sync-dot{background:var(--danger);}
 @keyframes tf-pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
 
+
+/* ═══ QUICK LINKS PAGE (v7.4 — Environment + Categories) ═══ */
+.ql-env-header{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;margin:18px 0 10px;font-size:13px;font-weight:700;}
+.ql-env-header:first-of-type{margin-top:6px;}
+.ql-env-emoji{font-size:18px;}
+.ql-env-name{flex:1;letter-spacing:.5px;}
+.ql-env-count{font-size:10px;font-weight:600;background:rgba(0,0,0,.12);padding:3px 10px;border-radius:10px;color:var(--text);}
+.ql-cat-header{display:flex;align-items:center;gap:8px;padding:10px 6px 6px;}
+.ql-cat-header:first-of-type{padding-top:4px;}
+.ql-cat-icon{font-size:14px;}
+.ql-cat-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);}
+.ql-cat-line{flex:1;height:1px;background:var(--border);}
+.ql-cat-count{font-size:9px;color:var(--text2);font-weight:600;background:var(--card2);padding:2px 8px;border-radius:10px;border:1px solid var(--border);}
+.ql-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:6px;}
+.ql-card{position:relative;background:var(--card2);border:1px solid var(--border);border-radius:12px;transition:all .2s;overflow:hidden;}
+.ql-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 20px rgba(108,92,231,.15);}
+.ql-card.ql-no-url{opacity:.7;border-style:dashed;}
+.ql-card.ql-no-url:hover{opacity:1;}
+.ql-card-body{display:flex;align-items:flex-start;gap:12px;padding:14px 14px;text-decoration:none;color:inherit;cursor:pointer;}
+.ql-icon{font-size:28px;width:48px;height:48px;border-radius:11px;background:linear-gradient(135deg,rgba(108,92,231,.15),rgba(0,206,201,.1));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ql-text{flex:1;min-width:0;}
+.ql-label{font-size:13px;font-weight:700;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.ql-badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px;}
+.ql-env-badge{font-size:8px;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.4px;}
+.ql-cat-badge{font-size:8px;font-weight:600;padding:2px 7px;border-radius:5px;background:var(--card);color:var(--text2);border:1px solid var(--border);}
+.ql-desc{font-size:10px;color:var(--text2);margin-top:5px;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.ql-card-actions{position:absolute;top:6px;right:6px;display:flex;gap:3px;opacity:0;transition:opacity .15s;z-index:2;}
+.ql-card:hover .ql-card-actions{opacity:1;}
+.ql-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text2);cursor:pointer;font-size:10px;display:flex;align-items:center;justify-content:center;padding:0;}
+.ql-btn:hover{border-color:var(--primary);color:var(--primary);}
+.ql-btn-del:hover{border-color:var(--danger);color:var(--danger);background:rgba(239,68,68,.08);}
+/* Environment radio selector inside Add/Edit modal */
+.ql-env-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;margin-top:4px;}
+.ql-env-radio{display:flex;align-items:center;gap:8px;padding:10px 12px;border:2px solid var(--border);border-radius:9px;cursor:pointer;background:var(--card2);font-size:11px;font-weight:600;transition:all .15s;user-select:none;}
+.ql-env-radio:hover{border-color:var(--border2);background:var(--hover);}
+.ql-env-radio input{display:none;}
+.ql-env-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0;transition:all .15s;background:var(--card);}
+.ql-env-radio.acn:has(input:checked){border-color:#6C5CE7;background:rgba(108,92,231,.08);}
+.ql-env-radio.client:has(input:checked){border-color:#0984E3;background:rgba(9,132,227,.08);}
+.ql-env-radio.personal:has(input:checked){border-color:#00B894;background:rgba(0,184,148,.08);}
+.ql-env-radio.other:has(input:checked){border-color:#B2BEC3;background:rgba(178,190,195,.08);}
+.ql-env-radio:has(input:checked) .ql-env-dot{background:currentColor;border-color:currentColor;}
+.ql-env-radio.acn:has(input:checked) .ql-env-dot{background:#6C5CE7;border-color:#6C5CE7;}
+.ql-env-radio.client:has(input:checked) .ql-env-dot{background:#0984E3;border-color:#0984E3;}
+.ql-env-radio.personal:has(input:checked) .ql-env-dot{background:#00B894;border-color:#00B894;}
+.ql-env-radio.other:has(input:checked) .ql-env-dot{background:#B2BEC3;border-color:#B2BEC3;}
+@media(pointer:coarse){.ql-card-actions{opacity:1!important;}}
+@media(max-width:640px){.ql-grid{grid-template-columns:1fr;}.ql-env-grid{grid-template-columns:repeat(2,1fr);}}
+
 .tf-remote-banner{
   position:fixed;bottom:90px;left:50%;
   transform:translateX(-50%);
@@ -9047,13 +9600,34 @@ TF.autoSync = (function(){
     }
   }
 
-  // Expose for backward compat
+  var _focusListenerAdded = false;
+  function setupFocusPull(){
+    if(_focusListenerAdded) return;
+    _focusListenerAdded = true;
+    var lastFocusPull = 0;
+    function tryFocusPull(){
+      var cfg = TF.gist.getCfg();
+      if(cfg.pullOnFocus === false) return;
+      var mode = getMode();
+      if(mode !== 'pull-only' && mode !== 'both') return;
+      if(!cfg.token || !cfg.gistId) return;
+      var now = Date.now();
+      if(now - lastFocusPull < 10000) return;
+      lastFocusPull = now;
+      autoPullCheck(true);
+    }
+    window.addEventListener('focus', tryFocusPull);
+    document.addEventListener('visibilitychange', function(){
+      if(!document.hidden) tryFocusPull();
+    });
+  }
+  var _origApply = apply;
+  apply = function(){_origApply();setupFocusPull();};
   window.tfAutoSync = {getMode:getMode, setMode:setMode};
-
   return {
     apply:apply, setMode:setMode, getMode:getMode,
     setupChangeTracking:setupChangeTracking, injectBadge:injectBadge,
-    autoPullCheck:autoPullCheck
+    autoPullCheck:autoPullCheck, setupFocusPull:setupFocusPull
   };
 })();
 
@@ -9555,7 +10129,7 @@ TF.boot = function(){
     setTimeout(function(){
       var mode = TF.autoSync.getMode();
       var cfg = TF.gist.getCfg();
-      if((mode === 'pull-only' || mode === 'both') && cfg.token && cfg.gistId){
+      if((mode === 'pull-only' || mode === 'both') && cfg.token && cfg.gistId && cfg.pullOnStartup !== false){
         TF.autoSync.autoPullCheck(true);
       }
     }, 5000);
