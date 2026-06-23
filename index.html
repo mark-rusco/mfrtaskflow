@@ -10,7 +10,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="msapplication-tap-highlight" content="no">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236C5CE7'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='50' font-family='sans-serif' font-weight='bold'>T</text></svg>">
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVGFza0Zsb3ciLCJzaG9ydF9uYW1lIjoiVGFza0Zsb3ciLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBDMEYxQSIsInRoZW1lX2NvbG9yIjoiIzZDNUNFNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsPHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIwJyBmaWxsPSclMjM2QzVDRTcnLz48dGV4dCB4PSc1MCcgeT0nNjgnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZpbGw9J3doaXRlJyBmb250LXNpemU9JzUwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9J2JvbGQnPlQ8L3RleHQ+PC9zdmc+Iiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19"><title>TaskFlow v7.5 — Duplicate Task Fix</title>
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVGFza0Zsb3ciLCJzaG9ydF9uYW1lIjoiVGFza0Zsb3ciLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBDMEYxQSIsInRoZW1lX2NvbG9yIjoiIzZDNUNFNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsPHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJz48cmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIwJyBmaWxsPSclMjM2QzVDRTcnLz48dGV4dCB4PSc1MCcgeT0nNjgnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZpbGw9J3doaXRlJyBmb250LXNpemU9JzUwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9J2JvbGQnPlQ8L3RleHQ+PC9zdmc+Iiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19"><title>TaskFlow v7.6 — Master Build (All Updates Merged)</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 [data-theme="dark"]{--primary:#6C5CE7;--primary-dk:#5A4BD1;--primary-lt:#A29BFE;--accent:#00CEC9;--accent2:#0984E3;--success:#00B894;--warning:#FDCB6E;--danger:#E17055;--urgent:#D63031;--bg:#0B0E17;--card:#131726;--card2:#1A1F35;--input:#1E2440;--hover:#232A45;--text:#F0F0F5;--text2:#8892B0;--muted:#5A6380;--border:#2A3050;--border2:#353D5E;--shadow:rgba(0,0,0,.35);--glass:rgba(255,255,255,.03);}
 [data-theme="light"]{--primary:#6C5CE7;--primary-dk:#5A4BD1;--primary-lt:#6C5CE7;--accent:#00B4AE;--accent2:#0770C7;--success:#059669;--warning:#D97706;--danger:#DC2626;--urgent:#B91C1C;--bg:#F3F4F8;--card:#FFF;--card2:#EEF0F5;--input:#E4E7EE;--hover:#DCDFE8;--text:#1A1D2E;--text2:#4A5568;--muted:#8896AB;--border:#D0D4DE;--border2:#BFC5D2;--shadow:rgba(0,0,0,.06);--glass:rgba(0,0,0,.02);}
@@ -466,34 +466,23 @@ console.log('%c[v6.8.8] Cache cleanup ran','color:#10B981;font-weight:bold;');
   <div class="panel-head">
     <div class="panel-title"><div class="dot" style="background:var(--accent2)"></div>Quick Links — Your Work Apps</div>
     <div class="filter-bar">
-      <input type="text" class="search-inp" id="qlSearch" placeholder="Search links..." oninput="renderQuickLinks()">
-      <select class="f-sel" id="qlEnvFilter" onchange="renderQuickLinks()">
-        <option value="">All Environments</option>
-        <option value="Accenture">🟣 Accenture</option>
-        <option value="Client">🔵 Client</option>
-        <option value="Personal">🟢 Personal</option>
-        <option value="Other">⚪ Other</option>
-      </select>
+      <input type="text" class="search-inp" id="qlSearch" placeholder="Search..." oninput="renderQuickLinks()">
+      <select class="f-sel" id="qlEnvFilter" onchange="renderQuickLinks()"><option value="">All Environments</option><option value="Accenture">🟣 Accenture</option><option value="Client">🔵 Client</option><option value="Personal">🟢 Personal</option><option value="Other">⚪ Other</option></select>
       <select class="f-sel" id="qlCatFilter" onchange="renderQuickLinks()"><option value="">All Categories</option></select>
-      <button class="btn btn-g" onclick="openQLCategoryMgr()" style="gap:4px;">🏷 Categories</button>
-      <button class="btn btn-p" onclick="openQLAddModal()" style="gap:4px;"><i class="ico ico-plus" style="width:14px;height:14px;"></i> Add Link</button>
+      <button class="btn btn-g" onclick="openQLCategoryMgr()">🏷 Categories</button>
+      <button class="btn btn-p" onclick="openQLAddModal()"><i class="ico ico-plus" style="width:14px;height:14px;"></i> Add Link</button>
     </div>
   </div>
-  <div style="font-size:11px;color:var(--text2);margin-bottom:14px;line-height:1.5;">📌 Your personal launchpad — tag each link as <b style="color:var(--primary-lt);">Accenture</b> or <b style="color:var(--accent2);">Client</b> environment. Syncs across devices via Gist.</div>
+  <div style="font-size:11px;color:var(--text2);margin-bottom:14px;">📌 Tag links as <b style="color:var(--primary-lt);">Accenture</b> or <b style="color:var(--accent2);">Client</b>. Auto-syncs via Safe-Merge.</div>
   <div id="qlinksContainer"></div>
 </div>
 </div>
-
 <div class="modal-overlay" id="qlEditModal"><div class="modal" style="max-width:520px;">
   <div class="modal-head"><h2 id="qlModalTitle">🔗 Add Quick Link</h2><button class="m-close" onclick="closeM('qlEditModal')">×</button></div>
   <div class="form-col">
-    <div class="form-pair">
-      <div class="fg" style="flex:2"><label>Link Label *</label><input type="text" id="qlLabel" placeholder="e.g. LILO Tracker, GPH"></div>
-      <div class="fg" style="max-width:90px;"><label>Icon</label><input type="text" id="qlIcon" placeholder="🔗" maxlength="4" style="text-align:center;font-size:18px;"></div>
-    </div>
-    <div class="fg full"><label>Full URL *</label><input type="url" id="qlUrl" placeholder="https://..."></div>
-    <div class="fg full">
-      <label>Environment *</label>
+    <div class="form-pair"><div class="fg" style="flex:2"><label>Label *</label><input type="text" id="qlLabel" placeholder="e.g. LILO, GPH"></div><div class="fg" style="max-width:90px;"><label>Icon</label><input type="text" id="qlIcon" placeholder="🔗" maxlength="4" style="text-align:center;font-size:18px;"></div></div>
+    <div class="fg full"><label>URL *</label><input type="url" id="qlUrl" placeholder="https://..."></div>
+    <div class="fg full"><label>Environment *</label>
       <div class="ql-env-grid">
         <label class="ql-env-radio acn"><input type="radio" name="qlEnv" value="Accenture"><span class="ql-env-dot"></span><span>🟣 Accenture</span></label>
         <label class="ql-env-radio client"><input type="radio" name="qlEnv" value="Client"><span class="ql-env-dot"></span><span>🔵 Client</span></label>
@@ -501,36 +490,17 @@ console.log('%c[v6.8.8] Cache cleanup ran','color:#10B981;font-weight:bold;');
         <label class="ql-env-radio other"><input type="radio" name="qlEnv" value="Other"><span class="ql-env-dot"></span><span>⚪ Other</span></label>
       </div>
     </div>
-    <div class="form-pair">
-      <div class="fg" style="flex:2"><label>Category</label>
-        <div style="display:flex;gap:6px;">
-          <select id="qlCategorySel" style="flex:1;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;"></select>
-          <button type="button" class="btn btn-g" onclick="openQLCategoryMgr()" style="white-space:nowrap;font-size:10px;">🏷 Manage</button>
-        </div>
-      </div>
-      <div class="fg" style="flex:2"><label>Description (optional)</label><input type="text" id="qlDesc" placeholder="Short note..."></div>
-    </div>
+    <div class="form-pair"><div class="fg" style="flex:2"><label>Category</label><div style="display:flex;gap:6px;"><select id="qlCategorySel" style="flex:1;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;"></select><button type="button" class="btn btn-g" onclick="openQLCategoryMgr()" style="font-size:10px;">🏷 Manage</button></div></div><div class="fg" style="flex:2"><label>Description</label><input type="text" id="qlDesc" placeholder="Note..."></div></div>
   </div>
   <input type="hidden" id="qlEditIdx">
-  <div class="modal-footer"><button class="btn btn-g" onclick="closeM('qlEditModal')">Cancel</button><button class="btn btn-p" onclick="saveQuickLink()">💾 Save Link</button></div>
+  <div class="modal-footer"><button class="btn btn-g" onclick="closeM('qlEditModal')">Cancel</button><button class="btn btn-p" onclick="saveQuickLink()">💾 Save</button></div>
 </div></div>
-
 <div class="modal-overlay" id="qlCatMgrModal"><div class="modal" style="max-width:480px;">
   <div class="modal-head"><h2>🏷 Manage Categories</h2><button class="m-close" onclick="closeM('qlCatMgrModal')">×</button></div>
-  <div style="margin-bottom:12px;">
-    <div style="display:flex;gap:6px;">
-      <input type="text" id="qlNewCatInput" placeholder="New category..." style="flex:1;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;" onkeydown="if(event.key==='Enter'){addQLCategory();event.preventDefault();}">
-      <input type="text" id="qlNewCatIcon" placeholder="Icon" maxlength="4" style="width:50px;padding:8px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:14px;font-family:inherit;text-align:center;">
-      <button class="btn btn-p" onclick="addQLCategory()">+ Add</button>
-    </div>
-  </div>
+  <div style="margin-bottom:12px;"><div style="display:flex;gap:6px;"><input type="text" id="qlNewCatInput" placeholder="New category..." style="flex:1;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;" onkeydown="if(event.key==='Enter'){addQLCategory();event.preventDefault();}"><input type="text" id="qlNewCatIcon" placeholder="Icon" maxlength="4" style="width:50px;padding:8px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:14px;font-family:inherit;text-align:center;"><button class="btn btn-p" onclick="addQLCategory()">+ Add</button></div></div>
   <div id="qlCatList" style="max-height:340px;overflow-y:auto;"></div>
-  <div class="modal-footer">
-    <button class="btn btn-g" onclick="resetQLCategories()">Reset Defaults</button>
-    <button class="btn btn-g" onclick="closeM('qlCatMgrModal')">Close</button>
-  </div>
+  <div class="modal-footer"><button class="btn btn-g" onclick="resetQLCategories()">Reset Defaults</button><button class="btn btn-g" onclick="closeM('qlCatMgrModal')">Close</button></div>
 </div></div>
-
 <div id="sec-leave" style="display:none;">
 
 <!-- ═══ MY LEAVE BALANCE ═══ -->
@@ -620,7 +590,7 @@ console.log('%c[v6.8.8] Cache cleanup ran','color:#10B981;font-weight:bold;');
 <div class="panel"><div class="panel-title" style="margin-bottom:12px;"><div class="dot" style="background:var(--accent)"></div>Add Reminder</div><div class="form-col"><div class="fg full"><label>Title</label><input type="text" id="rTitle" placeholder="e.g., Send EOD report"></div><div class="fg full"><label>Notes</label><input type="text" id="rNotes" placeholder="Details..."></div><div class="form-pair"><div class="fg"><label>Date</label><input type="date" id="rDate"><div class="quick-dates"><button class="qd" onclick="qd('rDate','tmr')">Tmr</button><button class="qd" onclick="qd('rDate','nwd')">NWD</button></div></div><div class="fg"><label>Time</label><input type="time" id="rTime" value="09:00"></div></div></div><button class="btn btn-a btn-full" onclick="addReminder()" style="margin-top:10px;">Add Reminder</button></div>
 <div class="panel"><div class="panel-head"><div class="panel-title"><div class="dot" style="background:var(--warning)"></div>Reminders</div><button class="btn-g" onclick="clearPastRem()">🧹</button></div><div class="section-label" id="rlToday" style="display:none;">⏰ Today</div><div id="rlTodayL"></div><div class="section-label" id="rlTmr" style="display:none;">🔜 Tomorrow</div><div id="rlTmrL"></div><div class="section-label" id="rlNwd" style="display:none;">🗓️ NWD</div><div id="rlNwdL"></div><div class="section-label" id="rlFut" style="display:none;">📆 Future</div><div id="rlFutL"></div><div class="section-label" id="rlPast" style="display:none;">📭 Past</div><div id="rlPastL"></div><div id="remEmpty" class="empty"><div class="empty-icon">🔔</div>No reminders.</div></div>
 <div class="panel"><div class="panel-title" style="margin-bottom:10px;"><div class="dot" style="background:var(--success)"></div>Quick Notes</div><textarea id="qNotes" placeholder="Notes..." style="width:100%;min-height:100px;padding:10px;border:1px solid var(--border);border-radius:8px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;resize:vertical;" oninput="localStorage.setItem('planner_notes',this.value)"></textarea><div style="font-size:9px;color:var(--muted);margin-top:4px;">Auto-saved</div></div>
-<div class="panel"><div class="panel-title" style="margin-bottom:10px;"><div class="dot" style="background:var(--accent2)"></div>Backup & Restore</div><div class="backup-stats" id="backupStats"></div><div style="display:flex;gap:6px;flex-wrap:wrap;"><button class="btn btn-p" onclick="exportBackup()" style="flex:1;">Export Backup</button><label class="btn btn-g" style="flex:1;cursor:pointer;">Import<input type="file" id="importFile" accept=".json" style="display:none;" onchange="importBackup(event)"></label></div><div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;"><button class="btn btn-g" onclick="if(confirm('Scan and remove duplicate tasks?'))removeDuplicateTasks(false)" style="font-size:10px;">🧹 Remove Duplicates</button><button class="btn btn-g" onclick="toggleNoRegenCompleted()" id="noRegenBtn" style="font-size:10px;">⚙ Loading...</button></div><div style="display:flex;gap:6px;margin-top:6px;"><button class="btn btn-d" onclick="cfm('🗑️','Delete ALL data? Cannot be undone!',()=>{['p2_recurring','p2_tasks','p2_instances','p2_reminders','planner_notes','p2_lastGen','p2_reports','p2_leave','p2_team','planner_theme','p2_showOverdue','p2_lilo_data','p2_lilo_settings','p2_lilo_submitted','p2_task_cats','p2_report_cats','p2_leave_types','p2_priorities','p2_bu_objects','p2_expenses','p2_expense_cats','p2_pay_methods','p2_expense_tags','p2_expense_budget','p2_my_leave_config','p2_my_leave_log'].forEach(k=>localStorage.removeItem(k));location.reload();})">🗑️ Reset All</button></div><div class="backup-info">💾 Export/Import all data as JSON. Transfer between devices or keep as backup.</div></div>
+<div class="panel"><div class="panel-title" style="margin-bottom:10px;"><div class="dot" style="background:var(--accent2)"></div>Backup & Restore</div><div class="backup-stats" id="backupStats"></div><div style="display:flex;gap:6px;flex-wrap:wrap;"><button class="btn btn-p" onclick="exportBackup()" style="flex:1;">Export Backup</button><label class="btn btn-g" style="flex:1;cursor:pointer;">Import<input type="file" id="importFile" accept=".json" style="display:none;" onchange="importBackup(event)"></label></div><div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;"><button class="btn btn-g" onclick="if(confirm('Scan and remove duplicate tasks?'))removeDuplicateTasks(false)" style="font-size:10px;">🧹 Remove Duplicates</button><button class="btn btn-g" onclick="toggleNoRegenCompleted()" id="noRegenBtn" style="font-size:10px;">⏸ Always regen daily</button></div><div style="display:flex;gap:6px;margin-top:6px;"><button class="btn btn-d" onclick="cfm('🗑️','Delete ALL data? Cannot be undone!',()=>{['p2_recurring','p2_tasks','p2_instances','p2_reminders','planner_notes','p2_lastGen','p2_reports','p2_leave','p2_team','planner_theme','p2_showOverdue','p2_lilo_data','p2_lilo_settings','p2_lilo_submitted','p2_task_cats','p2_report_cats','p2_leave_types','p2_priorities','p2_bu_objects','p2_expenses','p2_expense_cats','p2_pay_methods','p2_expense_tags','p2_expense_budget','p2_my_leave_config','p2_my_leave_log'].forEach(k=>localStorage.removeItem(k));location.reload();})">🗑️ Reset All</button></div><div class="backup-info">💾 Export/Import all data as JSON. Transfer between devices or keep as backup.</div></div>
 
 </div></div>
 <div class="footer">TaskFlow v6.7 — Admin Center + Page Layout · Quick Capture · Trash Bin · Health Check · A11y © 2026</div>
@@ -759,40 +729,15 @@ function saveReport(){const id=+document.getElementById('epId').value;const r=ld
 function deleteReport(id){cfm('🗑️','Delete this report?',()=>{sv(K.RP,ld(K.RP).filter(x=>x.id!==id));renderAll();toast('🗑️','i');});}
 function renderReports(){const rps=ld(K.RP);const el=document.getElementById('reportList');const q=(document.getElementById('rpSearch')?.value||'').toLowerCase();const fc=document.getElementById('rpFilterCat')?.value||'';let f=rps;if(q)f=f.filter(r=>r.name.toLowerCase().includes(q));if(fc)f=f.filter(r=>r.category===fc);if(!f.length){el.innerHTML='<div class="empty">No reports.</div>';return;}el.innerHTML=f.map(r=>{let ow='';if(r.primary)ow+='<span class="owner-badge owner-primary">'+esc(r.primary.split(',')[0])+' (Primary)</span>';if(r.backup)ow+='<span class="owner-badge owner-backup">'+esc(r.backup.split(',')[0])+' (Backup)</span>';if(r.backup2)ow+='<span class="owner-badge owner-backup2">'+esc(r.backup2.split(',')[0])+' (2nd)</span>';const lk=getReportLinks(r),lh=lk.length?'<div class="rc-links-list">'+lk.map(l=>'<a href="'+esc(l.url)+'" target="_blank" class="tag-report" style="margin:1px 2px;">'+esc(l.label||'Link')+'</a>').join('')+'</div>':'';return '<div class="report-card"><div class="rc-icon">'+(getCatIcon('reportCats',r.category)||r.category)+'</div><div class="rc-body"><div class="rc-name">'+esc(r.name)+'</div>'+lh+(r.desc?'<div class="rc-desc">'+esc(r.desc)+'</div>':'')+'<div class="rc-tags"><span class="rc-tag">'+getCatDisplay('reportCats',r.category)+'</span>'+ow+'</div></div><div class="rc-actions"><button class="btn btn-i btn-g" onclick="editReport('+r.id+')"><i class="ico ico-edit" style="width:14px;height:14px;"></i></button><button class="btn btn-i btn-g" onclick="deleteReport('+r.id+')" style="color:var(--danger);"><i class="ico ico-trash" style="width:14px;height:14px;"></i></button></div></div>';}).join('');}
 
-// ═══ QUICK LINKS (v7.4 — Categories + Environment Tags) ═══
-var QL_DEFAULT_CATS = [
-  {name:'Attendance',icon:'🕒'},{name:'Reports',icon:'📊'},{name:'BI',icon:'📈'},
-  {name:'Communication',icon:'💬'},{name:'Files',icon:'📁'},{name:'HR',icon:'👔'},
-  {name:'IT Tools',icon:'🎫'},{name:'Learning',icon:'🎓'},{name:'Dashboards',icon:'💼'},
-  {name:'Project',icon:'📌'},{name:'Other',icon:'🔗'}
-];
-var QL_ENV_META = {
-  'Accenture':{color:'#A29BFE',bg:'rgba(108,92,231,.12)',emoji:'🟣',label:'Accenture'},
-  'Client':{color:'#74B9FF',bg:'rgba(9,132,227,.12)',emoji:'🔵',label:'Client'},
-  'Personal':{color:'#55EFC4',bg:'rgba(0,184,148,.12)',emoji:'🟢',label:'Personal'},
-  'Other':{color:'#B2BEC3',bg:'rgba(178,190,195,.12)',emoji:'⚪',label:'Other'}
-};
+// ═══ QUICK LINKS (v7.4 Categories + Environment) ═══
+var QL_DEFAULT_CATS=[{name:'Attendance',icon:'🕒'},{name:'Reports',icon:'📊'},{name:'BI',icon:'📈'},{name:'Communication',icon:'💬'},{name:'Files',icon:'📁'},{name:'HR',icon:'👔'},{name:'IT Tools',icon:'🎫'},{name:'Learning',icon:'🎓'},{name:'Dashboards',icon:'💼'},{name:'Project',icon:'📌'},{name:'Other',icon:'🔗'}];
+var QL_ENV_META={'Accenture':{color:'#A29BFE',bg:'rgba(108,92,231,.12)',emoji:'🟣',label:'Accenture'},'Client':{color:'#74B9FF',bg:'rgba(9,132,227,.12)',emoji:'🔵',label:'Client'},'Personal':{color:'#55EFC4',bg:'rgba(0,184,148,.12)',emoji:'🟢',label:'Personal'},'Other':{color:'#B2BEC3',bg:'rgba(178,190,195,.12)',emoji:'⚪',label:'Other'}};
 function getQuickLinks(){try{return JSON.parse(localStorage.getItem('tf_quick_links')||'null')||[];}catch(e){return [];}}
 function saveQuickLinks(arr){localStorage.setItem('tf_quick_links',JSON.stringify(arr));}
-function getQLCategories(){
-  try{var c=JSON.parse(localStorage.getItem('tf_quick_link_cats')||'null');
-    if(!c||!Array.isArray(c)||!c.length){localStorage.setItem('tf_quick_link_cats',JSON.stringify(QL_DEFAULT_CATS));return QL_DEFAULT_CATS.slice();}
-    return c;
-  }catch(e){return QL_DEFAULT_CATS.slice();}
-}
+function getQLCategories(){try{var c=JSON.parse(localStorage.getItem('tf_quick_link_cats')||'null');if(!c||!Array.isArray(c)||!c.length){localStorage.setItem('tf_quick_link_cats',JSON.stringify(QL_DEFAULT_CATS));return QL_DEFAULT_CATS.slice();}return c;}catch(e){return QL_DEFAULT_CATS.slice();}}
 function saveQLCategories(arr){localStorage.setItem('tf_quick_link_cats',JSON.stringify(arr));}
 function getCatIconByName(name){var c=getQLCategories().find(function(x){return x.name===name;});return c?(c.icon||'🔗'):'🔗';}
-function seedDefaultLinksIfEmpty(){
-  if(getQuickLinks().length)return;
-  saveQuickLinks([
-    {label:'LILO Tracker',url:'',icon:'🕒',category:'Attendance',environment:'Accenture',desc:'Login/Logout time tracker'},
-    {label:'GPH',url:'',icon:'📊',category:'Reports',environment:'Accenture',desc:'Group Performance Hub'},
-    {label:'Power BI',url:'https://app.powerbi.com',icon:'📈',category:'BI',environment:'Accenture',desc:'Dashboards'},
-    {label:'Outlook',url:'https://outlook.office.com',icon:'📧',category:'Communication',environment:'Accenture',desc:'Email'},
-    {label:'Teams',url:'https://teams.microsoft.com',icon:'💬',category:'Communication',environment:'Accenture',desc:'Chat & meetings'},
-    {label:'SharePoint',url:'',icon:'📁',category:'Files',environment:'Accenture',desc:'Document library'}
-  ]);
-}
+function seedDefaultLinksIfEmpty(){if(getQuickLinks().length)return;var n=Date.now();saveQuickLinks([{id:'ql_lilo_'+n,label:'LILO Tracker',url:'',icon:'🕒',category:'Attendance',environment:'Accenture',desc:'Login/Logout tracker',modifiedAt:n},{id:'ql_gph_'+n,label:'GPH',url:'',icon:'📊',category:'Reports',environment:'Accenture',desc:'Group Performance Hub',modifiedAt:n},{id:'ql_pbi_'+n,label:'Power BI',url:'https://app.powerbi.com',icon:'📈',category:'BI',environment:'Accenture',desc:'Dashboards',modifiedAt:n},{id:'ql_out_'+n,label:'Outlook',url:'https://outlook.office.com',icon:'📧',category:'Communication',environment:'Accenture',desc:'Email',modifiedAt:n},{id:'ql_teams_'+n,label:'Teams',url:'https://teams.microsoft.com',icon:'💬',category:'Communication',environment:'Accenture',desc:'Chat',modifiedAt:n},{id:'ql_sp_'+n,label:'SharePoint',url:'',icon:'📁',category:'Files',environment:'Accenture',desc:'Files',modifiedAt:n}]);}
 function renderQuickLinks(){
   seedDefaultLinksIfEmpty();
   var links=getQuickLinks(),cats=getQLCategories();
@@ -801,126 +746,27 @@ function renderQuickLinks(){
   var fenv=document.getElementById('qlEnvFilter')&&document.getElementById('qlEnvFilter').value||'';
   var catSel=document.getElementById('qlCatFilter');
   if(catSel){var cur=catSel.value;catSel.innerHTML='<option value="">All Categories</option>'+cats.map(function(c){return '<option value="'+esc(c.name)+'">'+(c.icon?c.icon+' ':'')+esc(c.name)+'</option>';}).join('');catSel.value=cur;}
-  var filtered=links.map(function(l,i){return {l:l,i:i};}).filter(function(o){
-    var l=o.l;
-    if(q&&!((l.label||'').toLowerCase().includes(q)||(l.category||'').toLowerCase().includes(q)||(l.desc||'').toLowerCase().includes(q)||(l.environment||'').toLowerCase().includes(q)))return false;
-    if(fc&&l.category!==fc)return false;
-    if(fenv&&(l.environment||'Other')!==fenv)return false;
-    return true;
-  });
+  var filtered=links.map(function(l,i){return {l:l,i:i};}).filter(function(o){var l=o.l;if(l._deleted)return false;if(q&&!((l.label||'').toLowerCase().includes(q)||(l.category||'').toLowerCase().includes(q)||(l.desc||'').toLowerCase().includes(q)))return false;if(fc&&l.category!==fc)return false;if(fenv&&(l.environment||'Other')!==fenv)return false;return true;});
   var c=document.getElementById('qlinksContainer');if(!c)return;
-  if(!filtered.length){c.innerHTML='<div class="empty"><div class="empty-icon">🔗</div>'+(q||fc||fenv?'No links match.':'No quick links yet.')+'</div>';return;}
-  var byEnv={};
-  filtered.forEach(function(o){var env=o.l.environment||'Other';if(!byEnv[env])byEnv[env]={};var cat=o.l.category||'Uncategorized';if(!byEnv[env][cat])byEnv[env][cat]=[];byEnv[env][cat].push(o);});
+  if(!filtered.length){c.innerHTML='<div class="empty"><div class="empty-icon">🔗</div>'+(q||fc||fenv?'No matches.':'No quick links yet.')+'</div>';return;}
+  var byEnv={};filtered.forEach(function(o){var env=o.l.environment||'Other';if(!byEnv[env])byEnv[env]={};var cat=o.l.category||'Uncategorized';if(!byEnv[env][cat])byEnv[env][cat]=[];byEnv[env][cat].push(o);});
   var envOrder=['Accenture','Client','Personal','Other'],html='';
-  envOrder.forEach(function(env){
-    if(!byEnv[env])return;var meta=QL_ENV_META[env]||QL_ENV_META.Other;var envCount=0;
-    Object.keys(byEnv[env]).forEach(function(cat){envCount+=byEnv[env][cat].length;});
-    html+='<div class="ql-env-header" style="border-left:4px solid '+meta.color+';background:'+meta.bg+';"><span class="ql-env-emoji">'+meta.emoji+'</span><span class="ql-env-name">'+meta.label+' Environment</span><span class="ql-env-count">'+envCount+' link'+(envCount!==1?'s':'')+'</span></div>';
-    Object.keys(byEnv[env]).sort().forEach(function(cat){
-      var catIcon=getCatIconByName(cat);
-      html+='<div class="ql-cat-header"><span class="ql-cat-icon">'+catIcon+'</span><span class="ql-cat-label">'+esc(cat)+'</span><span class="ql-cat-line"></span><span class="ql-cat-count">'+byEnv[env][cat].length+'</span></div><div class="ql-grid">';
-      byEnv[env][cat].forEach(function(o){
-        var l=o.l,i=o.i,ic=l.icon||'🔗',hasUrl=l.url&&l.url.trim();
-        var envMeta=QL_ENV_META[l.environment||'Other']||QL_ENV_META.Other;
-        html+='<div class="ql-card'+(hasUrl?'':' ql-no-url')+'" style="border-top:3px solid '+envMeta.color+';">';
-        html+='<div class="ql-card-actions"><button class="ql-btn" onclick="openQLEditModal('+i+')"><i class="ico ico-edit" style="width:12px;height:12px;"></i></button><button class="ql-btn ql-btn-del" onclick="deleteQuickLink('+i+')"><i class="ico ico-trash" style="width:12px;height:12px;"></i></button></div>';
-        html+=hasUrl?'<a href="'+esc(l.url)+'" target="_blank" rel="noopener" class="ql-card-body">':'<div class="ql-card-body" onclick="openQLEditModal('+i+');" style="cursor:pointer;">';
-        html+='<div class="ql-icon">'+ic+'</div><div class="ql-text"><div class="ql-label">'+esc(l.label||'(no label)')+'</div><div class="ql-badges"><span class="ql-env-badge" style="color:'+envMeta.color+';background:'+envMeta.bg+';">'+envMeta.emoji+' '+envMeta.label+'</span>';
-        if(l.category)html+='<span class="ql-cat-badge">'+catIcon+' '+esc(l.category)+'</span>';
-        html+='</div>';
-        if(l.desc)html+='<div class="ql-desc">'+esc(l.desc)+'</div>';
-        if(!hasUrl)html+='<div class="ql-desc" style="color:var(--warning);font-style:italic;">⚠ No URL — click to add</div>';
-        html+='</div>'+(hasUrl?'</a>':'</div>')+'</div>';
-      });
-      html+='</div>';
-    });
-  });
+  envOrder.forEach(function(env){if(!byEnv[env])return;var meta=QL_ENV_META[env]||QL_ENV_META.Other;var envCount=0;Object.keys(byEnv[env]).forEach(function(cat){envCount+=byEnv[env][cat].length;});html+='<div class="ql-env-header" style="border-left:4px solid '+meta.color+';background:'+meta.bg+';"><span class="ql-env-emoji">'+meta.emoji+'</span><span class="ql-env-name">'+meta.label+' Environment</span><span class="ql-env-count">'+envCount+'</span></div>';
+    Object.keys(byEnv[env]).sort().forEach(function(cat){var catIcon=getCatIconByName(cat);html+='<div class="ql-cat-header"><span class="ql-cat-icon">'+catIcon+'</span><span class="ql-cat-label">'+esc(cat)+'</span><span class="ql-cat-line"></span><span class="ql-cat-count">'+byEnv[env][cat].length+'</span></div><div class="ql-grid">';
+      byEnv[env][cat].forEach(function(o){var l=o.l,i=o.i,ic=l.icon||'🔗',hasUrl=l.url&&l.url.trim();var envMeta=QL_ENV_META[l.environment||'Other']||QL_ENV_META.Other;html+='<div class="ql-card'+(hasUrl?'':' ql-no-url')+'" style="border-top:3px solid '+envMeta.color+';"><div class="ql-card-actions"><button class="ql-btn" onclick="openQLEditModal('+i+')"><i class="ico ico-edit" style="width:12px;height:12px;"></i></button><button class="ql-btn ql-btn-del" onclick="deleteQuickLink('+i+')"><i class="ico ico-trash" style="width:12px;height:12px;"></i></button></div>'+(hasUrl?'<a href="'+esc(l.url)+'" target="_blank" rel="noopener" class="ql-card-body">':'<div class="ql-card-body" onclick="openQLEditModal('+i+');" style="cursor:pointer;">')+'<div class="ql-icon">'+ic+'</div><div class="ql-text"><div class="ql-label">'+esc(l.label||'(no label)')+'</div><div class="ql-badges"><span class="ql-env-badge" style="color:'+envMeta.color+';background:'+envMeta.bg+';">'+envMeta.emoji+' '+envMeta.label+'</span>'+(l.category?'<span class="ql-cat-badge">'+catIcon+' '+esc(l.category)+'</span>':'')+'</div>'+(l.desc?'<div class="ql-desc">'+esc(l.desc)+'</div>':'')+(!hasUrl?'<div class="ql-desc" style="color:var(--warning);font-style:italic;">⚠ No URL — click to add</div>':'')+'</div>'+(hasUrl?'</a>':'</div>')+'</div>';});
+      html+='</div>';});});
   c.innerHTML=html;
 }
 function populateQLCategoryDropdown(sel){var s=document.getElementById('qlCategorySel');if(!s)return;var cats=getQLCategories();s.innerHTML='<option value="">— None —</option>'+cats.map(function(c){return '<option value="'+esc(c.name)+'">'+(c.icon?c.icon+' ':'')+esc(c.name)+'</option>';}).join('');if(sel)s.value=sel;}
-function openQLAddModal(){
-  document.getElementById('qlModalTitle').innerHTML='🔗 Add Quick Link';
-  document.getElementById('qlEditIdx').value='-1';
-  document.getElementById('qlLabel').value='';document.getElementById('qlUrl').value='';
-  document.getElementById('qlIcon').value='🔗';document.getElementById('qlDesc').value='';
-  populateQLCategoryDropdown('');
-  document.querySelectorAll('input[name="qlEnv"]').forEach(function(r){r.checked=(r.value==='Accenture');});
-  document.getElementById('qlEditModal').classList.add('show');
-  setTimeout(function(){document.getElementById('qlLabel').focus();},80);
-}
-function openQLEditModal(idx){
-  var l=getQuickLinks()[idx];if(!l)return;
-  document.getElementById('qlModalTitle').innerHTML='✏️ Edit Quick Link';
-  document.getElementById('qlEditIdx').value=idx;
-  document.getElementById('qlLabel').value=l.label||'';document.getElementById('qlUrl').value=l.url||'';
-  document.getElementById('qlIcon').value=l.icon||'🔗';document.getElementById('qlDesc').value=l.desc||'';
-  populateQLCategoryDropdown(l.category||'');
-  var env=l.environment||'Accenture';
-  document.querySelectorAll('input[name="qlEnv"]').forEach(function(r){r.checked=(r.value===env);});
-  document.getElementById('qlEditModal').classList.add('show');
-}
-function saveQuickLink(){
-  var idx=parseInt(document.getElementById('qlEditIdx').value);
-  var label=document.getElementById('qlLabel').value.trim();
-  var url=document.getElementById('qlUrl').value.trim();
-  var icon=document.getElementById('qlIcon').value.trim()||'🔗';
-  var category=document.getElementById('qlCategorySel').value;
-  var desc=document.getElementById('qlDesc').value.trim();
-  var envR=document.querySelector('input[name="qlEnv"]:checked');
-  var environment=envR?envR.value:'Accenture';
-  if(!label){toast('Label required','e');return;}
-  if(url&&!/^https?:\/\//i.test(url))url='https://'+url;
-  var links=getQuickLinks();
-  var entry={label:label,url:url,icon:icon,category:category,environment:environment,desc:desc};
-  if(idx>=0&&idx<links.length){links[idx]=entry;toast('✏️ Link updated','s');}
-  else{links.push(entry);toast('🔗 Link added','s');}
-  saveQuickLinks(links);closeM('qlEditModal');renderQuickLinks();
-}
-function deleteQuickLink(idx){
-  var l=getQuickLinks()[idx];if(!l)return;
-  cfm('🗑','Delete <b>'+esc(l.label)+'</b>?',function(){
-    var links=getQuickLinks();links.splice(idx,1);saveQuickLinks(links);renderQuickLinks();toast('🗑 Removed','i');
-  });
-}
+function openQLAddModal(){document.getElementById('qlModalTitle').innerHTML='🔗 Add Quick Link';document.getElementById('qlEditIdx').value='-1';document.getElementById('qlLabel').value='';document.getElementById('qlUrl').value='';document.getElementById('qlIcon').value='🔗';document.getElementById('qlDesc').value='';populateQLCategoryDropdown('');document.querySelectorAll('input[name="qlEnv"]').forEach(function(r){r.checked=(r.value==='Accenture');});document.getElementById('qlEditModal').classList.add('show');setTimeout(function(){document.getElementById('qlLabel').focus();},80);}
+function openQLEditModal(idx){var l=getQuickLinks()[idx];if(!l)return;document.getElementById('qlModalTitle').innerHTML='✏️ Edit Quick Link';document.getElementById('qlEditIdx').value=idx;document.getElementById('qlLabel').value=l.label||'';document.getElementById('qlUrl').value=l.url||'';document.getElementById('qlIcon').value=l.icon||'🔗';document.getElementById('qlDesc').value=l.desc||'';populateQLCategoryDropdown(l.category||'');var env=l.environment||'Accenture';document.querySelectorAll('input[name="qlEnv"]').forEach(function(r){r.checked=(r.value===env);});document.getElementById('qlEditModal').classList.add('show');}
+function saveQuickLink(){var idx=parseInt(document.getElementById('qlEditIdx').value);var label=document.getElementById('qlLabel').value.trim();var url=document.getElementById('qlUrl').value.trim();var icon=document.getElementById('qlIcon').value.trim()||'🔗';var category=document.getElementById('qlCategorySel').value;var desc=document.getElementById('qlDesc').value.trim();var envR=document.querySelector('input[name="qlEnv"]:checked');var environment=envR?envR.value:'Accenture';if(!label){toast('Label required','e');return;}if(url&&!/^https?:\/\//i.test(url))url='https://'+url;var links=getQuickLinks();var now=Date.now();if(idx>=0&&idx<links.length){var e=links[idx];links[idx]={id:e.id||('ql_'+now),label:label,url:url,icon:icon,category:category,environment:environment,desc:desc,modifiedAt:now};toast('✏️ Updated','s');}else{links.push({id:'ql_'+now+'_'+Math.random().toString(36).slice(2,7),label:label,url:url,icon:icon,category:category,environment:environment,desc:desc,modifiedAt:now});toast('🔗 Added','s');}saveQuickLinks(links);closeM('qlEditModal');renderQuickLinks();}
+function deleteQuickLink(idx){var l=getQuickLinks()[idx];if(!l)return;cfm('🗑','Delete <b>'+esc(l.label)+'</b>?',function(){var links=getQuickLinks();if(l.id){links[idx]=Object.assign({},links[idx],{_deleted:true,modifiedAt:Date.now()});}else{links.splice(idx,1);}saveQuickLinks(links);renderQuickLinks();toast('🗑 Removed','i');});}
 function openQLCategoryMgr(){renderQLCategoryList();document.getElementById('qlCatMgrModal').classList.add('show');}
-function renderQLCategoryList(){
-  var cats=getQLCategories(),links=getQuickLinks();
-  var el=document.getElementById('qlCatList');if(!el)return;
-  if(!cats.length){el.innerHTML='<div class="empty" style="padding:14px;font-size:11px;">No categories.</div>';return;}
-  el.innerHTML=cats.map(function(c,i){
-    var used=links.filter(function(l){return l.category===c.name;}).length;
-    return '<div class="alm-item"><span class="alm-icon">'+(c.icon||'🔗')+'</span><span class="alm-text">'+esc(c.name)+(used?'<span style="font-size:9px;color:var(--muted);margin-left:6px;">('+used+')</span>':'')+'</span><button class="alm-act" onclick="editQLCategory('+i+')">✏️</button><button class="alm-act del" onclick="deleteQLCategory('+i+')">🗑</button></div>';
-  }).join('');
-}
-function addQLCategory(){
-  var name=document.getElementById('qlNewCatInput').value.trim();
-  var icon=document.getElementById('qlNewCatIcon').value.trim()||'🔗';
-  if(!name){toast('Enter name','e');return;}
-  var cats=getQLCategories();
-  if(cats.some(function(c){return c.name.toLowerCase()===name.toLowerCase();})){toast('Exists','e');return;}
-  cats.push({name:name,icon:icon});saveQLCategories(cats);
-  document.getElementById('qlNewCatInput').value='';document.getElementById('qlNewCatIcon').value='';
-  renderQLCategoryList();renderQuickLinks();
-  if(document.getElementById('qlEditModal').classList.contains('show')){populateQLCategoryDropdown(document.getElementById('qlCategorySel').value);}
-  toast('🏷 Added','s');
-}
-function editQLCategory(idx){
-  var cats=getQLCategories(),c=cats[idx];if(!c)return;
-  var nn=prompt('Category name:',c.name);if(nn===null)return;nn=nn.trim();if(!nn)return;
-  var ni=prompt('Icon:',c.icon||'🔗');if(ni===null)ni=c.icon||'🔗';ni=ni.trim()||'🔗';
-  if(nn!==c.name){var links=getQuickLinks();links.forEach(function(l){if(l.category===c.name)l.category=nn;});saveQuickLinks(links);}
-  cats[idx]={name:nn,icon:ni};saveQLCategories(cats);
-  renderQLCategoryList();renderQuickLinks();toast('✏️ Updated','s');
-}
-function deleteQLCategory(idx){
-  var cats=getQLCategories(),c=cats[idx];if(!c)return;
-  cfm('🗑','Delete <b>'+esc(c.name)+'</b>?',function(){
-    var links=getQuickLinks();cats.splice(idx,1);saveQLCategories(cats);
-    links.forEach(function(l){if(l.category===c.name)l.category='';});saveQuickLinks(links);
-    renderQLCategoryList();renderQuickLinks();toast('🗑 Removed','i');
-  });
-}
+function renderQLCategoryList(){var cats=getQLCategories(),links=getQuickLinks();var el=document.getElementById('qlCatList');if(!el)return;if(!cats.length){el.innerHTML='<div class="empty" style="padding:14px;font-size:11px;">No categories.</div>';return;}el.innerHTML=cats.map(function(c,i){var used=links.filter(function(l){return !l._deleted&&l.category===c.name;}).length;return '<div class="alm-item"><span class="alm-icon">'+(c.icon||'🔗')+'</span><span class="alm-text">'+esc(c.name)+(used?'<span style="font-size:9px;color:var(--muted);margin-left:6px;">('+used+')</span>':'')+'</span><button class="alm-act" onclick="editQLCategory('+i+')">✏️</button><button class="alm-act del" onclick="deleteQLCategory('+i+')">🗑</button></div>';}).join('');}
+function addQLCategory(){var name=document.getElementById('qlNewCatInput').value.trim();var icon=document.getElementById('qlNewCatIcon').value.trim()||'🔗';if(!name){toast('Enter name','e');return;}var cats=getQLCategories();if(cats.some(function(c){return c.name.toLowerCase()===name.toLowerCase();})){toast('Exists','e');return;}cats.push({name:name,icon:icon});saveQLCategories(cats);document.getElementById('qlNewCatInput').value='';document.getElementById('qlNewCatIcon').value='';renderQLCategoryList();renderQuickLinks();if(document.getElementById('qlEditModal').classList.contains('show')){populateQLCategoryDropdown(document.getElementById('qlCategorySel').value);}toast('🏷 Added','s');}
+function editQLCategory(idx){var cats=getQLCategories(),c=cats[idx];if(!c)return;var nn=prompt('Name:',c.name);if(nn===null)return;nn=nn.trim();if(!nn)return;var ni=prompt('Icon:',c.icon||'🔗');if(ni===null)ni=c.icon||'🔗';ni=ni.trim()||'🔗';if(nn!==c.name){var links=getQuickLinks();links.forEach(function(l){if(l.category===c.name)l.category=nn;});saveQuickLinks(links);}cats[idx]={name:nn,icon:ni};saveQLCategories(cats);renderQLCategoryList();renderQuickLinks();toast('✏️ Updated','s');}
+function deleteQLCategory(idx){var cats=getQLCategories(),c=cats[idx];if(!c)return;cfm('🗑','Delete <b>'+esc(c.name)+'</b>?',function(){var links=getQuickLinks();cats.splice(idx,1);saveQLCategories(cats);links.forEach(function(l){if(l.category===c.name)l.category='';});saveQuickLinks(links);renderQLCategoryList();renderQuickLinks();toast('🗑 Removed','i');});}
 function resetQLCategories(){cfm('🔄','Reset to defaults?',function(){saveQLCategories(QL_DEFAULT_CATS.slice());renderQLCategoryList();renderQuickLinks();toast('🔄 Reset','s');});}
 
 function buildReportChips(cid,sel){const rps=ld(K.RP);const el=document.getElementById(cid);if(!rps.length){el.innerHTML='<span style="font-size:10px;color:var(--muted);">No reports</span>';return;}const s=new Set(sel||[]);el.innerHTML=rps.map(r=>`<div class="report-chip ${s.has(r.id)?'selected':''}" data-id="${r.id}" onclick="this.classList.toggle('selected')">${esc(r.name)}</div>`).join('');}
@@ -984,16 +830,12 @@ return`<div class="leave-card ${act?'lc-active':''} ${past?'lc-past':''}"><div c
 // ═══ INSTANCE ENGINE ═══
 function shouldRun(r,d){if(r.startDate&&d<r.startDate)return false;if(r.endDate&&d>r.endDate)return false;const w=dow(d);if(r.freq==='daily')return true;if(r.freq==='weekdays')return w>=1&&w<=5;if(r.freq==='weekly')return w===dow(r.createdDate||todayStr());if(r.freq==='monthly'){const dt=new Date(d+'T00:00:00'),td2=r.monthDay||1,ld2=new Date(dt.getFullYear(),dt.getMonth()+1,0).getDate();return dt.getDate()===Math.min(td2,ld2);}if(r.freq==='custom')return(r.days||[]).includes(w);return false;}
 function genInst(d){
-  // FIX 1: Hardened dedupe — by recurId+date AND by name+date
-  // FIX 4: Skip if user has 'no-regen-after-complete' enabled and instance already completed
-  var rs=ld(K.R).filter(function(r){return r.active!==false;});
+  var rs=ld(K.R).filter(function(r){return r.active!==false && !r._deleted;});
   var is=ld(K.I);
-  var noRegen=localStorage.getItem('tf_no_regen_completed')==='1';
-  // Build dedupe sets for the target date
   var existingByRecurId={};
   var existingByName=new Set();
   is.forEach(function(i){
-    if(i.date===d){
+    if(i.date===d && !i._deleted){
       if(i.recurId!=null) existingByRecurId[i.recurId]=i;
       var key=(i.name||'').toLowerCase().trim();
       if(key) existingByName.add(key);
@@ -1002,110 +844,30 @@ function genInst(d){
   var n=0;
   rs.forEach(function(r){
     if(!shouldRun(r,d)) return;
-    var existing=existingByRecurId[r.id];
-    if(existing){
-      // Already an instance for this recurring task on this date — never duplicate
-      return;
-    }
-    // Also check by name (defensive — protects against import/sync edge cases)
+    if(existingByRecurId[r.id]) return;
     var nameKey=(r.name||'').toLowerCase().trim();
-    if(nameKey && existingByName.has(nameKey)){
-      return;
-    }
-    // FIX 4: If 'no-regen-after-complete' is enabled, also check completion history
-    if(noRegen){
-      var hist=ld(K.CH)||[];
-      var doneToday=hist.some(function(h){
-        if(!h||!h.time||!h.name) return false;
-        var hd=new Date(h.time).toLocaleDateString('en-CA');
-        return hd===d && (h.name||'').toLowerCase().trim()===nameKey;
-      });
-      if(doneToday) return;
-    }
-    is.push({
-      id:Date.now()+Math.random()*1e3|0,
-      recurId:r.id,name:r.name,desc:r.desc,priority:r.priority,category:r.category,
-      time:r.time,remindBefore:r.remindBefore,date:d,status:'pending',isRecurring:true,
-      reminded:false,reportIds:r.reportIds||[],snapshots:r.snapshots||[],
-      meetingNotes:r.meetingNotes||'',
-      steps:(r.steps||[]).map(function(s){return Object.assign({},s,{completed:false,completedDate:null});})
-    });
+    if(nameKey && existingByName.has(nameKey)) return;
+    is.push({id:Date.now()+Math.random()*1e3|0,recurId:r.id,name:r.name,desc:r.desc,priority:r.priority,category:r.category,time:r.time,remindBefore:r.remindBefore,date:d,status:'pending',isRecurring:true,reminded:false,reportIds:r.reportIds||[],snapshots:r.snapshots||[],meetingNotes:r.meetingNotes||'',steps:(r.steps||[]).map(function(s){return Object.assign({},s,{completed:false,completedDate:null});}),modifiedAt:Date.now()});
     existingByRecurId[r.id]=is[is.length-1];
     if(nameKey) existingByName.add(nameKey);
     n++;
   });
   if(n) sv(K.I,is);
 }
-
-// FIX 2: One-shot dedupe cleanup for existing duplicates
 window.removeDuplicateTasks=function(silent){
-  var is=ld(K.I);
-  var seen={};
-  var kept=[];
-  var removed=0;
-  // Sort so 'completed' instances win over 'pending' (keep the completed one)
-  is.sort(function(a,b){
-    var ac=a.status==='completed'?0:1;
-    var bc=b.status==='completed'?0:1;
-    return ac-bc;
-  });
-  is.forEach(function(i){
-    var key=(i.recurId!=null?'r:'+i.recurId:'n:'+((i.name||'').toLowerCase().trim()))+'@'+i.date;
-    if(seen[key]){removed++;return;}
-    seen[key]=true;kept.push(i);
-  });
-  // Also dedupe one-time tasks by name+due+status
-  var ts=ld(K.T);
-  var seenT={};
-  var keptT=[];
-  ts.sort(function(a,b){
-    var ac=a.status==='completed'?0:1;
-    var bc=b.status==='completed'?0:1;
-    return ac-bc;
-  });
-  ts.forEach(function(t){
-    var key='n:'+((t.name||'').toLowerCase().trim())+'@'+(t.due||'');
-    if(!t.name||!t.due){keptT.push(t);return;}
-    if(seenT[key]){removed++;return;}
-    seenT[key]=true;keptT.push(t);
-  });
-  if(removed>0){
-    sv(K.I,kept);
-    sv(K.T,keptT);
-    if(!silent && typeof toast==='function')toast('🧹 Removed '+removed+' duplicate task'+(removed!==1?'s':''),'s');
-    if(typeof renderAll==='function')renderAll();
-  }else{
-    if(!silent && typeof toast==='function')toast('No duplicates found','i');
-  }
+  var is=ld(K.I),seen={},kept=[],removed=0;
+  is.sort(function(a,b){var ac=a.status==='completed'?0:1;var bc=b.status==='completed'?0:1;return ac-bc;});
+  is.forEach(function(i){if(i._deleted){kept.push(i);return;}var key=(i.recurId!=null?'r:'+i.recurId:'n:'+((i.name||'').toLowerCase().trim()))+'@'+i.date;if(seen[key]){removed++;return;}seen[key]=true;kept.push(i);});
+  var ts=ld(K.T),seenT={},keptT=[];
+  ts.sort(function(a,b){var ac=a.status==='completed'?0:1;var bc=b.status==='completed'?0:1;return ac-bc;});
+  ts.forEach(function(t){if(t._deleted){keptT.push(t);return;}var key='n:'+((t.name||'').toLowerCase().trim())+'@'+(t.due||'');if(!t.name||!t.due){keptT.push(t);return;}if(seenT[key]){removed++;return;}seenT[key]=true;keptT.push(t);});
+  if(removed>0){sv(K.I,kept);sv(K.T,keptT);if(!silent && typeof toast==='function')toast('🧹 Removed '+removed+' duplicate'+(removed!==1?'s':''),'s');if(typeof renderAll==='function')renderAll();}
+  else{if(!silent && typeof toast==='function')toast('No duplicates found','i');}
   return removed;
 };
-
-// FIX 3: Per-task lastGen tracking (instead of single global key)
-function getPerTaskLastGen(){try{return JSON.parse(localStorage.getItem('tf_per_task_lastgen')||'{}');}catch(e){return {};}}
-function setPerTaskLastGen(o){localStorage.setItem('tf_per_task_lastgen',JSON.stringify(o));}
-
-window.toggleNoRegenCompleted=function(){
-  var cur=localStorage.getItem('tf_no_regen_completed')==='1';
-  localStorage.setItem('tf_no_regen_completed',cur?'0':'1');
-  updateNoRegenBtn();
-  if(typeof toast==='function')toast(cur?'\uD83D\uDD04 Auto-regen recurring: ON':'\u23F8 Auto-regen recurring: OFF (after completion)','i');
-};
-window.updateNoRegenBtn=function(){
-  var btn=document.getElementById('noRegenBtn');if(!btn)return;
-  var on=localStorage.getItem('tf_no_regen_completed')==='1';
-  btn.innerHTML=on?'\u2705 Skip regen after complete':'\u23F8 Always regen daily';
-  btn.title=on?'Recurring tasks completed today will NOT regenerate (strict mode)':'Recurring tasks always regenerate daily even if you completed one earlier';
-};
-// Initialize button + auto-cleanup on first load if duplicates exist
-setTimeout(function(){
-  if(typeof updateNoRegenBtn==='function')updateNoRegenBtn();
-  // Silent cleanup of any existing dupes from previous versions
-  if(typeof removeDuplicateTasks==='function'){
-    try{removeDuplicateTasks(true);}catch(e){}
-  }
-},2000);
-
-
+window.toggleNoRegenCompleted=function(){var cur=localStorage.getItem('tf_no_regen_completed')==='1';localStorage.setItem('tf_no_regen_completed',cur?'0':'1');updateNoRegenBtn();if(typeof toast==='function')toast(cur?'🔄 Auto-regen ON':'⏸ Skip regen after complete','i');};
+window.updateNoRegenBtn=function(){var btn=document.getElementById('noRegenBtn');if(!btn)return;var on=localStorage.getItem('tf_no_regen_completed')==='1';btn.innerHTML=on?'✅ Skip regen after complete':'⏸ Always regen daily';};
+setTimeout(function(){if(typeof updateNoRegenBtn==='function')updateNoRegenBtn();if(typeof removeDuplicateTasks==='function'){try{removeDuplicateTasks(true);}catch(e){}}},2000);
 function dailyGen(){const td=todayStr(),tm=tmrStr(),nw=nwdStr();genInst(td);genInst(tm);if(nw!==tm)genInst(nw);localStorage.setItem(K.G,td);}
 function getTasksFor(d){return[...ld(K.I).filter(i=>i.date===d),...ld(K.T).filter(t=>t.due===d)].sort((a,b)=>(a.time||'99:99').localeCompare(b.time||'99:99'));}
 function getAllTasks(){return[...ld(K.I),...ld(K.T)];}
@@ -2620,30 +2382,22 @@ window.runCarryForward=function(show){try{
   if(lc===t && !show) return 0;
   var a=typeof ld==='function'?ld(K.T):[];
   var todayNames=new Set();
-  a.forEach(function(x){if(x.due===t && x.status!=='completed' && x.status!=='cancelled')todayNames.add((x.name||'').toLowerCase().trim());});
-  var todayInstances=ld(K.I).filter(function(i){return i.date===t;});
+  a.forEach(function(x){if(x.due===t && x.status!=='completed' && !x._deleted)todayNames.add((x.name||'').toLowerCase().trim());});
+  var todayInstances=ld(K.I).filter(function(i){return i.date===t && !i._deleted;});
   todayInstances.forEach(function(i){todayNames.add((i.name||'').toLowerCase().trim());});
   var c=0;
   a.forEach(function(x){
-    if(!x.due)return;
-    if(x.due>=t)return;
+    if(!x.due||x._deleted)return;if(x.due>=t)return;
     if(x.status==='completed'||x.status==='cancelled')return;
     var nameKey=(x.name||'').toLowerCase().trim();
     if(nameKey && todayNames.has(nameKey)) return;
-    x.due=t;x.carriedForward=true;
-    if(nameKey) todayNames.add(nameKey);
-    c++;
+    x.due=t;x.carriedForward=true;x.modifiedAt=Date.now();
+    if(nameKey) todayNames.add(nameKey);c++;
   });
-  if(c>0){
-    sv(K.T,a);localStorage.setItem('tf_last_carry',t);
+  if(c>0){sv(K.T,a);localStorage.setItem('tf_last_carry',t);
     if(show && typeof toast==='function')toast('\uD83D\uDD04 Carried '+c+' task'+(c>1?'s':''),'s');
-    if(typeof renderAll==='function')renderAll();
-    return c;
-  }else{
-    if(show && typeof toast==='function')toast('Nothing to carry','i');
-    localStorage.setItem('tf_last_carry',t);
-    return 0;
-  }
+    if(typeof renderAll==='function')renderAll();return c;
+  }else{if(show && typeof toast==='function')toast('Nothing to carry','i');localStorage.setItem('tf_last_carry',t);return 0;}
 }catch(e){return 0;}};
 window.autoCarryOnLoad=function(){if(localStorage.getItem('tf_auto_carry')==='0')return;setTimeout(function(){window.runCarryForward(false);},1500);};
 
@@ -5293,6 +5047,11 @@ function buildBackup(){
 function restoreBackup(data){
   if(!data||(typeof data!=='object'))throw new Error('Invalid payload');
   if(!data._app&&!data.p2_tasks&&!data.p2_recurring)throw new Error('Not a TaskFlow backup');
+  var cfg=getCfg();
+  var safeMode=(cfg.syncMode==='both' || cfg.syncMode==='pull-only') && cfg.token && cfg.gistId;
+  if(safeMode && typeof window.tfSafeMerge==='function'){
+    return window.tfSafeMerge(data,DATA_KEYS);
+  }
   var restored=0;
   Object.keys(data).forEach(function(k){
     if(k.charAt(0)==='_')return;
@@ -5379,8 +5138,15 @@ window.tfGistPull=function(silent){
     addLog('ok','✓ Restored '+restored+' items from '+(data._exportedAt||'unknown').slice(0,16));
     updateStatusDisplay();
     updateFabIndicator('ok');
-    if(typeof toast==='function')toast('✅ Restored from Gist — reloading...','s');
-    setTimeout(function(){location.reload();},1500);
+    if(typeof toast==='function'){
+      if((cfg.syncMode==='both'||cfg.syncMode==='pull-only')){
+        toast('🔄 Safe-merge complete — '+restored+' items merged','s');
+        if(typeof renderAll==='function')renderAll();
+      }else{
+        toast('✅ Restored from Gist — reloading...','s');
+        setTimeout(function(){location.reload();},1500);
+      }
+    }
     return data;
   }).catch(function(err){
     cfg.lastSyncStatus='err';saveCfg(cfg);
@@ -5430,10 +5196,7 @@ function stopAutoSync(){
 window.tfGistToggleAuto=function(){
   var cfg=getCfg();cfg.autoSync=!cfg.autoSync;
   cfg.syncMode=cfg.autoSync?(cfg.syncMode==='both'?'both':'push-only'):'off';saveCfg(cfg);
-  var sw=document.getElementById('tfGistAutoSwitch');if(sw)sw.classList.toggle('on',cfg.autoSync);
-  var mEl=document.getElementById('tfGistSyncMode');if(mEl)mEl.value=cfg.syncMode;
   if(TF.autoSync && TF.autoSync.apply) TF.autoSync.apply();
-  if(typeof toast==='function')toast(cfg.autoSync?'\uD83D\uDD04 Auto-sync ON':'⏸ Auto-sync OFF','s');
 };
 
 // ── UI ──
@@ -5492,27 +5255,27 @@ function injectGistModal(){
       '<div class="tf-gist-help" style="margin-top:8px;"><b>Push</b> = upload local data to gist. <b>Pull</b> = download from gist (overwrites local!).</div>'+
     '</div>'+
     '<div class="tf-gist-section">'+
-      '<div class="tf-gist-section-title">\uD83D\uDD04 Auto-Sync (Two-Way Capable)</div>'+
+      '<div class="tf-gist-section-title">\uD83D\uDD04 Auto-Sync (Safe-Merge Two-Way)</div>'+
       '<div class="tf-gist-field">'+
         '<label>Sync Mode</label>'+
         '<select id="tfGistSyncMode" onchange="tfGistSetSyncMode(this.value)" style="width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--input);color:var(--text);font-size:12px;font-family:inherit;">'+
           '<option value="off">\u23F8 Off</option>'+
           '<option value="push-only">\u2B06\uFE0F Push only</option>'+
           '<option value="pull-only">\u2B07\uFE0F Pull only</option>'+
-          '<option value="both">\uD83D\uDD04 Two-Way Sync (Recommended)</option>'+
+          '<option value="both">\uD83D\uDD04 Two-Way Safe-Merge (Recommended)</option>'+
         '</select>'+
-        '<div class="tf-gist-help">Two-Way syncs both ways across devices.</div>'+
+        '<div class="tf-gist-help">Safe-Merge intelligently merges changes from all devices.</div>'+
       '</div>'+
       '<div class="tf-gist-field">'+
         '<label>Sync Interval (minutes)</label>'+
         '<input type="number" id="tfGistInterval" min="1" max="120" value="1" onchange="tfGistUpdateInterval(this.value)">'+
       '</div>'+
       '<div class="tf-gist-auto">'+
-        '<div><div class="tf-gist-auto-label">Pull on Window Focus</div><div class="tf-gist-auto-desc">Auto-check on app return</div></div>'+
+        '<div><div class="tf-gist-auto-label">Pull on Window Focus</div><div class="tf-gist-auto-desc">Safe-merge on return</div></div>'+
         '<div class="tf-gist-switch" id="tfGistFocusSwitch" onclick="tfGistTogglePullOnFocus()"></div>'+
       '</div>'+
       '<div class="tf-gist-auto">'+
-        '<div><div class="tf-gist-auto-label">Pull on Startup</div><div class="tf-gist-auto-desc">Fetch latest on launch</div></div>'+
+        '<div><div class="tf-gist-auto-label">Pull on Startup</div><div class="tf-gist-auto-desc">Safe-merge on launch</div></div>'+
         '<div class="tf-gist-switch" id="tfGistStartupSwitch" onclick="tfGistTogglePullOnStartup()"></div>'+
       '</div>'+
     '</div>'+
@@ -5528,35 +5291,29 @@ function injectGistModal(){
 }
 
 window.tfGistOpenModal=function(){
-  injectGistModal();
-  var cfg=getCfg();
+  injectGistModal();var cfg=getCfg();
   document.getElementById('tfGistToken').value=cfg.token||'';
   document.getElementById('tfGistId').value=cfg.gistId||'';
   document.getElementById('tfGistInterval').value=cfg.autoInterval||1;
   var modeEl=document.getElementById('tfGistSyncMode');
-  if(modeEl){var m=cfg.syncMode || (cfg.autoSync?'push-only':'off');modeEl.value=m;}
-  var fs=document.getElementById('tfGistFocusSwitch');
-  if(fs) fs.classList.toggle('on', cfg.pullOnFocus!==false);
-  var ss=document.getElementById('tfGistStartupSwitch');
-  if(ss) ss.classList.toggle('on', cfg.pullOnStartup!==false);
-  updateStatusDisplay();
-  updateLogDisplay();
+  if(modeEl){modeEl.value=cfg.syncMode || (cfg.autoSync?'push-only':'off');}
+  var fs=document.getElementById('tfGistFocusSwitch');if(fs)fs.classList.toggle('on',cfg.pullOnFocus!==false);
+  var ss=document.getElementById('tfGistStartupSwitch');if(ss)ss.classList.toggle('on',cfg.pullOnStartup!==false);
+  updateStatusDisplay();updateLogDisplay();
   document.getElementById('tfGistModal').classList.add('show');
 };
 window.tfGistSetSyncMode=function(mode){
   var cfg=getCfg();cfg.syncMode=mode;cfg.autoSync=(mode==='push-only'||mode==='both');saveCfg(cfg);
   if(TF.autoSync && TF.autoSync.apply) TF.autoSync.apply();
-  if(typeof toast==='function'){var lbl={'off':'\u23F8 Off','pull-only':'\u2B07\uFE0F Pull only','push-only':'\u2B06\uFE0F Push only','both':'\uD83D\uDD04 Two-Way Sync'}[mode]||mode;toast('Sync mode: '+lbl,'s');}
+  if(typeof toast==='function'){var lbl={'off':'\u23F8 Off','pull-only':'\u2B07\uFE0F Pull only','push-only':'\u2B06\uFE0F Push only','both':'\uD83D\uDD04 Two-Way Safe-Merge'}[mode]||mode;toast('Sync mode: '+lbl,'s');}
 };
 window.tfGistTogglePullOnFocus=function(){
   var cfg=getCfg();cfg.pullOnFocus=!(cfg.pullOnFocus!==false);saveCfg(cfg);
   var sw=document.getElementById('tfGistFocusSwitch');if(sw)sw.classList.toggle('on',cfg.pullOnFocus);
-  if(typeof toast==='function') toast(cfg.pullOnFocus?'\uD83D\uDD04 Pull on focus ON':'\u23F8 Pull on focus OFF','i');
 };
 window.tfGistTogglePullOnStartup=function(){
   var cfg=getCfg();cfg.pullOnStartup=!(cfg.pullOnStartup!==false);saveCfg(cfg);
   var sw=document.getElementById('tfGistStartupSwitch');if(sw)sw.classList.toggle('on',cfg.pullOnStartup);
-  if(typeof toast==='function') toast(cfg.pullOnStartup?'\uD83D\uDD04 Pull on startup ON':'\u23F8 Pull on startup OFF','i');
 };
 
 window.tfGistSaveCfg=function(){
@@ -5586,7 +5343,7 @@ window.tfGistUpdateInterval=function(v){
   var cfg=getCfg();cfg.autoInterval=Math.max(1,Math.min(120,+v||1));saveCfg(cfg);
   if(typeof stopAutoSync==='function')stopAutoSync();
   if(cfg.autoSync && typeof startAutoSync==='function')startAutoSync();
-  if(TF.autoSync && TF.autoSync.apply) TF.autoSync.apply();
+  if(TF.autoSync && TF.autoSync.apply)TF.autoSync.apply();
 };
 
 // ── FAB indicator ──
@@ -6674,38 +6431,89 @@ tfacPages.shortcuts=function(){
   '</div>';
 };
 
-// ═══ PAGE: ABOUT ═══
+// ═══ PAGE: ABOUT (v7.6 Master Build) ═══
 tfacPages.about=function(){
   var stats={};
-  ['p2_tasks','p2_recurring','p2_reports','tf_dev_projects','p2_expenses'].forEach(function(k){try{var d=JSON.parse(localStorage.getItem(k)||'[]');stats[k]=Array.isArray(d)?d.filter(function(x){return x&&!x._deleted;}).length:0;}catch(e){stats[k]=0;}});
+  var dataKeys=[
+    ['p2_tasks','One-Time Tasks','📋'],['p2_recurring','Recurring','🔄'],['p2_reports','Reports','📂'],
+    ['p2_reminders','Reminders','🔔'],['p2_leave','Team Leave','🏥'],['p2_my_leave_log','My Leave','🧍'],
+    ['p2_lilo_data','LILO Days','🕒'],['p2_expenses','Expenses','💰'],['p2_msg_tpl','Msg Templates','📝'],
+    ['p2_step_tpl','Step Templates','✅'],['p2_team','Team Members','👥'],['p2_workspaces','Workspaces','🗂'],
+    ['tf_dev_projects','Developments','📊'],['tf_goals','Goals','🎯'],['tf_habits','Habits','🔁'],
+    ['tf_focus_sessions','Focus Sessions','⏱'],['tf_meeting_drafts','Meeting Drafts','📋'],
+    ['p2_comp_history','Completed','✔️'],['tf_quick_links','Quick Links','🔗']
+  ];
+  dataKeys.forEach(function(row){
+    var k=row[0];
+    try{var raw=localStorage.getItem(k);if(!raw){stats[k]=0;return;}var d=JSON.parse(raw);
+      if(Array.isArray(d)) stats[k]=d.filter(function(x){return x&&!x._deleted;}).length;
+      else if(typeof d==='object'&&d) stats[k]=Object.keys(d).length;
+      else stats[k]=0;
+    }catch(e){stats[k]=0;}
+  });
+  var totalRecords=0; Object.keys(stats).forEach(function(k){totalRecords+=stats[k]||0;});
+  var gistCfg={}; try{gistCfg=JSON.parse(localStorage.getItem('tf_gist_config')||'{}');}catch(e){}
+  var syncMode=gistCfg.syncMode||(gistCfg.autoSync?'push-only':'off');
+  var syncLabel={'off':'⏸ Off','push-only':'⬆️ Push only','pull-only':'⬇️ Pull only','both':'🔄 Two-Way Safe-Merge'}[syncMode]||syncMode;
+  var syncColor=syncMode==='both'?'var(--success)':(syncMode==='off'?'var(--muted)':'var(--accent)');
+  var lastSync=gistCfg.lastSync?new Date(gistCfg.lastSync).toLocaleString():'Never';
+  var statHtml=dataKeys.map(function(row){return '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats[row[0]]||0)+'</div><div class="tfac-stat-l">'+row[2]+' '+row[1]+'</div></div>';}).join('');
+
   return '<div class="tfac-page active">'+
     '<div class="tfac-page-head"><div><div class="tfac-page-title"><span class="tfac-page-icon">ℹ️</span>About TaskFlow</div><div class="tfac-page-desc">Your personal productivity hub</div></div></div>'+
     '<div class="tfac-card" style="background:linear-gradient(135deg,rgba(108,92,231,.08),rgba(0,206,201,.04));">'+
       '<div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">'+
         '<div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#6C5CE7,#00CEC9);display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff;font-weight:800;">T</div>'+
-        '<div><div style="font-size:20px;font-weight:800;">TaskFlow</div><div style="font-size:11px;color:var(--text2);">Version 6.7 · Admin Center + Page Layout</div></div>'+
+        '<div><div style="font-size:20px;font-weight:800;">TaskFlow</div><div style="font-size:11px;color:var(--text2);">Version 7.6 · Master Build — All Updates Merged</div></div>'+
       '</div>'+
-      '<div style="font-size:11px;color:var(--text2);line-height:1.6;">A single-file offline-capable productivity webapp.</div>'+
+      '<div style="font-size:11px;color:var(--text2);line-height:1.6;">A single-file offline-capable productivity webapp with Safe-Merge cloud sync, AI insights, voice control, environment-tagged quick links, and full multi-device support.</div>'+
+      '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">'+
+        '<span style="font-size:10px;padding:4px 10px;border-radius:12px;background:'+syncColor+';color:#fff;font-weight:700;">Sync: '+syncLabel+'</span>'+
+        '<span style="font-size:10px;padding:4px 10px;border-radius:12px;background:var(--card2);border:1px solid var(--border);color:var(--text2);font-weight:600;">Last sync: '+lastSync+'</span>'+
+        '<span style="font-size:10px;padding:4px 10px;border-radius:12px;background:var(--card2);border:1px solid var(--border);color:var(--text2);font-weight:600;">'+totalRecords+' total records</span>'+
+      '</div>'+
     '</div>'+
-    '<div class="tfac-card"><div class="tfac-card-title">📊 Your Data Summary</div><div class="tfac-stat-grid">'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_tasks||0)+'</div><div class="tfac-stat-l">📋 Tasks</div></div>'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_recurring||0)+'</div><div class="tfac-stat-l">🔄 Recurring</div></div>'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_reports||0)+'</div><div class="tfac-stat-l">📂 Reports</div></div>'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.tf_dev_projects||0)+'</div><div class="tfac-stat-l">📊 Developments</div></div>'+
-      '<div class="tfac-stat"><div class="tfac-stat-v">'+(stats.p2_expenses||0)+'</div><div class="tfac-stat-l">💰 Expenses</div></div>'+
-    '</div></div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">📊 Your Data Summary</div><div class="tfac-stat-grid">'+statHtml+'</div></div>'+
+    '<div class="tfac-card"><div class="tfac-card-title">✨ Core Features</div>'+
+      '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">📋 Task Management</div><div style="font-size:10px;color:var(--text2);">Schedule, recurring, kanban, priorities</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🔗 Quick Links Hub</div><div style="font-size:10px;color:var(--text2);">LILO, GPH, env-tagged shortcuts</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🔄 Safe-Merge Sync</div><div style="font-size:10px;color:var(--text2);">4-layer cross-device sync</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🤖 AI Agent</div><div style="font-size:10px;color:var(--text2);">Briefings, alerts, suggestions</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🎤 Voice Control</div><div style="font-size:10px;color:var(--text2);">Hands-free task input</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">📝 Markdown Notes</div><div style="font-size:10px;color:var(--text2);">Rich notes everywhere</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🎯 Focus Mode</div><div style="font-size:10px;color:var(--text2);">Pomodoro + distraction-free UI</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🕒 LILO Attendance</div><div style="font-size:10px;color:var(--text2);">Shift-aware tracking + CSV</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">💰 Expense Tracker</div><div style="font-size:10px;color:var(--text2);">Budget, categories, charts</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🏥 Leave Balance</div><div style="font-size:10px;color:var(--text2);">VL/SL + team + LILO sync</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">🧹 Dedupe Guard</div><div style="font-size:10px;color:var(--text2);">Triple-layer task dedupe</div></div>'+
+        '<div style="padding:10px;border-radius:8px;background:var(--card2);border:1px solid var(--border);"><div style="font-size:11px;font-weight:700;margin-bottom:3px;">📲 PWA Install</div><div style="font-size:10px;color:var(--text2);">Offline-capable app</div></div>'+
+      '</div></div>'+
     '<div class="tfac-card"><div class="tfac-card-title">📜 Version Highlights</div><ul style="font-size:11px;color:var(--text2);line-height:1.7;padding-left:18px;margin:0;">'+
-      '<li><b>v6.7</b> — Page Layout configuration · Backup/Settings consolidated</li>'+
-      '<li><b>v6.6</b> — Admin Center unified configuration</li>'+
-      '<li><b>v6.5</b> — Selective backup with module-level control</li>'+
-      '<li><b>v6.4</b> — GitHub Gist cloud sync</li>'+
-      '<li><b>v6.3</b> — Universal search, Quick capture, Trash, Health</li>'+
+      '<li><b>v7.6</b> — 🛡 Safe-Merge Sync Engine (4-layer protection: pre-pull push, smart merge, modifiedAt stamping, tombstone deletion)</li>'+
+      '<li><b>v7.5</b> — 🧹 Duplicate Task Fix (hardened genInst, removeDuplicateTasks utility, carry-forward dedupe)</li>'+
+      '<li><b>v7.4</b> — 🏷 Categories + Environment Tags (🟣Accenture, 🔵Client, 🟢Personal, ⚪Other)</li>'+
+      '<li><b>v7.3</b> — 🔗 Quick Links as sidebar page (LILO, GPH, Power BI pre-seeded)</li>'+
+      '<li><b>v7.2</b> — Quick Links manager in About page</li>'+
+      '<li><b>v7.1</b> — 🔄 Two-Way Gist Sync · Pull on focus · Pull on startup</li>'+
+      '<li><b>v7.0</b> — Professional Polish · UI redesign</li>'+
+      '<li><b>v6.9</b> — Markdown rendering</li>'+
+      '<li><b>v6.8</b> — Configurable Next Up · Persistent timer state</li>'+
+      '<li><b>v6.7</b> — Page Layout configuration</li>'+
+      '<li><b>v6.6</b> — Admin Center unified</li>'+
+      '<li><b>v6.5</b> — Selective backup</li>'+
+      '<li><b>v6.4</b> — GitHub Gist cloud sync (one-way)</li>'+
       '<li><b>v6.0</b> — Development progress tracker</li>'+
     '</ul></div>'+
-    '<div class="tfac-card"><div class="tfac-card-title">🔗 Useful Links</div><div class="tfac-action-grid">'+
+    '<div class="tfac-card"><div class="tfac-card-title">🛠 App Tools</div><div class="tfac-action-grid">'+
+      '<button class="tfac-action-btn" onclick="navTo(\'qlinks\')"><div class="tfac-action-icon">🔗</div><div class="tfac-action-body"><div class="tfac-action-title">Quick Links</div><div class="tfac-action-sub">LILO, GPH, etc.</div></div></button>'+
       '<button class="tfac-action-btn" onclick="if(typeof openHelp===\'function\')openHelp()"><div class="tfac-action-icon">📚</div><div class="tfac-action-body"><div class="tfac-action-title">Help Center</div></div></button>'+
-      '<button class="tfac-action-btn" onclick="if(typeof openCmdPalette===\'function\')openCmdPalette()"><div class="tfac-action-icon">🔍</div><div class="tfac-action-body"><div class="tfac-action-title">Command Palette</div><div class="tfac-action-sub">Ctrl+K</div></div></button>'+
-      '<button class="tfac-action-btn" onclick="if(typeof openGPT===\'function\')openGPT()"><div class="tfac-action-icon">🤖</div><div class="tfac-action-body"><div class="tfac-action-title">AI Assistant</div><div class="tfac-action-sub">Alt+G</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof openCmdPalette===\'function\')openCmdPalette()"><div class="tfac-action-icon">🔍</div><div class="tfac-action-body"><div class="tfac-action-title">Command Palette</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof openGPT===\'function\')openGPT()"><div class="tfac-action-icon">🤖</div><div class="tfac-action-body"><div class="tfac-action-title">AI Assistant</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof tfGistOpenModal===\'function\')tfGistOpenModal()"><div class="tfac-action-icon">☁️</div><div class="tfac-action-body"><div class="tfac-action-title">Gist Sync</div><div class="tfac-action-sub">Safe-Merge enabled</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof exportBackup===\'function\')exportBackup()"><div class="tfac-action-icon">💾</div><div class="tfac-action-body"><div class="tfac-action-title">Backup</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof toggleAdmin===\'function\')toggleAdmin()"><div class="tfac-action-icon">⚙️</div><div class="tfac-action-body"><div class="tfac-action-title">Admin Center</div></div></button>'+
+      '<button class="tfac-action-btn" onclick="if(typeof toggleTheme===\'function\')toggleTheme()"><div class="tfac-action-icon">🎨</div><div class="tfac-action-body"><div class="tfac-action-title">Toggle Theme</div></div></button>'+
     '</div></div>'+
   '</div>';
 };
@@ -8164,40 +7972,34 @@ body.tf-dock-on #tfGistFab{display:none !important;}
 @keyframes tf-pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
 
 
-/* ═══ QUICK LINKS PAGE ═══ */
+/* QL */
 .ql-env-header{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;margin:18px 0 10px;font-size:13px;font-weight:700;}
-.ql-env-header:first-of-type{margin-top:6px;}
-.ql-env-emoji{font-size:18px;}
-.ql-env-name{flex:1;letter-spacing:.5px;}
-.ql-env-count{font-size:10px;font-weight:600;background:rgba(0,0,0,.12);padding:3px 10px;border-radius:10px;color:var(--text);}
+.ql-env-emoji{font-size:18px;}.ql-env-name{flex:1;}
+.ql-env-count{font-size:10px;font-weight:600;background:rgba(0,0,0,.12);padding:3px 10px;border-radius:10px;}
 .ql-cat-header{display:flex;align-items:center;gap:8px;padding:10px 6px 6px;}
-.ql-cat-icon{font-size:14px;}
-.ql-cat-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);}
+.ql-cat-icon{font-size:14px;}.ql-cat-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);}
 .ql-cat-line{flex:1;height:1px;background:var(--border);}
 .ql-cat-count{font-size:9px;color:var(--text2);font-weight:600;background:var(--card2);padding:2px 8px;border-radius:10px;border:1px solid var(--border);}
 .ql-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:6px;}
 .ql-card{position:relative;background:var(--card2);border:1px solid var(--border);border-radius:12px;transition:all .2s;overflow:hidden;}
 .ql-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 20px rgba(108,92,231,.15);}
 .ql-card.ql-no-url{opacity:.7;border-style:dashed;}
-.ql-card.ql-no-url:hover{opacity:1;}
-.ql-card-body{display:flex;align-items:flex-start;gap:12px;padding:14px 14px;text-decoration:none;color:inherit;cursor:pointer;}
+.ql-card-body{display:flex;align-items:flex-start;gap:12px;padding:14px;text-decoration:none;color:inherit;cursor:pointer;}
 .ql-icon{font-size:28px;width:48px;height:48px;border-radius:11px;background:linear-gradient(135deg,rgba(108,92,231,.15),rgba(0,206,201,.1));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .ql-text{flex:1;min-width:0;}
 .ql-label{font-size:13px;font-weight:700;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .ql-badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px;}
-.ql-env-badge{font-size:8px;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.4px;}
+.ql-env-badge{font-size:8px;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;}
 .ql-cat-badge{font-size:8px;font-weight:600;padding:2px 7px;border-radius:5px;background:var(--card);color:var(--text2);border:1px solid var(--border);}
-.ql-desc{font-size:10px;color:var(--text2);margin-top:5px;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
-.ql-card-actions{position:absolute;top:6px;right:6px;display:flex;gap:3px;opacity:0;transition:opacity .15s;z-index:2;}
+.ql-desc{font-size:10px;color:var(--text2);margin-top:5px;line-height:1.4;}
+.ql-card-actions{position:absolute;top:6px;right:6px;display:flex;gap:3px;opacity:0;transition:opacity .15s;}
 .ql-card:hover .ql-card-actions{opacity:1;}
-.ql-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text2);cursor:pointer;font-size:10px;display:flex;align-items:center;justify-content:center;padding:0;}
-.ql-btn:hover{border-color:var(--primary);color:var(--primary);}
-.ql-btn-del:hover{border-color:var(--danger);color:var(--danger);background:rgba(239,68,68,.08);}
+.ql-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:var(--card);color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;}
+.ql-btn-del:hover{border-color:var(--danger);color:var(--danger);}
 .ql-env-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;margin-top:4px;}
-.ql-env-radio{display:flex;align-items:center;gap:8px;padding:10px 12px;border:2px solid var(--border);border-radius:9px;cursor:pointer;background:var(--card2);font-size:11px;font-weight:600;transition:all .15s;user-select:none;}
-.ql-env-radio:hover{border-color:var(--border2);background:var(--hover);}
+.ql-env-radio{display:flex;align-items:center;gap:8px;padding:10px 12px;border:2px solid var(--border);border-radius:9px;cursor:pointer;background:var(--card2);font-size:11px;font-weight:600;user-select:none;}
 .ql-env-radio input{display:none;}
-.ql-env-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0;transition:all .15s;background:var(--card);}
+.ql-env-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border2);background:var(--card);}
 .ql-env-radio.acn:has(input:checked){border-color:#6C5CE7;background:rgba(108,92,231,.08);}
 .ql-env-radio.client:has(input:checked){border-color:#0984E3;background:rgba(9,132,227,.08);}
 .ql-env-radio.personal:has(input:checked){border-color:#00B894;background:rgba(0,184,148,.08);}
@@ -9514,20 +9316,17 @@ TF.autoSync = (function(){
 
   var _focusListenerAdded=false;
   function setupFocusPull(){
-    if(_focusListenerAdded)return;_focusListenerAdded=true;
-    var lastFocusPull=0;
+    if(_focusListenerAdded)return;_focusListenerAdded=true;var lastFocusPull=0;
     function tryFocusPull(){
       var cfg=TF.gist.getCfg();if(cfg.pullOnFocus===false)return;
       var mode=getMode();if(mode!=='pull-only'&&mode!=='both')return;
       if(!cfg.token||!cfg.gistId)return;
-      var now=Date.now();if(now-lastFocusPull<10000)return;
-      lastFocusPull=now;autoPullCheck(true);
+      var now=Date.now();if(now-lastFocusPull<10000)return;lastFocusPull=now;autoPullCheck(true);
     }
     window.addEventListener('focus',tryFocusPull);
     document.addEventListener('visibilitychange',function(){if(!document.hidden)tryFocusPull();});
   }
-  var _origApply=apply;
-  apply=function(){_origApply();setupFocusPull();};
+  var _origApply=apply;apply=function(){_origApply();setupFocusPull();};
   window.tfAutoSync={getMode:getMode,setMode:setMode};
   return {apply:apply,setMode:setMode,getMode:getMode,setupChangeTracking:setupChangeTracking,injectBadge:injectBadge,autoPullCheck:autoPullCheck,setupFocusPull:setupFocusPull};
 })();
@@ -10083,6 +9882,125 @@ window.tfIcons = {
 };
 window.tfSmartPaste = {convert: TF.paste.htmlToMarkdown};
 
+})();
+</script>
+
+
+<script id="tfSafeMergeEngine">
+// ═══ TaskFlow v7.6 SAFE-MERGE ENGINE (4-Layer) ═══
+(function(){
+  'use strict';
+  var ARRAY_KEYS_BY_ID = ['p2_recurring','p2_tasks','p2_instances','p2_reminders','p2_reports','p2_leave','p2_team','p2_msg_tpl','p2_step_tpl','p2_workspaces','p2_lilo_data','p2_expenses','p2_my_leave_log','p2_comp_history','p2_recur_history','tf_dev_projects','tf_meeting_drafts','tf_goals','tf_habits','tf_focus_sessions','tf_quick_links','tf_quick_link_cats','p2_expense_cats','p2_pay_methods','p2_expense_tags','p2_task_cats','p2_report_cats','p2_leave_types','p2_priorities','p2_bus_units','p2_bu_objects'];
+  var SCALAR_KEYS = ['planner_notes','planner_theme','p2_showOverdue','p2_admin','p2_active_ws','p2_lilo_settings','p2_lilo_submitted','p2_expense_budget','p2_my_leave_config','tf_dashboard','tf_earned_badges','tf_sidebar_pinned','tf_themes_used','tf_pins_count','tf_voice_used','tf_lang','tf_compact','tf_task_view_mode','tf_carry_forward_settings','tf_a11y','tf_theme_preset','tf_admin_v66','tf_v70_prefs','p2_lastGen'];
+  function parseArr(s){try{var x=JSON.parse(s||'[]');return Array.isArray(x)?x:[];}catch(e){return [];}}
+  function parseObj(s){try{return JSON.parse(s||'null');}catch(e){return null;}}
+  function getItemKey(item){
+    if(!item || typeof item!=='object') return null;
+    if(item.id!=null) return 'id:'+item.id;
+    if(item._id!=null) return 'id:'+item._id;
+    if(item.recurId!=null && item.date) return 'r:'+item.recurId+'@'+item.date;
+    if(item.name && item.due) return 'n:'+(''+item.name).toLowerCase().trim()+'@'+item.due;
+    if(item.name && item.date) return 'n:'+(''+item.name).toLowerCase().trim()+'@'+item.date;
+    if(item.label && item.url) return 'l:'+(''+item.label).toLowerCase().trim()+'|'+item.url;
+    if(item.label) return 'l:'+(''+item.label).toLowerCase().trim();
+    if(item.name) return 'n:'+(''+item.name).toLowerCase().trim();
+    return null;
+  }
+  function mergeArrayKey(key, localArr, remoteArr){
+    var merged = {};var ordered = [];var conflicts = 0;
+    function add(item, source){
+      var k = getItemKey(item);
+      if(!k){ordered.push({key:'_anon_'+ordered.length,item:item,source:source});return;}
+      if(!merged[k]){merged[k] = {item:item,source:source};ordered.push({key:k});}
+      else{
+        var existing = merged[k].item;
+        var lMod = +(item.modifiedAt||item._modifiedAt||0);
+        var rMod = +(existing.modifiedAt||existing._modifiedAt||0);
+        if(item._deleted && !existing._deleted){if(lMod >= rMod){merged[k]={item:item,source:source};}}
+        else if(!item._deleted && existing._deleted){if(lMod > rMod){merged[k]={item:item,source:source};}}
+        else if(lMod > rMod){if(rMod>0 && lMod-rMod > 5000) conflicts++;merged[k] = {item:item,source:source};}
+      }
+    }
+    localArr.forEach(function(x){add(x,'local');});
+    remoteArr.forEach(function(x){add(x,'remote');});
+    var result = ordered.map(function(o){return (merged[o.key]||{}).item;}).filter(Boolean);
+    return {result:result, conflicts:conflicts};
+  }
+  window.tfSafeMerge = function(remoteData, dataKeys){
+    if(!remoteData) return 0;
+    var merged=0,totalConflicts=0,summary={arr:0,scalar:0,skipped:0};
+    dataKeys.forEach(function(key){
+      if(!(key in remoteData)) return;
+      var remoteStr = remoteData[key];
+      if(remoteStr===null || remoteStr===undefined) return;
+      var localStr = localStorage.getItem(key);
+      if(localStr === remoteStr){summary.skipped++; return;}
+      if(ARRAY_KEYS_BY_ID.indexOf(key) >= 0){
+        var localArr = parseArr(localStr);var remoteArr = parseArr(remoteStr);
+        var mr = mergeArrayKey(key, localArr, remoteArr);
+        totalConflicts += mr.conflicts;
+        try{localStorage.setItem(key, JSON.stringify(mr.result));merged++;summary.arr++;}catch(e){}
+      }else if(SCALAR_KEYS.indexOf(key) >= 0){
+        var lo = parseObj(localStr);var ro = parseObj(remoteStr);
+        var lMod = lo && lo._modifiedAt ? +lo._modifiedAt : 0;
+        var rMod = ro && ro._modifiedAt ? +ro._modifiedAt : 0;
+        if(rMod > lMod){try{localStorage.setItem(key, remoteStr);merged++;summary.scalar++;}catch(e){}}
+        else if(lMod === 0 && rMod === 0){summary.skipped++;}
+      }else{summary.skipped++;}
+    });
+    if(totalConflicts > 0 && typeof toast === 'function'){toast('⚠️ '+totalConflicts+' conflict'+(totalConflicts!==1?'s':'')+' auto-resolved (newer wins)','i');}
+    try{if(typeof renderAll==='function') renderAll();if(typeof updateSbBadges==='function') updateSbBadges();}catch(e){}
+    console.log('[SafeMerge]',summary,'conflicts:',totalConflicts);
+    return merged;
+  };
+  // Auto-stamp modifiedAt
+  var origSetItem = Storage.prototype.setItem;
+  Storage.prototype.setItem = function(key, value){
+    try{
+      if(ARRAY_KEYS_BY_ID.indexOf(key) >= 0){
+        var arr;try{arr = JSON.parse(value);}catch(e){arr=null;}
+        if(Array.isArray(arr)){
+          var now = Date.now();var changed = false;
+          var oldArr;try{oldArr = JSON.parse(localStorage.getItem(key) || '[]');}catch(e){oldArr=[];}
+          var oldMap = {};
+          (Array.isArray(oldArr)?oldArr:[]).forEach(function(x){var k=getItemKey(x);if(k)oldMap[k]={data:JSON.stringify(x),mod:x.modifiedAt||0};});
+          arr.forEach(function(item){
+            if(!item || typeof item !== 'object') return;
+            var k = getItemKey(item);
+            if(!k){if(!item.modifiedAt) item.modifiedAt = now;return;}
+            var prev = oldMap[k];
+            var curStr = JSON.stringify(item);
+            if(!prev || prev.data !== curStr){item.modifiedAt = now;changed = true;}
+            else if(!item.modifiedAt){item.modifiedAt = prev.mod || now;}
+          });
+          if(changed) value = JSON.stringify(arr);
+        }
+      }else if(SCALAR_KEYS.indexOf(key) >= 0){
+        try{var v = JSON.parse(value);if(v && typeof v === 'object' && !Array.isArray(v) && !v._modifiedAt){v._modifiedAt = Date.now();value = JSON.stringify(v);}}catch(e){}
+      }
+    }catch(e){console.warn('[SafeMerge] stamp failed:',e);}
+    return origSetItem.call(this, key, value);
+  };
+  // Pre-Pull Push Guard
+  function wrapPullWithPushGuard(){
+    if(typeof window.tfGistPull !== 'function') return;
+    if(window.tfGistPull._safeMergeWrapped) return;
+    var origPull = window.tfGistPull;
+    window.tfGistPull = function(silent){
+      var cfg = (typeof getCfg === 'function') ? getCfg() : null;
+      if(!cfg) return origPull(silent);
+      var mode = cfg.syncMode || (cfg.autoSync ? 'push-only' : 'off');
+      if(mode === 'both' && typeof window.tfGistPush === 'function' && cfg.token && cfg.gistId){
+        if(typeof addLog === 'function') addLog('info','[Safe-Merge] Pre-pull push guard active');
+        return window.tfGistPush(true).then(function(){return origPull(silent);}).catch(function(){return origPull(silent);});
+      }
+      return origPull(silent);
+    };
+    window.tfGistPull._safeMergeWrapped = true;
+  }
+  setTimeout(wrapPullWithPushGuard, 2000);
+  setTimeout(wrapPullWithPushGuard, 5000);
+  console.log('%c[TaskFlow v7.6] Safe-Merge Engine loaded ✓','color:#10B981;font-weight:bold;');
 })();
 </script>
 
